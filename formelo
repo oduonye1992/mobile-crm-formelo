@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+use Symfony\Component\Console\Application as Application;
+$application = new Application();
+$application->add(new \commands\GreetCommand());
+$application->add(new \commands\BuildCommand());
+$application->add(new \commands\InitCommand());
+$application->add(new \commands\DeployCommand());
+$application->add(new \commands\ProviderCommand());
+$application->add(new \commands\DepencencyCommand());
+$application->run();

@@ -1,0 +1,16 @@
+{
+    "name": "root/formelo",
+    "description": "Formelo CLI for Developers",
+    "authors": [
+        {
+            "name": "Daniel Oduonye",
+            "email": "contactdanny19@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "~2.5"
+    },
+    "autoload": {
+        "classmap": ["commands"]
+    }
+}

@@ -1,0 +1,5 @@
+F O R M E L O   C L I
+
+TODO
+1. Modify the script
+2. Launch a server
