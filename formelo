@@ -9,4 +9,6 @@ $application->add(new \commands\InitCommand());
 $application->add(new \commands\DeployCommand());
 $application->add(new \commands\ProviderCommand());
 $application->add(new \commands\DepencencyCommand());
+$application->add(new \commands\ImportCSSCommand());
+$application->add(new \commands\PullCommand());
 $application->run();

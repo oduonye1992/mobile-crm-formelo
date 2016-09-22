@@ -83,7 +83,12 @@ class BuildCommand extends Command
 
                     ],
                     'dependencies' => [
+                        'js' => [
 
+                        ],
+                        'css' => [
+
+                        ]
                     ]
                 ]
             ],
@@ -113,14 +118,19 @@ class BuildCommand extends Command
             $js = $this->getFileContents("app/providers/$key.js");
             array_push($config['applets']['myname']['providers'], $js);
         }
-        $io->text("Compiling Dependencies");
-        foreach ($pages->dependencies as $key){
-            $js = $this->getFileContents("app/dependencies/$key.js");
-            array_push($config['applets']['myname']['dependencies'], $js);
+        $io->text("Compiling Javascript Dependencies");
+        foreach ($pages->dependencies->js as $key){
+            $js = $this->getFileContents("app/dependencies/js/$key.js");
+            array_push($config['applets']['myname']['dependencies']['js'], $js);
+        }
+        $io->text("Compiling CSS Dependencies");
+        foreach ($pages->dependencies->css as $key){
+            $js = $this->getFileContents("app/dependencies/css/$key.css");
+            array_push($config['applets']['myname']['dependencies']['css'], $js);
         }
         $this->saveJSON($config, "build/formelo.manifest");
         $io->success(array("Build script has been completed.","Development server running on localhost:8020"));
-        shell_exec('php -S localhost:8020');
+        return shell_exec('php -S localhost:8020');
     }
     private function getJSON(){
         $filename = "app/pages/pages.json";

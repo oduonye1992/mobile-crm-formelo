@@ -6,15 +6,14 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
-class DepencencyCommand extends Command
+class PullCommand extends Command
 {
-    protected $commandName = 'import:js';
-    protected $commandDescription = "Imports and external CSS file";
+    protected $commandName = 'pull';
+    protected $commandDescription = "builds from an existing repo";
 
     protected $commandArgumentName = "name";
-    protected $commandArgumentDescription = "Who do you want to greet?";
+    protected $commandArgumentDescription = "Location to pull from";
 
     protected $commandOptionName = "root"; // should be specified like "app:greet John --cap"
     protected $commandOptionDescription = 'If set, it will make tis page the root page';
@@ -37,29 +36,56 @@ class DepencencyCommand extends Command
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
+        /**
+         * Get sample JSON
+         * Parse, Create Pages.json, folders and
+         */
+        $testConf = $this->getFileContents("build/formelo.backup");
+        $testArray = json_decode($testConf);
+        $pages = $testArray->pages;
+
         $name = $input->getArgument($this->commandArgumentName);
         $setAsMain = false;
         if ($input->getOption($this->commandOptionName)) {
             $setAsMain = true;
         }
         $filename = $name;
-        // TODO validate link
-        $io->text("Fetching $filename");
-        $homepage = file_get_contents($filename);
-        $depName = $io->ask("Choose a name for this dependency");
-        if (file_exists("app/dependencies/$depName.js")){
-            throw new \RuntimeException("$depName already exists.");
+        if (file_exists("app/pages/$filename/$filename.js")){
+            $output->writeln("$name already exists.");
+            die();
         }
+        mkdir("app/pages/$filename");
         $fileContents = <<<EOD
-$homepage
+(function(){
+    'use strict';
+    formelo.event().onCreate(function(){
+        // Entry point of this application
+    });
+
+    formelo.event().onIntent(function(params){
+        var data = params.detail;
+        // Receive parameters from calling page
+    });
+
+    formelo.event().onClose(function(){
+        // Override close button
+        // formelo.navigation.stopPropagation()
+    });
+}());
 EOD;
-        $js = fopen("app/dependencies/js/$depName.js", "w");
+        $js = fopen("app/pages/$filename/$filename.js", "w");
+        $css = fopen("app/pages/$filename/$filename.css", "w");
+        $html = fopen("app/pages/$filename/$filename.html", "w");
         fwrite($js, $fileContents);
+        // Update the json
         $pages = $this->getJSON();
-        array_push($pages->dependencies->js, $depName);
+        if ($pages->root === "" || $setAsMain){
+            $pages->root = $filename;
+        }
+        array_push($pages->pages, $filename);
         $this->saveJSON($pages);
-        $io->success("$depName has been imported.");
+
+        $output->writeln("$name page has been created.");
     }
     private function getJSON(){
         $filename = "app/pages/pages.json";
@@ -73,5 +99,11 @@ EOD;
         $handle = fopen($filename, "w");
         fwrite($handle, json_encode($json));
         fclose($handle);
+    }
+    private function getFileContents($filename){
+        $handle = fopen($filename, "r") or die('Error opening '.$filename);
+        $contents = fread($handle, filesize($filename)+1);
+        fclose($handle);
+        return $contents;
     }
 }

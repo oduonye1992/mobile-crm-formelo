@@ -151,10 +151,10 @@ Formelo.prototype.start = function(){
         // Create the first page
         if (that.mAppletConfig && that.mAppletConfig.pages){
             that.runProvider();
-            // that.runDependencies();
+            that.runDependencies();
             that.runCode(that.rootPage);
-            that.runCss(that.rootPage);
             that.createPage(that.rootPage);
+            that.runCss(that.rootPage);
         } else {
             alert('Invalid config '+JSON.stringify(that.mAppletConfig));
         }
@@ -181,11 +181,21 @@ Formelo.prototype.runCode = function(index,params){
 };
 
 Formelo.prototype.runDependencies = function(){
-    var dependencies =  this.mAppletConfig.dependencies;
-    for (var i = 0; i < dependencies.length; i++){
-        alert('checking '+dependencies[i]);
-        eval(dependencies[i]);
-        alert(anime);
+    var jsDependencies =  this.mAppletConfig.dependencies.js;
+    var cssDependencies =  this.mAppletConfig.dependencies.css;
+    console.log(cssDependencies);
+    var script = '', style = '';
+    if (jsDependencies && jsDependencies.length) {
+        for (var i = 0; i < jsDependencies.length; i++){
+            script += '<script class="applet-dependencies" type="text/javascript">'+jsDependencies[i]+'</script>';
+        }
+        BODY.append(script);
+    }
+    if (cssDependencies && cssDependencies.length) {
+        for (var j = 0; j < cssDependencies.length; j++) {
+            style += '<style class="applet-dependencies">' + cssDependencies[j] + '</style>';
+        }
+        BODY.append(style);
     }
 };
 
@@ -199,7 +209,7 @@ Formelo.prototype.runProvider = function(){
 Formelo.prototype.runCss = function(index){
     var css = this.mAppletConfig.pages[index].css;
     if (css){
-        var id = this.mAppletID+'-'+index;
+        var id = this.mAppletID+'-'+index+'-style';
         function addStyleString(str){
             $('#'+id).remove();
             var node = document.createElement('style');

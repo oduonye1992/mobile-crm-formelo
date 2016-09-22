@@ -10,6 +10,8 @@ return array(
     'commands\\DepencencyCommand' => $baseDir . '/commands/DependencyCommand.php',
     'commands\\DeployCommand' => $baseDir . '/commands/DeployCommand.php',
     'commands\\GreetCommand' => $baseDir . '/commands/GreetCommand.php',
+    'commands\\ImportCSSCommand' => $baseDir . '/commands/ImportCSSCommand.php',
     'commands\\InitCommand' => $baseDir . '/commands/InitCommand.php',
     'commands\\ProviderCommand' => $baseDir . '/commands/ProviderCommand.php',
+    'commands\\PullCommand' => $baseDir . '/commands/PullCommand.php',
 );

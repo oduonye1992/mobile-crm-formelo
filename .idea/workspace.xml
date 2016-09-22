@@ -24,29 +24,14 @@
     <favorites_list name="formelo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6584887">
+    <splitter split-orientation="horizontal" split-proportion="0.4760479">
       <split-first>
         <leaf>
-          <file leaf-file-name="ProviderCommand.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/commands/ProviderCommand.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1512">
-                  <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#26#72#0#PHP" expanded="true" />
-                    <element signature="e#834#1352#0#PHP" expanded="false" />
-                    <element signature="e#2363#2602#0#PHP" expanded="false" />
-                    <element signature="e#2607#2801#0#PHP" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="DependencyCommand.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1169" max-vertical-offset="2064">
-                  <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+                <state vertical-scroll-proportion="-5.0" vertical-offset="1272" max-vertical-offset="1968">
+                  <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
                   <folding>
                     <element signature="e#26#72#0#PHP" expanded="true" />
                   </folding>
@@ -54,71 +39,33 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
+          <file leaf-file-name="ImportCSSCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/ImportCSSCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="861" max-vertical-offset="11088">
-                  <caret line="153" column="15" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="15" />
+                <state vertical-scroll-proportion="-4.2916665" vertical-offset="1409" max-vertical-offset="1968">
+                  <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
                   <folding>
-                    <element signature="e#846#1508#0" expanded="false" />
-                    <element signature="e#1543#1821#0" expanded="false" />
-                    <element signature="e#1860#2061#0" expanded="false" />
-                    <element signature="e#2100#5049#0" expanded="false" />
-                    <element signature="e#6107#6582#0" expanded="false" />
-                    <element signature="e#6890#7022#0" expanded="false" />
-                    <element signature="e#7067#7538#0" expanded="false" />
-                    <element signature="e#7597#8563#0" expanded="false" />
-                    <element signature="e#8614#9396#0" expanded="false" />
-                    <element signature="e#9445#9511#0" expanded="false" />
-                    <element signature="e#9551#9620#0" expanded="false" />
-                    <element signature="e#9828#11672#0" expanded="false" />
-                    <element signature="e#10001#10008#0" expanded="false" />
-                    <element signature="e#10065#11248#0" expanded="false" />
-                    <element signature="e#11308#11530#0" expanded="false" />
-                    <element signature="e#11591#11599#0" expanded="false" />
-                    <element signature="e#11662#11670#0" expanded="false" />
-                    <element signature="e#11713#12104#0" expanded="false" />
-                    <element signature="e#12313#22663#0" expanded="false" />
-                    <element signature="e#12391#12403#0" expanded="false" />
-                    <element signature="e#12417#12598#0" expanded="false" />
-                    <element signature="e#12640#14471#0" expanded="false" />
-                    <element signature="e#14501#14658#0" expanded="false" />
-                    <element signature="e#14668#15093#0" expanded="false" />
-                    <element signature="e#15144#17503#0" expanded="false" />
-                    <element signature="e#17555#20069#0" expanded="false" />
-                    <element signature="e#20094#20351#0" expanded="false" />
-                    <element signature="e#20365#20714#0" expanded="false" />
-                    <element signature="e#20768#22550#0" expanded="false" />
-                    <element signature="e#22595#22655#0" expanded="false" />
-                    <element signature="e#22840#23871#0" expanded="false" />
-                    <element signature="e#23910#25822#0" expanded="false" />
-                    <element signature="e#25994#26095#0" expanded="false" />
-                    <element signature="e#26139#27589#0" expanded="false" />
-                    <element signature="e#27727#27952#0" expanded="false" />
-                    <element signature="e#27983#29136#0" expanded="false" />
-                    <element signature="e#29167#30523#0" expanded="false" />
-                    <marker date="1474101354000" expanded="false" signature="4526:4543" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="12984:13037" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="13195:13228" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="16356:16407" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="16471:16488" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="16522:16539" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="18271:18287" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="18362:18375" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="18722:18778" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="18814:18865" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="18929:19024" placeholder="..." />
-                    <marker date="1474101354000" expanded="false" signature="21309:21326" placeholder="..." />
+                    <element signature="e#26#72#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="formelo.manifest" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
+          <file leaf-file-name="InitCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
-                  <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="857" max-vertical-offset="1872">
+                  <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DeployCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="1608">
+                  <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -127,24 +74,18 @@
           <file leaf-file-name="BuildCommand.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1484" max-vertical-offset="2856">
-                  <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+                <state vertical-scroll-proportion="-12.208333" vertical-offset="1843" max-vertical-offset="2544">
+                  <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
                   <folding>
                     <element signature="e#26#72#0#PHP" expanded="true" />
                     <element signature="e#769#1296#0#PHP" expanded="false" />
                     <element signature="e#1504#1603#0#PHP" expanded="false" />
                     <element signature="e#1612#2263#0#PHP" expanded="false" />
+                    <element signature="e#4907#5146#0#PHP" expanded="false" />
+                    <element signature="e#5151#5387#0#PHP" expanded="false" />
+                    <element signature="e#5392#5578#0#PHP" expanded="false" />
+                    <element signature="e#5583#5954#0#PHP" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
-                  <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -152,38 +93,54 @@
           <file leaf-file-name="myapp.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.19649805" vertical-offset="19" max-vertical-offset="648">
-                  <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+                <state vertical-scroll-proportion="0.60327196" vertical-offset="4985" max-vertical-offset="5808">
+                  <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dante.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/dependencies/dante.js">
+          <file leaf-file-name="myapp.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1584">
-                  <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="264">
+                  <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dante.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/providers/dante.js">
+          <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="144">
+                  <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="paw.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/paw/paw.js">
+          <file leaf-file-name="PullCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/PullCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="720">
-                  <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+                <state vertical-scroll-proportion="-7.0833335" vertical-offset="838" max-vertical-offset="2664">
+                  <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#26#72#0#PHP" expanded="true" />
+                    <element signature="e#1385#1476#0#PHP" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formelo.backup" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/formelo.backup">
+              <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="5448" max-vertical-offset="5784">
+                  <caret line="227" column="6" selection-start-line="227" selection-start-column="6" selection-end-line="227" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -193,11 +150,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="formelo" pinned="false" current-in-tab="true">
+          <file leaf-file-name="formelo" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/formelo">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2238806" vertical-offset="0" max-vertical-offset="536">
-                  <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+                <state vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="456">
+                  <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -213,11 +170,41 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="myapp.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="myapp.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="408">
-                  <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="511">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formelo.manifest" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="408">
+                  <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.0" vertical-offset="120" max-vertical-offset="14784">
+                  <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -228,6 +215,98 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="288">
                   <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-14.769231" vertical-offset="840" max-vertical-offset="10032">
+                  <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="12" />
+                  <folding>
+                    <element signature="n#!!doc;n#Formelo#0" expanded="false" />
+                    <element signature="n#!!block;n#Formelo#0" expanded="false" />
+                    <element signature="e#846#1508#0" expanded="false" />
+                    <element signature="e#1543#1821#0" expanded="false" />
+                    <element signature="e#1860#2061#0" expanded="false" />
+                    <element signature="e#2100#5049#0" expanded="false" />
+                    <element signature="e#5955#6053#0" expanded="false" />
+                    <element signature="e#6104#6579#0" expanded="false" />
+                    <element signature="e#7387#7519#0" expanded="false" />
+                    <element signature="e#8103#9069#0" expanded="false" />
+                    <element signature="e#9120#9902#0" expanded="false" />
+                    <element signature="e#9951#10017#0" expanded="false" />
+                    <element signature="e#10057#10126#0" expanded="false" />
+                    <element signature="e#10129#10307#0" expanded="false" />
+                    <element signature="e#10334#12178#0" expanded="false" />
+                    <element signature="e#10507#10514#0" expanded="false" />
+                    <element signature="e#10571#11754#0" expanded="false" />
+                    <element signature="e#11814#12036#0" expanded="false" />
+                    <element signature="e#12097#12105#0" expanded="false" />
+                    <element signature="e#12168#12176#0" expanded="false" />
+                    <element signature="e#12219#12610#0" expanded="false" />
+                    <element signature="e#12613#12785#0" expanded="false" />
+                    <element signature="e#12819#23169#0" expanded="false" />
+                    <element signature="e#12897#12909#0" expanded="false" />
+                    <element signature="e#12923#13104#0" expanded="false" />
+                    <element signature="e#13146#14977#0" expanded="false" />
+                    <element signature="e#15007#15164#0" expanded="false" />
+                    <element signature="e#15174#15599#0" expanded="false" />
+                    <element signature="e#15650#18009#0" expanded="false" />
+                    <element signature="e#18061#20575#0" expanded="false" />
+                    <element signature="e#20600#20857#0" expanded="false" />
+                    <element signature="e#20871#21220#0" expanded="false" />
+                    <element signature="e#21274#23056#0" expanded="false" />
+                    <element signature="e#23101#23161#0" expanded="false" />
+                    <element signature="e#23172#23309#0" expanded="false" />
+                    <element signature="e#23346#24377#0" expanded="false" />
+                    <element signature="e#24416#26328#0" expanded="false" />
+                    <element signature="e#26330#26460#0" expanded="false" />
+                    <element signature="e#26500#26601#0" expanded="false" />
+                    <element signature="e#26645#28095#0" expanded="false" />
+                    <element signature="e#28097#28195#0" expanded="false" />
+                    <element signature="e#28233#28458#0" expanded="false" />
+                    <element signature="e#28489#29642#0" expanded="false" />
+                    <element signature="e#29673#31029#0" expanded="false" />
+                    <element signature="e#31248#31389#0" expanded="false" />
+                    <element signature="e#31432#31604#0" expanded="false" />
+                    <element signature="e#31660#31729#0" expanded="false" />
+                    <element signature="e#31771#31826#0" expanded="false" />
+                    <element signature="e#31991#32141#0" expanded="false" />
+                    <marker date="1474575577000" expanded="false" signature="4526:4543" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="13490:13543" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="13701:13734" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="16862:16913" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="16977:16994" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="17028:17045" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="18777:18793" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="18868:18881" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="19228:19284" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="19320:19371" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="19435:19530" placeholder="..." />
+                    <marker date="1474575577000" expanded="false" signature="21815:21832" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dante.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/providers/dante.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="408">
+                  <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="bombom.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/providers/bombom.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
+                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -252,7 +331,6 @@
         <option value="$PROJECT_DIR$/app/pages/filler/filler.js" />
         <option value="$PROJECT_DIR$/Spec.txt" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/app/pages/users/users.html" />
         <option value="$PROJECT_DIR$/app/pages/users/users.js" />
         <option value="$PROJECT_DIR$/build/js/app/index.js" />
@@ -265,18 +343,23 @@
         <option value="$PROJECT_DIR$/app/providers/dante.js" />
         <option value="$PROJECT_DIR$/commands/ProviderCommand.php" />
         <option value="$PROJECT_DIR$/app/pages/fada/fada.js" />
-        <option value="$PROJECT_DIR$/formelo" />
-        <option value="$PROJECT_DIR$/commands/BuildCommand.php" />
-        <option value="$PROJECT_DIR$/commands/DependencyCommand.php" />
         <option value="$PROJECT_DIR$/app/pages/paw/paw.css" />
         <option value="$PROJECT_DIR$/app/pages/paw/paw.js" />
         <option value="$PROJECT_DIR$/app/pages/hsbdjsdsarsdsdddd/hsbdjsdsarsdsdddd.html" />
         <option value="$PROJECT_DIR$/app/pages/paw/paw.html" />
-        <option value="$PROJECT_DIR$/app/pages/myapp/myapp.html" />
-        <option value="$PROJECT_DIR$/app/pages/pages.json" />
         <option value="$PROJECT_DIR$/app/dependencies/dante.js" />
-        <option value="$PROJECT_DIR$/app/pages/myapp/myapp.js" />
+        <option value="$PROJECT_DIR$/build/formelo.backup" />
+        <option value="$PROJECT_DIR$/commands/PullCommand.php" />
+        <option value="$PROJECT_DIR$/app/pages/pages.json" />
+        <option value="$PROJECT_DIR$/app/pages/myapp/myapp.css" />
+        <option value="$PROJECT_DIR$/formelo" />
+        <option value="$PROJECT_DIR$/commands/ImportCSSCommand.php" />
+        <option value="$PROJECT_DIR$/commands/DependencyCommand.php" />
+        <option value="$PROJECT_DIR$/commands/BuildCommand.php" />
+        <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/build/js/app/formelo.js" />
+        <option value="$PROJECT_DIR$/app/pages/myapp/myapp.js" />
+        <option value="$PROJECT_DIR$/app/pages/myapp/myapp.html" />
       </list>
     </option>
   </component>
@@ -354,43 +437,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dependencies" />
+              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,9 +451,9 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.js&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/formelo&#10;paw.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;paw.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.css&#10;paw&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;buil&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;formelo.m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;page&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/ProviderCommand.php&#10;paw.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;dant&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/dante.js&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;Gr&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;de&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DeployCommand.php&#10;bui&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;bu&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;paw.h&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.html&#10;paw.j&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;gotoform&#9;null&#9;null&#10;createform&#9;null&#9;null&#10;Gre&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;globals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;usersc&#9;null&#9;null&#10;devap&#9;null&#9;null&#10;userscrip&#9;null&#9;null&#10;vertic&#9;ACTION&#9;SplitVertically&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;formcont&#9;null&#9;null&#10;detailscon&#9;null&#9;null&#10;index&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;my&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;myapp&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pa&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;bui&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.js&#10;myapp.html&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;myap&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.man&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;depend&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DependencyCommand.php&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;myapp.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.css&#10;mya&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;paw.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;paw.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.css&#10;paw&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;buil&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;formelo.m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;page&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/ProviderCommand.php&#10;paw.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;dant&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/dante.js&#10;Gr&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;de&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DeployCommand.php&#10;bu&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;paw.h&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.html&#10;paw.j&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;gotoform&#9;null&#9;null&#10;createform&#9;null&#9;null&#10;Gre&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;globals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;usersc&#9;null&#9;null&#10;devap&#9;null&#9;null&#10;userscrip&#9;null&#9;null&#10;vertic&#9;ACTION&#9;SplitVertically&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;formcont&#9;null&#9;null&#10;detailscon&#9;null&#9;null&#10;index&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Scripts/tutorial/githubIonic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Scripts/servicebeast" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="ReadonlyStatusHandler">
@@ -417,6 +464,7 @@
       <recent name="$PROJECT_DIR$/build" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/dependencies/js" />
       <recent name="$PROJECT_DIR$/app/pages" />
       <recent name="$PROJECT_DIR$/commands" />
     </key>
@@ -439,15 +487,15 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -466,7 +514,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="727" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -475,19 +523,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17932148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19063005" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -508,85 +556,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/js/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54270" max-vertical-offset="85896">
-          <caret line="2274" column="21" selection-start-line="2274" selection-start-column="21" selection-end-line="2274" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1527" max-vertical-offset="24624">
-          <caret line="166" column="24" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="24" />
-          <folding>
-            <element signature="e#846#1508#0" expanded="false" />
-            <element signature="e#1543#1821#0" expanded="false" />
-            <element signature="e#1860#2061#0" expanded="false" />
-            <element signature="e#2100#5049#0" expanded="false" />
-            <element signature="e#6107#6582#0" expanded="false" />
-            <element signature="e#6890#7022#0" expanded="false" />
-            <element signature="e#7067#7538#0" expanded="false" />
-            <element signature="e#7597#8563#0" expanded="false" />
-            <element signature="e#8614#9396#0" expanded="false" />
-            <element signature="e#9445#9511#0" expanded="false" />
-            <element signature="e#9551#9620#0" expanded="false" />
-            <element signature="e#9828#11672#0" expanded="false" />
-            <element signature="e#10001#10008#0" expanded="false" />
-            <element signature="e#10065#11248#0" expanded="false" />
-            <element signature="e#11308#11530#0" expanded="false" />
-            <element signature="e#11591#11599#0" expanded="false" />
-            <element signature="e#11662#11670#0" expanded="false" />
-            <element signature="e#11713#12104#0" expanded="false" />
-            <element signature="e#12313#22663#0" expanded="false" />
-            <element signature="e#12391#12403#0" expanded="false" />
-            <element signature="e#12417#12598#0" expanded="false" />
-            <element signature="e#12640#14471#0" expanded="false" />
-            <element signature="e#14501#14658#0" expanded="false" />
-            <element signature="e#14668#15093#0" expanded="false" />
-            <element signature="e#15144#17503#0" expanded="false" />
-            <element signature="e#17555#20069#0" expanded="false" />
-            <element signature="e#20094#20351#0" expanded="false" />
-            <element signature="e#20365#20714#0" expanded="false" />
-            <element signature="e#20768#22550#0" expanded="false" />
-            <element signature="e#22595#22655#0" expanded="false" />
-            <element signature="e#22840#23871#0" expanded="false" />
-            <element signature="e#23910#25822#0" expanded="false" />
-            <element signature="e#25994#26095#0" expanded="false" />
-            <element signature="e#26139#27589#0" expanded="false" />
-            <element signature="e#27727#27952#0" expanded="false" />
-            <element signature="e#27983#29136#0" expanded="false" />
-            <element signature="e#29167#30523#0" expanded="false" />
-            <marker date="1474101354000" expanded="false" signature="4526:4543" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="12984:13037" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="13195:13228" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16356:16407" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16471:16488" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16522:16539" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18271:18287" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18362:18375" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18722:18778" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18814:18865" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18929:19024" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="21309:21326" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="1728">
@@ -596,6 +570,10 @@
             <element signature="e#769#1296#0#PHP" expanded="false" />
             <element signature="e#1504#1603#0#PHP" expanded="false" />
             <element signature="e#1612#2263#0#PHP" expanded="false" />
+            <element signature="e#4907#5146#0#PHP" expanded="false" />
+            <element signature="e#5151#5387#0#PHP" expanded="false" />
+            <element signature="e#5392#5578#0#PHP" expanded="false" />
+            <element signature="e#5583#5954#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -604,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12402" max-vertical-offset="14784">
           <caret line="531" column="29" selection-start-line="531" selection-start-column="29" selection-end-line="531" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -618,7 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="192">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,16 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="35559" max-vertical-offset="59136">
           <caret line="1515" column="40" selection-start-line="1515" selection-start-column="40" selection-end-line="1515" selection-end-column="40" />
-          <folding>
-            <element signature="e#1241#1312#0" expanded="false" />
-            <element signature="e#1337#1452#0" expanded="false" />
-            <element signature="e#1471#1727#0" expanded="false" />
-            <element signature="e#1749#2005#0" expanded="false" />
-            <element signature="e#2072#2170#0" expanded="false" />
-            <element signature="e#3393#3874#0" expanded="false" />
-            <element signature="e#4335#4441#0" expanded="false" />
-            <element signature="e#4564#4592#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -658,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="54270" max-vertical-offset="85896">
           <caret line="2274" column="21" selection-start-line="2274" selection-start-column="21" selection-end-line="2274" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,55 +626,67 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1527" max-vertical-offset="24624">
           <caret line="166" column="24" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="24" />
           <folding>
+            <element signature="n#!!doc;n#Formelo#0" expanded="false" />
+            <element signature="n#!!block;n#Formelo#0" expanded="false" />
             <element signature="e#846#1508#0" expanded="false" />
             <element signature="e#1543#1821#0" expanded="false" />
             <element signature="e#1860#2061#0" expanded="false" />
             <element signature="e#2100#5049#0" expanded="false" />
-            <element signature="e#6107#6582#0" expanded="false" />
-            <element signature="e#6890#7022#0" expanded="false" />
-            <element signature="e#7067#7538#0" expanded="false" />
-            <element signature="e#7597#8563#0" expanded="false" />
-            <element signature="e#8614#9396#0" expanded="false" />
-            <element signature="e#9445#9511#0" expanded="false" />
-            <element signature="e#9551#9620#0" expanded="false" />
-            <element signature="e#9828#11672#0" expanded="false" />
-            <element signature="e#10001#10008#0" expanded="false" />
-            <element signature="e#10065#11248#0" expanded="false" />
-            <element signature="e#11308#11530#0" expanded="false" />
-            <element signature="e#11591#11599#0" expanded="false" />
-            <element signature="e#11662#11670#0" expanded="false" />
-            <element signature="e#11713#12104#0" expanded="false" />
-            <element signature="e#12313#22663#0" expanded="false" />
-            <element signature="e#12391#12403#0" expanded="false" />
-            <element signature="e#12417#12598#0" expanded="false" />
-            <element signature="e#12640#14471#0" expanded="false" />
-            <element signature="e#14501#14658#0" expanded="false" />
-            <element signature="e#14668#15093#0" expanded="false" />
-            <element signature="e#15144#17503#0" expanded="false" />
-            <element signature="e#17555#20069#0" expanded="false" />
-            <element signature="e#20094#20351#0" expanded="false" />
-            <element signature="e#20365#20714#0" expanded="false" />
-            <element signature="e#20768#22550#0" expanded="false" />
-            <element signature="e#22595#22655#0" expanded="false" />
-            <element signature="e#22840#23871#0" expanded="false" />
-            <element signature="e#23910#25822#0" expanded="false" />
-            <element signature="e#25994#26095#0" expanded="false" />
-            <element signature="e#26139#27589#0" expanded="false" />
-            <element signature="e#27727#27952#0" expanded="false" />
-            <element signature="e#27983#29136#0" expanded="false" />
-            <element signature="e#29167#30523#0" expanded="false" />
-            <marker date="1474101354000" expanded="false" signature="4526:4543" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="12984:13037" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="13195:13228" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16356:16407" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16471:16488" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16522:16539" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18271:18287" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18362:18375" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18722:18778" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18814:18865" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18929:19024" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="21309:21326" placeholder="..." />
+            <element signature="e#5955#6053#0" expanded="false" />
+            <element signature="e#6104#6579#0" expanded="false" />
+            <element signature="e#7387#7519#0" expanded="false" />
+            <element signature="e#8103#9069#0" expanded="false" />
+            <element signature="e#9120#9902#0" expanded="false" />
+            <element signature="e#9951#10017#0" expanded="false" />
+            <element signature="e#10057#10126#0" expanded="false" />
+            <element signature="e#10129#10307#0" expanded="false" />
+            <element signature="e#10334#12178#0" expanded="false" />
+            <element signature="e#10507#10514#0" expanded="false" />
+            <element signature="e#10571#11754#0" expanded="false" />
+            <element signature="e#11814#12036#0" expanded="false" />
+            <element signature="e#12097#12105#0" expanded="false" />
+            <element signature="e#12168#12176#0" expanded="false" />
+            <element signature="e#12219#12610#0" expanded="false" />
+            <element signature="e#12613#12785#0" expanded="false" />
+            <element signature="e#12819#23169#0" expanded="false" />
+            <element signature="e#12897#12909#0" expanded="false" />
+            <element signature="e#12923#13104#0" expanded="false" />
+            <element signature="e#13146#14977#0" expanded="false" />
+            <element signature="e#15007#15164#0" expanded="false" />
+            <element signature="e#15174#15599#0" expanded="false" />
+            <element signature="e#15650#18009#0" expanded="false" />
+            <element signature="e#18061#20575#0" expanded="false" />
+            <element signature="e#20600#20857#0" expanded="false" />
+            <element signature="e#20871#21220#0" expanded="false" />
+            <element signature="e#21274#23056#0" expanded="false" />
+            <element signature="e#23101#23161#0" expanded="false" />
+            <element signature="e#23172#23309#0" expanded="false" />
+            <element signature="e#23346#24377#0" expanded="false" />
+            <element signature="e#24416#26328#0" expanded="false" />
+            <element signature="e#26330#26460#0" expanded="false" />
+            <element signature="e#26500#26601#0" expanded="false" />
+            <element signature="e#26645#28095#0" expanded="false" />
+            <element signature="e#28097#28195#0" expanded="false" />
+            <element signature="e#28233#28458#0" expanded="false" />
+            <element signature="e#28489#29642#0" expanded="false" />
+            <element signature="e#29673#31029#0" expanded="false" />
+            <element signature="e#31248#31389#0" expanded="false" />
+            <element signature="e#31432#31604#0" expanded="false" />
+            <element signature="e#31660#31729#0" expanded="false" />
+            <element signature="e#31771#31826#0" expanded="false" />
+            <element signature="e#31991#32141#0" expanded="false" />
+            <marker date="1474575577000" expanded="false" signature="4526:4543" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="13490:13543" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="13701:13734" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="16862:16913" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="16977:16994" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="17028:17045" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="18777:18793" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="18868:18881" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19228:19284" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19320:19371" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19435:19530" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="21815:21832" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -737,6 +708,10 @@
             <element signature="e#769#1296#0#PHP" expanded="false" />
             <element signature="e#1504#1603#0#PHP" expanded="false" />
             <element signature="e#1612#2263#0#PHP" expanded="false" />
+            <element signature="e#4907#5146#0#PHP" expanded="false" />
+            <element signature="e#5151#5387#0#PHP" expanded="false" />
+            <element signature="e#5392#5578#0#PHP" expanded="false" />
+            <element signature="e#5583#5954#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,13 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12402" max-vertical-offset="14784">
           <caret line="531" column="29" selection-start-line="531" selection-start-column="29" selection-end-line="531" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="192">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,32 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12402" max-vertical-offset="14784">
-          <caret line="531" column="29" selection-start-line="531" selection-start-column="29" selection-end-line="531" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/js/app/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="54270" max-vertical-offset="85896">
           <caret line="2274" column="21" selection-start-line="2274" selection-start-column="21" selection-end-line="2274" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,16 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="58416">
           <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
-          <folding>
-            <element signature="e#1241#1312#0" expanded="false" />
-            <element signature="e#1337#1452#0" expanded="false" />
-            <element signature="e#1471#1727#0" expanded="false" />
-            <element signature="e#1749#2005#0" expanded="false" />
-            <element signature="e#2072#2170#0" expanded="false" />
-            <element signature="e#3393#3874#0" expanded="false" />
-            <element signature="e#4335#4441#0" expanded="false" />
-            <element signature="e#4564#4592#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,13 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="3720">
           <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.125" vertical-offset="1053" max-vertical-offset="1824">
-          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -889,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1793" max-vertical-offset="2328">
           <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,75 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.25" vertical-offset="834" max-vertical-offset="1728">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="708" max-vertical-offset="1920">
-          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/fada/fada.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
           <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/providers/bombom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ProviderCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1512">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#26#72#0#PHP" expanded="true" />
-            <element signature="e#834#1352#0#PHP" expanded="false" />
-            <element signature="e#2363#2602#0#PHP" expanded="false" />
-            <element signature="e#2607#2801#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1484" max-vertical-offset="2856">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <element signature="e#26#72#0#PHP" expanded="true" />
-            <element signature="e#769#1296#0#PHP" expanded="false" />
-            <element signature="e#1504#1603#0#PHP" expanded="false" />
-            <element signature="e#1612#2263#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="512">
-          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1169" max-vertical-offset="2064">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="e#26#72#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,30 +868,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
           <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="2280">
+          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
+    <entry file="file://$PROJECT_DIR$/commands/ProviderCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="513">
-          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+        <state vertical-scroll-proportion="3.6666667" vertical-offset="424" max-vertical-offset="1512">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#72#0#PHP" expanded="false" />
+            <element signature="e#834#1352#0#PHP" expanded="false" />
+            <element signature="e#2363#2602#0#PHP" expanded="false" />
+            <element signature="e#2607#2801#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="857" max-vertical-offset="1872">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.html">
+    <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="408">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="1608">
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formelo">
+    <entry file="file://$PROJECT_DIR$/build/formelo.backup">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2238806" vertical-offset="0" max-vertical-offset="536">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5176" max-vertical-offset="5784">
+          <caret line="227" column="6" selection-start-line="227" selection-start-column="6" selection-end-line="227" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1037,81 +922,197 @@
     <entry file="file://$PROJECT_DIR$/app/providers/dante.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dependencies/dante.js">
+    <entry file="file://$PROJECT_DIR$/commands/PullCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1584">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state vertical-scroll-proportion="-7.0833335" vertical-offset="838" max-vertical-offset="2664">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#72#0#PHP" expanded="true" />
+            <element signature="e#1385#1476#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/providers/bombom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="264">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.208333" vertical-offset="1843" max-vertical-offset="2544">
+          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <folding>
+            <element signature="e#26#72#0#PHP" expanded="true" />
+            <element signature="e#769#1296#0#PHP" expanded="false" />
+            <element signature="e#1504#1603#0#PHP" expanded="false" />
+            <element signature="e#1612#2263#0#PHP" expanded="false" />
+            <element signature="e#4907#5146#0#PHP" expanded="false" />
+            <element signature="e#5151#5387#0#PHP" expanded="false" />
+            <element signature="e#5392#5578#0#PHP" expanded="false" />
+            <element signature="e#5583#5954#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="1272" max-vertical-offset="1968">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding>
+            <element signature="e#26#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/ImportCSSCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2916665" vertical-offset="1409" max-vertical-offset="1968">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+          <folding>
+            <element signature="e#26#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formelo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="456">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="861" max-vertical-offset="11088">
-          <caret line="153" column="15" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="15" />
+        <state vertical-scroll-proportion="-14.769231" vertical-offset="840" max-vertical-offset="10032">
+          <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="12" />
           <folding>
+            <element signature="n#!!doc;n#Formelo#0" expanded="false" />
+            <element signature="n#!!block;n#Formelo#0" expanded="false" />
             <element signature="e#846#1508#0" expanded="false" />
             <element signature="e#1543#1821#0" expanded="false" />
             <element signature="e#1860#2061#0" expanded="false" />
             <element signature="e#2100#5049#0" expanded="false" />
-            <element signature="e#6107#6582#0" expanded="false" />
-            <element signature="e#6890#7022#0" expanded="false" />
-            <element signature="e#7067#7538#0" expanded="false" />
-            <element signature="e#7597#8563#0" expanded="false" />
-            <element signature="e#8614#9396#0" expanded="false" />
-            <element signature="e#9445#9511#0" expanded="false" />
-            <element signature="e#9551#9620#0" expanded="false" />
-            <element signature="e#9828#11672#0" expanded="false" />
-            <element signature="e#10001#10008#0" expanded="false" />
-            <element signature="e#10065#11248#0" expanded="false" />
-            <element signature="e#11308#11530#0" expanded="false" />
-            <element signature="e#11591#11599#0" expanded="false" />
-            <element signature="e#11662#11670#0" expanded="false" />
-            <element signature="e#11713#12104#0" expanded="false" />
-            <element signature="e#12313#22663#0" expanded="false" />
-            <element signature="e#12391#12403#0" expanded="false" />
-            <element signature="e#12417#12598#0" expanded="false" />
-            <element signature="e#12640#14471#0" expanded="false" />
-            <element signature="e#14501#14658#0" expanded="false" />
-            <element signature="e#14668#15093#0" expanded="false" />
-            <element signature="e#15144#17503#0" expanded="false" />
-            <element signature="e#17555#20069#0" expanded="false" />
-            <element signature="e#20094#20351#0" expanded="false" />
-            <element signature="e#20365#20714#0" expanded="false" />
-            <element signature="e#20768#22550#0" expanded="false" />
-            <element signature="e#22595#22655#0" expanded="false" />
-            <element signature="e#22840#23871#0" expanded="false" />
-            <element signature="e#23910#25822#0" expanded="false" />
-            <element signature="e#25994#26095#0" expanded="false" />
-            <element signature="e#26139#27589#0" expanded="false" />
-            <element signature="e#27727#27952#0" expanded="false" />
-            <element signature="e#27983#29136#0" expanded="false" />
-            <element signature="e#29167#30523#0" expanded="false" />
-            <marker date="1474101354000" expanded="false" signature="4526:4543" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="12984:13037" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="13195:13228" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16356:16407" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16471:16488" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="16522:16539" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18271:18287" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18362:18375" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18722:18778" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18814:18865" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="18929:19024" placeholder="..." />
-            <marker date="1474101354000" expanded="false" signature="21309:21326" placeholder="..." />
+            <element signature="e#5955#6053#0" expanded="false" />
+            <element signature="e#6104#6579#0" expanded="false" />
+            <element signature="e#7387#7519#0" expanded="false" />
+            <element signature="e#8103#9069#0" expanded="false" />
+            <element signature="e#9120#9902#0" expanded="false" />
+            <element signature="e#9951#10017#0" expanded="false" />
+            <element signature="e#10057#10126#0" expanded="false" />
+            <element signature="e#10129#10307#0" expanded="false" />
+            <element signature="e#10334#12178#0" expanded="false" />
+            <element signature="e#10507#10514#0" expanded="false" />
+            <element signature="e#10571#11754#0" expanded="false" />
+            <element signature="e#11814#12036#0" expanded="false" />
+            <element signature="e#12097#12105#0" expanded="false" />
+            <element signature="e#12168#12176#0" expanded="false" />
+            <element signature="e#12219#12610#0" expanded="false" />
+            <element signature="e#12613#12785#0" expanded="false" />
+            <element signature="e#12819#23169#0" expanded="false" />
+            <element signature="e#12897#12909#0" expanded="false" />
+            <element signature="e#12923#13104#0" expanded="false" />
+            <element signature="e#13146#14977#0" expanded="false" />
+            <element signature="e#15007#15164#0" expanded="false" />
+            <element signature="e#15174#15599#0" expanded="false" />
+            <element signature="e#15650#18009#0" expanded="false" />
+            <element signature="e#18061#20575#0" expanded="false" />
+            <element signature="e#20600#20857#0" expanded="false" />
+            <element signature="e#20871#21220#0" expanded="false" />
+            <element signature="e#21274#23056#0" expanded="false" />
+            <element signature="e#23101#23161#0" expanded="false" />
+            <element signature="e#23172#23309#0" expanded="false" />
+            <element signature="e#23346#24377#0" expanded="false" />
+            <element signature="e#24416#26328#0" expanded="false" />
+            <element signature="e#26330#26460#0" expanded="false" />
+            <element signature="e#26500#26601#0" expanded="false" />
+            <element signature="e#26645#28095#0" expanded="false" />
+            <element signature="e#28097#28195#0" expanded="false" />
+            <element signature="e#28233#28458#0" expanded="false" />
+            <element signature="e#28489#29642#0" expanded="false" />
+            <element signature="e#29673#31029#0" expanded="false" />
+            <element signature="e#31248#31389#0" expanded="false" />
+            <element signature="e#31432#31604#0" expanded="false" />
+            <element signature="e#31660#31729#0" expanded="false" />
+            <element signature="e#31771#31826#0" expanded="false" />
+            <element signature="e#31991#32141#0" expanded="false" />
+            <marker date="1474575577000" expanded="false" signature="4526:4543" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="13490:13543" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="13701:13734" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="16862:16913" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="16977:16994" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="17028:17045" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="18777:18793" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="18868:18881" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19228:19284" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19320:19371" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="19435:19530" placeholder="..." />
+            <marker date="1474575577000" expanded="false" signature="21815:21832" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19649805" vertical-offset="19" max-vertical-offset="648">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.60327196" vertical-offset="4985" max-vertical-offset="5808">
+          <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0" vertical-offset="120" max-vertical-offset="14784">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/myapp/myapp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="511">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

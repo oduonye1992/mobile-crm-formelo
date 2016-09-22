@@ -8,10 +8,10 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class DepencencyCommand extends Command
+class ImportCSSCommand extends Command
 {
-    protected $commandName = 'import:js';
-    protected $commandDescription = "Imports and external CSS file";
+    protected $commandName = 'import:css';
+    protected $commandDescription = "Imports an external CSS file";
 
     protected $commandArgumentName = "name";
     protected $commandArgumentDescription = "Who do you want to greet?";
@@ -48,16 +48,16 @@ class DepencencyCommand extends Command
         $io->text("Fetching $filename");
         $homepage = file_get_contents($filename);
         $depName = $io->ask("Choose a name for this dependency");
-        if (file_exists("app/dependencies/$depName.js")){
+        if (file_exists("app/dependencies/$depName.css")){
             throw new \RuntimeException("$depName already exists.");
         }
         $fileContents = <<<EOD
 $homepage
 EOD;
-        $js = fopen("app/dependencies/js/$depName.js", "w");
+        $js = fopen("app/dependencies/css/$depName.css", "w");
         fwrite($js, $fileContents);
         $pages = $this->getJSON();
-        array_push($pages->dependencies->js, $depName);
+        array_push($pages->dependencies->css, $depName);
         $this->saveJSON($pages);
         $io->success("$depName has been imported.");
     }
