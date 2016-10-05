@@ -1,1 +1,1 @@
-{"dependencies":{"js":["anime"],"css":["animate"]},"providers":["dante"],"app":{"name":"f","Description":"f","Author":"f"},"pages":["users","teams","user","fada","paw","hsbdjsd","hsbdjsdsas","hsbdjsdsa","hsbdjsdsar","hsbdjsdsarsd","hsbdjsdsarsds","hsbdjsdsarsdsd","hsbdjsdsarsdsdd","hsbdjsdsarsdsddd","hsbdjsdsarsdsdddd","myapp","dantefire"],"root":"myapp"}
+{"dependencies":{"js":["tweenmax","three"],"css":[]},"providers":[],"app":{"name":"","Description":"","Author":""},"pages":["welcome","game"],"root":"welcome"}

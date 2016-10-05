@@ -30,22 +30,28 @@ var Log =  function(){
         };
         http.send(params);
     };
-    window.onerror = function(msg, url, line, col, error) {
+    window.onerror = function(msg, url, line, col, _error) {
         // Note that col & error are new to the HTML 5 spec and may not be
         // supported in every browser.  It worked for me in Chrome.
-        var extra = !col ? '' : '\ncolumn: ' + col;
-        extra += !error ? '' : '\nerror: ' + error;
+        //var extra = !col ? '' : '\ncolumn: ' + col;
+        //extra += !error ? '' : '\nerror: ' + error;
 
         // You can view the information in an alert to see things working like this:
-        var message ="Error: " + msg + "\nurl: " + url + "\nline: " + line + extra;
-        alert(message);
-        //reportFatal(message);
+        //var message ="Error: " + msg + "\nurl: " + url + "\nline: " + line + extra;
+        var error = {
+            message : msg,
+            url : url,
+            line : line,
+            col : col,
+            error : _error
+        };
+        alert('Error - '+JSON.stringify(error));
 
         // TODO: Report this error via ajax so you can keep track
+        // TODO: Track through intercom
         // of what pages have JS issues
-
-        var suppressErrorAlert = true;
-        return suppressErrorAlert;
+        //var suppressErrorAlert = true;
+        return true;
     };
     return {
         v : function(e, tag){  // verbose
@@ -90,7 +96,11 @@ var Tracker = function(){
                     postLocation(data);
                 })
                 .fail(function(e){
-                    alert('Error -- '+JSON.stringify(e));
+                    var error = {
+                        message : e.message,
+                        stackTrack : e
+                    };
+                    alert('Error -- '+JSON.stringify(error));
                 })
         }, interval);
     };
@@ -106,4 +116,4 @@ var Tracker = function(){
             }
         }
     }
-}();
+};

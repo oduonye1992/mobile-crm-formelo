@@ -150,6 +150,7 @@ Formelo.prototype.start = function(){
     this.getAppletConfig(this.mAppletID, function(){
         // Create the first page
         if (that.mAppletConfig && that.mAppletConfig.pages){
+            that.currentIndex = that.rootPage;
             that.runProvider();
             that.runDependencies();
             that.runCode(that.rootPage);
@@ -260,6 +261,7 @@ Formelo.prototype.show = function(_title, _body){
     document.dispatchEvent(onCreateEvent);
     $('#preview-close').click(function(){
         previewMain.html('');
+        $('.applet-dependencies').remove();
         $.mobile.back();
         var onCloseEvent = new Event(this.constants.ON_CLOSE);
         document.dispatchEvent(onCloseEvent);
@@ -358,226 +360,258 @@ Formelo.prototype.profile = function(){
 Formelo.prototype.ui = function(){
         var that = this;
         return {
-        emptyLayout : function(id){
-
-        },
             /**
-             * @example formelo.ui().footer(data, function(unique){})
-             * @param data
-             * @param callback
-             * @returns {boolean}
+             *
              */
-        footer : function(data, callback){
-            var defaults = {
-                'icon' : 'fa fa-heart',
-                'text' : 'placeholder',
-                'link' : null,
-                'active' :  false,
-                'unique' : null
-            };
-            if (!data || !data.length){
-                return false;
-            }
-            var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
-                '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
-                '<ul>';
-            data.forEach(function(item){
-                var newDefault = $.extend({}, defaults, item);
-                html += '<li>'+
-                            '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; border:none !important; background-color: #34495E !important;">'+
-                                '<span class="footer-icon" style="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
-                                '<p class="footer_p" style="margin-top: -4px; color:'+(newDefault.active ? '#EB5055' : 'white')+' !important;">'+newDefault.text+'</p>'+
-                            '</a>'+
-                        '</li>';
-            });
-            html += '</ul></div></div>';
-            var id = that.mAppletID+'-'+that.currentIndex;
-            var placeholder = '#'+id;
-            $(placeholder).appends(html);
-            BODY.trigger('create');
-            $(placeholder+' .applet-footer-items').click(function(){
-                var unique = $(this).attr('unique-id');
-                if (unique && callback){
-                    callback(unique);
-                }
-            });
-        },
-        spinner: function() {
-            return {
-                start : function(){
-
-                },
-                stop : function(){
-
-                }
-            };
-        },
-        /**
-         * Creates a list for you, setting the click listeners and other cool stuffs
-         * @param {array} items - An array of items to
-         * @param {string} placeholder - Ususlly the ID od class of an empty div
-         * @access {public}
-         * @example new formelo().ui().listAdapter(arrays, '#placeholder').attach(function(callback){});
-         * @todo Add custom mapping and interactions
-         * **/
-        listAdapter : function(items, placeholder){
-            if (!items) throw new Error('Item not specified'); // I am going home now
-            var html = '<div class="card share full-height no-margin-card" data-social="item">';
-            var identifier = str_random(20);
-            items.forEach(function(item){
-                /**
-                 * @type {{name: string, description: string, time: string, image: string, unique: string}}
-                 * @example {{name: string, description: string, time: string, image: string, unique: string}}
-                 */
-                var defaults = {
-                    name : '',
-                    description : '',
-                    time : '',
-                    image : '',
-                    unique: ''
+            actionBars : function(items, callback){
+                var showSingleAction = function(that){
+                        var id = formelo.mAppletID+'-'+formelo.currentIndex;
+                        $('#'+id).find('#applet-header-nav-btn-right').html(items[0].name).click(function(){
+                            callback(items[0].unique);
+                        });
                 };
-                var defaultItem = $.extend({}, defaults, item);
-                html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'">' +
-                '<div class="user-pic pull-left">' +
-                '<img alt="Profile Image" width="33" height="33" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '">' +
-                '</div>' +
-                '<h6 style="float: right; font-size: xx-small; display: inline;">' + defaultItem.time + '</h6>' +
-                '<div style="margin-left: 40px">' +
-                '<h5 style="font-weight: 300;">' + defaultItem.name + '</h5>' +
-                '<h6>' + defaultItem.description + '</h6>' +
-                '</div>' +
-                '</div>';
-            });
-            html += '</div>';
-            return {
-                /**
-                 *
+                var showMultipleActions = function(that, items, callback){
+                    var id = that.mAppletID+'-'+that.currentIndex;
+                    $('#'+id).find('#applet-header-nav-btn-right').html('More').click(function(){
+                        var actionPlaceholder = id+'-actionbar';
+                        var placeholder = '<div id="'+id+'-actionbar"></div>';
+                        var mod = that.ui().modal('Options', placeholder);
+                        that.ui().listAdapter(items, '#'+actionPlaceholder).attach(function(unique){
+                            mod.close();
+                            callback('unique');
+                        });
+                    });
+                };
+                if (items && items.length){
+                    if (items.length == 1){
+                        showSingleAction(that, items, callback);
+                    } else {
+                        showMultipleActions(that, items, callback);
+                    }
+                } else {
+                    alert('Action bars needs records to survive');
+                }
+            },
+            emptyLayout : function(id){
+
+            },
+            /**
+                 * @example formelo.ui().footer(data, function(unique){})
+                 * @param data
                  * @param callback
-                 * @callback callback - Called when a list item has been clicked.
+                 * @returns {boolean}
                  */
-                attach : function(callback){
-                    $(placeholder).html(html);
-                    $(placeholder).find('.'+identifier).click(function(){
-                        var unique = $(this).attr('unique');
-                        if (unique){
-                            //var event = new CustomEvent('listItemClicked', {id : unique});
-                            if (callback){
-                                callback(unique);
-                            }
-                        }
-                    });
-                }
-            };
-        },
-        gridAdapter : function(items, placeholder){
-            if (!items) throw new Error('Item not specified');
-            var html = '';
-            var identifier = str_random(20);
-            var i = 0;
-            items.forEach(function(item){
+            footer : function(data, callback){
                 var defaults = {
-                    name : '',
-                    description : '',
-                    time : '',
-                    image : '',
-                    unique: ''
+                    'icon' : 'fa fa-heart',
+                    'text' : 'placeholder',
+                    'link' : null,
+                    'active' :  false,
+                    'unique' : null
                 };
-                var defaultItem = $.extend({}, defaults, item);
-                html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
-                '<div class = "row" style="height: inherit;">' +
-                '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px;">' +
-                '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
-                '<img xxx ="' + i + '" class="qmyImg qmainImg" src="' + defaultItem.image + '" style="max-width: 100%;" />' +
-                '</div>' +
-                '<div class="col-xs-12 col-sm-12 col-md-12" style = " height:64px; max-height:64px; background-color:#404040;">' +
-                '<span style="font-size: x-small; color: #ffffff; font-weight:400">' + defaultItem.name + '</span>' +
-                '<p style="font-size: xx-small; color: #D9D9D9; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-                i++;
-            });
-            return {
-                attach : function(callback){
-                    $(placeholder).html(html);
-                    $(placeholder).find('.qmyImg').hide();
-                    $(placeholder).find('.qloadingImg').show();
-                    $(placeholder).find('.qmainImg').on('load', function () {
-                        var x = $(this).attr('xxx');
-                        $(placeholder).find('[aaa="'+x+'"]').hide();
-                        $(this).show();
-                    });
-                    $(placeholder).find('.'+identifier).click(function(){
-                        var unique = $(this).attr('unique');
-                        if (unique){
-                            if (callback){
-                                callback(unique);
+                if (!data || !data.length){
+                    return false;
+                }
+                var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
+                    '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
+                    '<ul>';
+                data.forEach(function(item){
+                    var newDefault = $.extend({}, defaults, item);
+                    html += '<li>'+
+                                '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; border:none !important; background-color: #34495E !important;">'+
+                                    '<span class="footer-icon" style="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
+                                    '<p class="footer_p" style="margin-top: -4px; color:'+(newDefault.active ? '#EB5055' : 'white')+' !important;">'+newDefault.text+'</p>'+
+                                '</a>'+
+                            '</li>';
+                });
+                html += '</ul></div></div>';
+                var id = that.mAppletID+'-'+that.currentIndex;
+                var placeholder = '#'+id;
+                $(placeholder).appends(html);
+                BODY.trigger('create');
+                $(placeholder+' .applet-footer-items').click(function(){
+                    var unique = $(this).attr('unique-id');
+                    if (unique && callback){
+                        callback(unique);
+                    }
+                });
+            },
+            spinner: function() {
+                return {
+                    start : function(){
+
+                    },
+                    stop : function(){
+
+                    }
+                };
+            },
+            /**
+             * Creates a list for you, setting the click listeners and other cool stuffs
+             * @param {array} items - An array of items to
+             * @param {string} placeholder - Ususlly the ID od class of an empty div
+             * @access {public}
+             * @example new formelo().ui().listAdapter(arrays, '#placeholder').attach(function(callback){});
+             * @todo Add custom mapping and interactions
+             * **/
+            listAdapter : function(items, placeholder){
+                if (!items) throw new Error('Item not specified'); // I am going home now
+                var html = '<div class="card share full-height no-margin-card" data-social="item">';
+                var identifier = str_random(20);
+                items.forEach(function(item){
+                    /**
+                     * @type {{name: string, description: string, time: string, image: string, unique: string}}
+                     * @example {{name: string, description: string, time: string, image: string, unique: string}}
+                     */
+                    var defaults = {
+                        name : '',
+                        description : '',
+                        time : '',
+                        image : '',
+                        unique: ''
+                    };
+                    var defaultItem = $.extend({}, defaults, item);
+                    html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'">' +
+                    '<div class="user-pic pull-left">' +
+                    '<img alt="Profile Image" width="33" height="33" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '">' +
+                    '</div>' +
+                    '<h6 style="float: right; font-size: xx-small; display: inline;">' + defaultItem.time + '</h6>' +
+                    '<div style="margin-left: 40px">' +
+                    '<h5 style="font-weight: 300;">' + defaultItem.name + '</h5>' +
+                    '<h6>' + defaultItem.description + '</h6>' +
+                    '</div>' +
+                    '</div>';
+                });
+                html += '</div>';
+                return {
+                    /**
+                     *
+                     * @param callback
+                     * @callback callback - Called when a list item has been clicked.
+                     */
+                    attach : function(callback){
+                        $(placeholder).html(html);
+                        $(placeholder).find('.'+identifier).click(function(){
+                            var unique = $(this).attr('unique');
+                            if (unique){
+                                //var event = new CustomEvent('listItemClicked', {id : unique});
+                                if (callback){
+                                    callback(unique);
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
+                };
+            },
+            gridAdapter : function(items, placeholder){
+                if (!items) throw new Error('Item not specified');
+                var html = '';
+                var identifier = str_random(20);
+                var i = 0;
+                items.forEach(function(item){
+                    var defaults = {
+                        name : '',
+                        description : '',
+                        time : '',
+                        image : '',
+                        unique: ''
+                    };
+                    var defaultItem = $.extend({}, defaults, item);
+                    html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
+                    '<div class = "row" style="height: inherit;">' +
+                    '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px;">' +
+                    '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
+                    '<img xxx ="' + i + '" class="qmyImg qmainImg" src="' + defaultItem.image + '" style="max-width: 100%;" />' +
+                    '</div>' +
+                    '<div class="col-xs-12 col-sm-12 col-md-12" style = " height:64px; max-height:64px; background-color:#404040;">' +
+                    '<span style="font-size: x-small; color: #ffffff; font-weight:400">' + defaultItem.name + '</span>' +
+                    '<p style="font-size: xx-small; color: #D9D9D9; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+                    i++;
+                });
+                return {
+                    attach : function(callback){
+                        $(placeholder).html(html);
+                        $(placeholder).find('.qmyImg').hide();
+                        $(placeholder).find('.qloadingImg').show();
+                        $(placeholder).find('.qmainImg').on('load', function () {
+                            var x = $(this).attr('xxx');
+                            $(placeholder).find('[aaa="'+x+'"]').hide();
+                            $(this).show();
+                        });
+                        $(placeholder).find('.'+identifier).click(function(){
+                            var unique = $(this).attr('unique');
+                            if (unique){
+                                if (callback){
+                                    callback(unique);
+                                }
+                            }
+                        });
+                    }
+                };
+            },
+            notification : {
+                /**
+                 * @example formelo.ui().notification.Toast(message)
+                 * @param message
+                 * @constructor
+                 */
+                toast : function(message){
+                    showMessage(message);
                 }
-            };
-        },
-        notification : {
+            },
             /**
-             * @example formelo.ui().notification.Toast(message)
-             * @param message
-             * @constructor
-             */
-            toast : function(message){
-                showMessage(message);
-            }
-        },
-            /**
-             *  @example formelo.ui().sidemenu(data, function(itemClicked){})
-             *  @example var data = [{ unique : 'aa',
-                                    text : 'Name',
-                                    icon : 'fa fa-edit'}]
-             * @param _data
-             * @param callback
-             * @param options
-             */
-        sidemenu : function(_data, callback, options){
-            var data = _data || [];
-            var subList = '';
-            var defaults = {
-                unique : 'aa',
-                text : 'Name',
-                icon : 'fa fa-edit'
-            };
-            var placeholder = that.mAppletID+'-'+that.currentIndex;
-            data.forEach(function(item){
-                var newDefaults = $.extend({}, defaults, item);
-                subList += '<li unique-id="'+newDefaults.unique+'" class="'+placeholder+'-panel-item"><br/><a data-ajax="false" class="panel-black-bg" style="font-size: large;"><i class="'+newDefaults.icon+'" style="color:#F7CA18;"></i> &nbsp;&nbsp;'+newDefaults.text+'</a></li>';
-            });
-            var id = that.mAppletID+'-'+that.currentIndex+'-panel';
-            var html = '<div class = "main-panel panel-black-bg" data-role="panel" id="'+id+'" data-display="overlay" data-position-fixed="true" data-position="right">';
-            html += '<ul data-role="listview" data-inset="false" data-icon="false">';
-            html += subList;
-            html += '</ul>';
-            html += '</div>';
-            $('#'+placeholder).appends(html).trigger('refresh');
-            $('.'+placeholder+'-panel-item').click(function(){
-                var unique = $(this).attr('unique-id');
-                if (unique){
-                    callback(unique);
+                 *  @example formelo.ui().sidemenu(data, function(itemClicked){})
+                 *  @example var data = [{ unique : 'aa',
+                                        text : 'Name',
+                                        icon : 'fa fa-edit'}]
+                 * @param _data
+                 * @param callback
+                 * @param options
+                 */
+            sidemenu : function(_data, callback, options){
+                var data = _data || [];
+                var subList = '';
+                var defaults = {
+                    unique : 'aa',
+                    text : 'Name',
+                    icon : 'fa fa-edit'
+                };
+                var placeholder = that.mAppletID+'-'+that.currentIndex;
+                data.forEach(function(item){
+                    var newDefaults = $.extend({}, defaults, item);
+                    subList += '<li unique-id="'+newDefaults.unique+'" class="'+placeholder+'-panel-item"><br/><a data-ajax="false" class="panel-black-bg" style="font-size: large;"><i class="'+newDefaults.icon+'" style="color:#F7CA18;"></i> &nbsp;&nbsp;'+newDefaults.text+'</a></li>';
+                });
+                var id = that.mAppletID+'-'+that.currentIndex+'-panel';
+                var html = '<div class = "main-panel panel-black-bg" data-role="panel" id="'+id+'" data-display="overlay" data-position-fixed="true" data-position="right">';
+                html += '<ul data-role="listview" data-inset="false" data-icon="false">';
+                html += subList;
+                html += '</ul>';
+                html += '</div>';
+                $('#'+placeholder).appends(html).trigger('refresh');
+                $('.'+placeholder+'-panel-item').click(function(){
+                    var unique = $(this).attr('unique-id');
+                    if (unique){
+                        callback(unique);
+                    }
+                });
+                $('#'+id).panel();
+                var defOptions = {
+                    showHamburgerMenu :  true
+                };
+                var def = $.extend({}, defOptions, options);
+                if (def.showHamburgerMenu){
+                     var nav = that.html().get.header.menu();
+                     nav.html('<i class="fa fa-bars"></i>').attr('href', '#'+id);
                 }
-            });
-            $('#'+id).panel();
-            var defOptions = {
-                showHamburgerMenu :  true
-            };
-            var def = $.extend({}, defOptions, options);
-            if (def.showHamburgerMenu){
-                 var nav = that.html().get.header.menu();
-                 nav.html('<i class="fa fa-bars"></i>').attr('href', '#'+id);
+                return $('#'+id);
+            },
+            modal : function(title, body, type){
+                return openModal(title, body, type);
             }
-            return $('#'+id);
-        },
-        modal : function(title, body, type){
-            return openModal(title, body, type);
         }
-    }
 };
 
 /**
@@ -852,15 +886,9 @@ Formelo.prototype.uses = function(name){
 /**
  * Handle each applets dependencies and loads them on demand
  * @returns {{}}
+ * @deprecated
  */
 Formelo.prototype.dependencies =  function(){
-    var loadAllJS = function(){
-        /**
-         * Curate all the dependencies from all the pages into an array,
-         * Load Everything
-         * Resolve
-         */
-    };
     var loadJs = function(link){
         var tx = $.Deferred();
         var firstScript = document.getElementsByTagName('script')[0],

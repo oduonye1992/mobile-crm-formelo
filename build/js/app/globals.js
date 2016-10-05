@@ -71,7 +71,7 @@ function openDevApplet(){
         app.initScripts(JSON.parse(data));
         formelo = new Formelo('myname', 'selector-page', JSON.parse(data).applets['myname']);
         formelo.start();
-    })
+    });
 }
 function readTextFile(file, callback)
 {
@@ -97,9 +97,8 @@ var formelo = null;
 // Execute code in app. . . Danger
 var userScripts = {
     "exec": function(key){
-        try{
+        try {
             var evalScript = app.scripts[key];
-            //alert("which is "+evalScript);
             return eval(evalScript);
         } catch(e){
             showMessage(e.message);
@@ -114,7 +113,7 @@ function initApp(){
             animation:'grow',
             theme: 'tooltipster-shadow'
         });
-        monitorEvents();
+        //monitorEvents();
         bodyContainer = $(":mobile-pagecontainer");
         BODY = $('body');
         $.mobile.defaultPageTransition      = 'none';
@@ -122,7 +121,7 @@ function initApp(){
         $.mobile.useFastClick               = true;
         $.mobile.touchOverflowEnabled       = true;
     };
-    customiseSplash();//
+    //customiseSplash();//
     //adjustHeightsToViewport();
     $.event.special.tap.emitTapOnTaphold = false;
     $(document).ready(function() {
@@ -132,7 +131,7 @@ function initApp(){
                 return this;
             };
         })(jQuery);
-        initFunctions.database.create();
+        //initFunctions.database.create();
         //initialize swiper when document ready
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
@@ -147,7 +146,7 @@ function initApp(){
     }, false);
 
     // SET EVENTS
-    $(window).on("orientationchange",function(){
+    $(window).on("Xorientationchange",function(){
         adjustHeightsToViewport();
     });
     window.addEventListener("batterylow", function(status){
@@ -159,17 +158,17 @@ function initApp(){
     }, false);
 
     $(document).on('pageinit', function(){
-        $('.home-link').attr('src', globals.files.images.favicon);
-        $('.profile-text').html('<strong>'+(getUserCredentials() !== null ? getUserCredentials().name : "Unknown user")+'</strong>');
-        $('.profile-realm').html(window.localStorage.realm_full ? JSON.parse(window.localStorage.realm_full).name.substr(0, 30) : '');
+        //$('.home-link').attr('src', globals.files.images.favicon);
+        //$('.profile-text').html('<strong>'+(getUserCredentials() !== null ? getUserCredentials().name : "Unknown user")+'</strong>');
+        //$('.profile-realm').html(window.localStorage.realm_full ? JSON.parse(window.localStorage.realm_full).name.substr(0, 30) : '');
         $.mobile.keepNative = "select,input"; /* jQuery Mobile 1.4 and higher*/
-        adjustHeightsToViewport();
+        //adjustHeightsToViewport();
         //loader.hide();
-        if(customisationCount === 0){
+        /*if(customisationCount === 0){
             //initCustomisation();
             $('.aba').removeClass('hidden-content');
             customisationCount++;
-        }
+        }*/
     });
 
 }
@@ -1922,25 +1921,7 @@ function createSearchPage() {
 
     txDeferred.promise();
 }
-var openModal = function(title, body, type){
-    var title = title || '';
-    var body = body || '';
-    var type = type || '';
-    if (type == "slideInLeft"){
-        var mod = $('#modalSlideLeft');
-    } else {
-        var mod = $('#modalSlideUp');
-    }
-    mod.find('.modal-title').html(title);
-    mod.find('.modal-body').html(body);
-    mod.modal('show');
 
-    return {
-        close : function(){
-            mod.modal('hide');
-        }
-    }
-};
 function openPublicChannel(){
     //return swal("Good job!", "You clicked the button!", "success");
     //$('#modalSlideLeft').modal('show');
@@ -2474,4 +2455,45 @@ function rgbToHex(r, g, b) {
     }
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+var openModal = function(title, body, type){
+    var title = title || '';
+    var body = body || '';
+    var type = type || '';
+    var mod = $('#modalSlideLeft');
+    mod.remove();
+    var html = '<div class="modal fade stick-up in" id="modalSlideLeft" tabindex="-1" role="dialog" aria-hidden="false" style="display: block; overflow:scroll;>'+
+        '<div class="modal-dialog modal-sm">'+
+        '<div class="modal-content-wrapper">'+
+        '<div class="modal-content">'+
+        '<br/>'+
+        '<div class="container-xs-height full-height">'+
+        '<div class="row-xs-height">'+
+        '<div class="modal-body col-xs-height col-middle xtext-center" style="padding: 6px;">'+
+        '<h5 class="" style="text-align: center"><span class="semi-bold">'+title+'</span><span class="close-modal" data-dismiss="modal" style="float:right;'+
+        'margin-right: 10px; color:grey;"><i class="fa fa-close"></i></span></h5>'+
+        //'<div class="card share full-height no-margin-card" data-social="item">'+
+        body+
+        //'</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '<!-- /.modal-content -->'+
+        '</div>'+
+        '<!-- /.modal-dialog -->'+
+        '</div>';
+    $('body').append(html);
+    mod.modal();
+    $('.close-modal').click(function(){
+        $('#modalSlideLeft').modal('hide').remove();
+        $('.modal-backdrop').hide().remove();
+    });
+    return {
+        close : function(){
+            $('#modalSlideLeft').modal('hide').remove();
+            $('.modal-backdrop').hide().remove();
+        }
+    }
+};
 
