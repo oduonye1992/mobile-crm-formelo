@@ -1,9 +1,8 @@
 #Welcome to Formelo CLI v1 Ladies
 
-###### This is the version one of this CLI. It might have issues. Kindly create a issue if you happen to find one before us. Also,
+###### This is the version one of this CLI. It might have issues. Kindly create a issue if you happen to find one before us.
 
-The "lite" version of Formelo is open while the Full API is open here.
-Some API calls hat triger native functionalities (see the documentation) might (WILL) not work when previewing on the browser
+###### Some methods might triger native functionalities that will not work when previewing on the browser. These methods are marked as "Native" in the docs.
 
 
 ### 1. Initialize a new applet
