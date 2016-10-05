@@ -20,7 +20,7 @@
     <favorites_list name="formelo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38506418">
+    <splitter split-orientation="horizontal" split-proportion="0.14320835">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DependencyCommand.php" pinned="false" current-in-tab="false">
@@ -94,7 +94,7 @@
             <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
-                  <caret line="0" column="82" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
+                  <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
                   <folding />
                 </state>
               </provider>
@@ -224,7 +224,7 @@
           <file leaf-file-name="globals.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build/js/app/globals.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2112">
+                <state relative-caret-position="456">
                   <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
                   <folding>
                     <marker date="1475610273000" expanded="true" signature="7496:7510" ph="..." />
@@ -282,12 +282,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/pages/game/game.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="11" column="107" selection-start-line="11" selection-start-column="107" selection-end-line="11" selection-end-column="107" />
-                  <folding />
+                <state relative-caret-position="376">
+                  <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+                  <folding>
+                    <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -295,21 +297,26 @@
           <file leaf-file-name="game.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/pages/game/game.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3528">
+                <state relative-caret-position="332">
                   <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/pages/game/game.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+                <state relative-caret-position="324">
+                  <caret line="982" column="5" selection-start-line="982" selection-start-column="5" selection-end-line="982" selection-end-column="5" />
                   <folding>
                     <element signature="e#517#693#0" expanded="false" />
                     <element signature="e#957#2694#0" expanded="false" />
+                    <element signature="e#3070#4281#0" expanded="false" />
+                    <element signature="e#4345#4546#0" expanded="false" />
+                    <element signature="e#4584#4722#0" expanded="false" />
+                    <element signature="e#4760#4948#0" expanded="false" />
+                    <element signature="e#4983#5096#0" expanded="false" />
                     <element signature="e#5340#6212#0" expanded="false" />
                     <element signature="e#6241#9037#0" expanded="false" />
                     <element signature="e#9083#9380#0" expanded="false" />
@@ -323,6 +330,7 @@
                     <element signature="e#18657#19033#0" expanded="false" />
                     <element signature="e#19071#19153#0" expanded="false" />
                     <element signature="e#19210#19908#0" expanded="false" />
+                    <element signature="e#19966#21429#0" expanded="false" />
                     <element signature="e#21460#21750#0" expanded="false" />
                     <element signature="e#21812#22624#0" expanded="false" />
                     <element signature="e#22663#22746#0" expanded="false" />
@@ -332,9 +340,8 @@
                     <element signature="e#24093#24884#0" expanded="false" />
                     <element signature="e#24936#26205#0" expanded="false" />
                     <element signature="e#26500#26608#0" expanded="false" />
-                    <element signature="e#30227#30522#0" expanded="false" />
-                    <element signature="e#33145#33197#0" expanded="false" />
-                    <element signature="e#33323#33520#0" expanded="false" />
+                    <element signature="e#30226#30521#0" expanded="false" />
+                    <element signature="e#33322#33519#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -368,9 +375,9 @@
         <option value="$PROJECT_DIR$/app/pages/welcome/welcome.js" />
         <option value="$PROJECT_DIR$/app/pages/welcome/welcome.html" />
         <option value="$PROJECT_DIR$/app/pages/game/game.css" />
-        <option value="$PROJECT_DIR$/app/pages/game/game.js" />
-        <option value="$PROJECT_DIR$/app/pages/game/game.html" />
         <option value="$PROJECT_DIR$/app/pages/pages.json" />
+        <option value="$PROJECT_DIR$/app/pages/game/game.html" />
+        <option value="$PROJECT_DIR$/app/pages/game/game.js" />
       </list>
     </option>
   </component>
@@ -466,46 +473,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -515,7 +482,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.html&#10;welcom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/welcome/welcome.js&#10;game&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.js&#10;game.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.css&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;createformgr&#9;null&#9;null&#10;formgrouplis&#9;null&#9;null&#10;inboc&#9;null&#9;null&#10;old.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/old/old.js&#10;openm&#9;null&#9;null&#10;openmo&#9;null&#9;null&#10;users&#9;null&#9;null&#10;api&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/api.js&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;myapp&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.css&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;my&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pa&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;bui&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.js&#10;myapp.html&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;myap&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.man&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;depend&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DependencyCommand.php&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;myapp.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.css&#10;mya&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;paw.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;paw.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.css&#10;paw&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;buil&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;formelo.m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;page&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/ProviderCommand.php&#10;paw.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;dant&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/dante.js&#10;Gr&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;de&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DeployCommand.php&#10;bu&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;paw.h&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.html&#10;paw.j&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;gotoform&#9;null&#9;null&#10;createform&#9;null&#9;null&#10;Gre&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;globals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;usersc&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.html&#10;hidere&#9;null&#9;null&#10;welcom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/welcome/welcome.js&#10;game&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.js&#10;game.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.css&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;createformgr&#9;null&#9;null&#10;formgrouplis&#9;null&#9;null&#10;inboc&#9;null&#9;null&#10;old.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/old/old.js&#10;openm&#9;null&#9;null&#10;openmo&#9;null&#9;null&#10;users&#9;null&#9;null&#10;api&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/api.js&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;myapp&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.css&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;my&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pa&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;bui&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.js&#10;myapp.html&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;myap&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.man&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;depend&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DependencyCommand.php&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;myapp.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.css&#10;mya&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/myapp/myapp.html&#10;formelo.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;paw.js&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;paw.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.css&#10;paw&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;buil&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;formelo.m&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;page&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/ProviderCommand.php&#10;paw.&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;dant&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/dante.js&#10;Gr&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;de&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/DeployCommand.php&#10;bu&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/BuildCommand.php&#10;paw.h&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.html&#10;paw.j&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/paw/paw.js&#10;gotoform&#9;null&#9;null&#10;createform&#9;null&#9;null&#10;Gre&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/GreetCommand.php&#10;globals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Scripts/servicebeast" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -600,24 +567,24 @@
       <updated>1473617971998</updated>
       <workItem from="1475573718303" duration="14263000" />
       <workItem from="1475610797048" duration="4651000" />
-      <workItem from="1475666115564" duration="877000" />
+      <workItem from="1475666115564" duration="3704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19791000" />
+    <option name="totallyTimeSpent" value="22618000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1920" height="1007" extended-state="6" />
+    <frame x="1280" y="23" width="1920" height="1007" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13365282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13365282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -645,7 +612,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -806,6 +773,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="2361" column="39" selection-start-line="2361" selection-start-column="39" selection-end-line="2361" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -835,65 +803,6 @@
         <state relative-caret-position="1152">
           <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/app/globals.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-          <folding>
-            <marker date="1475610273000" expanded="true" signature="7496:7510" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="28699:28716" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="28749:28805" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="28852:28890" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="29089:29145" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="29449:29462" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="29508:29526" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="29631:29674" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="57234:57294" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="57622:57635" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="57685:57703" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="57791:57838" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="70062:70074" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="70163:70174" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="70259:70317" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="74369:74381" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="74457:74468" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="74525:74583" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="77173:77185" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="79085:79102" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="79183:79199" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86248:86264" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86308:86326" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86462:86478" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86517:86535" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86661:86677" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="86818:86834" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="88070:88082" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="89005:89035" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="90214:90226" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="90457:90468" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="91596:91611" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="92238:92268" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="92534:92570" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="92622:92675" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="92834:92867" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="93009:93049" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="93195:93235" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="93360:93438" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="93536:93547" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="93625:93666" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="94524:94536" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="94606:94636" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="97448:97479" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="97936:97987" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="98669:98720" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="104473:104529" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="104833:104846" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="104880:104898" ph="..." />
-            <marker date="1475610273000" expanded="true" signature="104994:105049" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -995,21 +904,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/app/globals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding>
+            <marker date="1475610273000" expanded="true" signature="7496:7510" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="28699:28716" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="28749:28805" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="28852:28890" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="29089:29145" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="29449:29462" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="29508:29526" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="29631:29674" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="57234:57294" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="57622:57635" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="57685:57703" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="57791:57838" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="70062:70074" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="70163:70174" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="70259:70317" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="74369:74381" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="74457:74468" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="74525:74583" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="77173:77185" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="79085:79102" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="79183:79199" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86248:86264" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86308:86326" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86462:86478" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86517:86535" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86661:86677" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="86818:86834" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="88070:88082" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="89005:89035" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="90214:90226" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="90457:90468" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="91596:91611" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="92238:92268" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="92534:92570" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="92622:92675" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="92834:92867" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="93009:93049" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="93195:93235" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="93360:93438" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="93536:93547" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="93625:93666" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="94524:94536" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="94606:94636" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="97448:97479" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="97936:97987" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="98669:98720" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="104473:104529" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="104833:104846" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="104880:104898" ph="..." />
+            <marker date="1475610273000" expanded="true" signature="104994:105049" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/game/game.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3528">
+        <state relative-caret-position="332">
           <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/game/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="324">
+          <caret line="982" column="5" selection-start-line="982" selection-start-column="5" selection-end-line="982" selection-end-column="5" />
           <folding>
             <element signature="e#517#693#0" expanded="false" />
             <element signature="e#957#2694#0" expanded="false" />
+            <element signature="e#3070#4281#0" expanded="false" />
+            <element signature="e#4345#4546#0" expanded="false" />
+            <element signature="e#4584#4722#0" expanded="false" />
+            <element signature="e#4760#4948#0" expanded="false" />
+            <element signature="e#4983#5096#0" expanded="false" />
             <element signature="e#5340#6212#0" expanded="false" />
             <element signature="e#6241#9037#0" expanded="false" />
             <element signature="e#9083#9380#0" expanded="false" />
@@ -1023,6 +1014,7 @@
             <element signature="e#18657#19033#0" expanded="false" />
             <element signature="e#19071#19153#0" expanded="false" />
             <element signature="e#19210#19908#0" expanded="false" />
+            <element signature="e#19966#21429#0" expanded="false" />
             <element signature="e#21460#21750#0" expanded="false" />
             <element signature="e#21812#22624#0" expanded="false" />
             <element signature="e#22663#22746#0" expanded="false" />
@@ -1032,26 +1024,9 @@
             <element signature="e#24093#24884#0" expanded="false" />
             <element signature="e#24936#26205#0" expanded="false" />
             <element signature="e#26500#26608#0" expanded="false" />
-            <element signature="e#30227#30522#0" expanded="false" />
-            <element signature="e#33145#33197#0" expanded="false" />
-            <element signature="e#33323#33520#0" expanded="false" />
+            <element signature="e#30226#30521#0" expanded="false" />
+            <element signature="e#33322#33519#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="82" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/game/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="107" selection-start-line="11" selection-start-column="107" selection-end-line="11" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>

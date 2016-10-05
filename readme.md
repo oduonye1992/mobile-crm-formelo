@@ -22,6 +22,9 @@ Add an extra --root to make the page the root page. By default the fitst page is
 
     php formelo make:page <name_of_page> --root
 
+##### To Remove a page
+Delete the page's generated folder and remove the entry in the /app/pages/pages.json. Pages are stored in the **pages** array
+
 
 ### 2. Create a Provider
 ---------------------------------------

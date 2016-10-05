@@ -881,7 +881,6 @@
             if (airplane.mesh.position.y <-200){
                 showReplay();
                 game.status = "waitingReplay";
-
             }
         }else if (game.status=="waitingReplay"){
 
