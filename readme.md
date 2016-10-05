@@ -1,4 +1,4 @@
-#Welcome to Formelo CLI v1 Ladies
+#Welcome to Formelo CLI v1 :)
 
 ###### This is the version one of this CLI. It might have issues. Kindly create a issue if you happen to find one before us.
 

@@ -68,7 +68,7 @@ var nav_options = {
 function openDevApplet(){
     // Get the json
     readTextFile('formelo.manifest', function(data){
-        app.initScripts(JSON.parse(data));
+        //app.initScripts(JSON.parse(data));
         formelo = new Formelo('myname', 'selector-page', JSON.parse(data).applets['myname']);
         formelo.start();
     });

@@ -108,7 +108,7 @@ class BuildCommand extends Command
                 "name" => $key,
                 "key" => $key,
                 "events" => [
-                    "ready" => "userScripts.exec('$randomString')"
+                    "ready" => $js
                 ]
             ];
             $config['applets']['myname']['pages'][$key] = $pageJson;
