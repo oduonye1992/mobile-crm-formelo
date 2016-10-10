@@ -1,5 +1,6 @@
 <?php
 namespace commands;
+use GuzzleHttp\Client;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,7 +17,7 @@ class InitCommand extends Command
     protected $commandArgumentDescription = "";
 
     protected $commandOptionName = "name"; // should be specified like "app:greet John --cap"
-    protected $commandOptionDescription = 'If set, it will make tis page the root page';
+    protected $commandOptionDescription = '';
 
     protected function configure(){
         $this
@@ -36,43 +37,44 @@ class InitCommand extends Command
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $name = $input->getArgument($this->commandArgumentName);
-        $setAsMain = false;
-        if ($input->getOption($this->commandOptionName)) {
-            $setAsMain = true;
-        }
         $io = new SymfonyStyle($input, $output);
-        $io->title("Welcome to Formelo. Yayyyy");
-        $io->text('Formelo helps you build applications rapidly');
-        $appname = $io->ask("Application name");
+        $io->title("Welcome to Formelo. Yayyyy!");
+
+        // A S K   F O R   U S E R   P A R A M S
+        $io->text('Formelo helps you build applications rapidly.');
+        $appName = $io->ask("Application name");
         $appDesc = $io->ask("Description", "");
-        $appAuthor = $io->ask("Author", "");
-        $io->text("Initializing");
-        $io->progressStart(100);
-        $pages = $this->getJSON();
-        $app = [
-            'name' => $appname,
-            'Description' => $appDesc,
-            'Author' => $appAuthor
-        ];
-        $pages->app = $app;
-        $this->saveJSON($pages);
-        $io->success(array(
-            'All set. Go build something awesome',
-            'For a quickstart guide, see https://formelo.com/docs',
-        ));
-    }
-    private function getJSON(){
-        $filename = "app/pages/pages.json";
-        $handle = fopen($filename, "r");
-        $contents = fread($handle, filesize($filename));
-        fclose($handle);
-        return json_decode($contents);
-    }
-    private function saveJSON($json){
-        $filename = "app/pages/pages.json";
-        $handle = fopen($filename, "w");
-        fwrite($handle, json_encode($json));
-        fclose($handle);
+        $username = $io->ask("Enter your Username", "");
+        $apikey = $io->ask("Enter your API Key", "");
+        $appletMode = $io->choice('Make this applet Public', array('public', 'private'));
+
+        // U P D A T E   P A G E S   C O N F I G
+        $config = (array) $this->getJSON();
+        $config['name'] = $appName;
+        $config['description'] = $appDesc;
+        $config['scope'] = $appletMode;
+        $config['cred']->username = $username;
+        $config['cred']->api_key = $apikey;
+
+        // R E G I S T E R   T O   A P P  S T O R E
+        $io->text('Creating...');
+        $client = new Client();
+        try {
+            $res = $client->request('POST', 'https://requestb.in/tsfcjmts', [
+                'auth' => [$username, $apikey],
+                'headers'  => [
+                    'content-type' => 'application/json; charset=UTF-8',
+                    'Accept' => 'application/json'
+                ],
+                'json' => $config
+            ]);
+            $io->success(array(
+                'All set. Go build something awesome',
+                'For a quickstart guide, see https://developer.formelo.com',
+            ));
+            Globals::saveJSON($config);
+        } catch (\Exception $e) {
+            $io->error("Error connecting to server. Please check your internet connection and tru again");
+        }
     }
 }

@@ -48,7 +48,7 @@ class ImportCSSCommand extends Command
         $io->text("Fetching $filename");
         $homepage = file_get_contents($filename);
         $depName = $io->ask("Choose a name for this dependency");
-        if (file_exists("app/dependencies/$depName.css")){
+        if (file_exists("app/dependencies/css/$depName.css")){
             throw new \RuntimeException("$depName already exists.");
         }
         $fileContents = <<<EOD

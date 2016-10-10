@@ -9,14 +9,16 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class PullCommand extends Command
 {
+    protected $pages;
+
     protected $commandName = 'pull';
     protected $commandDescription = "builds from an existing repo";
 
     protected $commandArgumentName = "name";
     protected $commandArgumentDescription = "Location to pull from";
 
-    protected $commandOptionName = "root"; // should be specified like "app:greet John --cap"
-    protected $commandOptionDescription = 'If set, it will make tis page the root page';
+    protected $commandOptionName = ""; // should be specified like "app:greet John --cap"
+    protected $commandOptionDescription = '';
 
     protected function configure(){
         $this
@@ -34,57 +36,84 @@ class PullCommand extends Command
                 $this->commandOptionDescription
             );
     }
+    private function resetConfig (){
+        $defaultConfigContent = <<<EOD
+        {"dependencies":{"js":[],"css":[]},"providers":[],"app":{"name":"","Description":"","Author":""},"pages":[],"root":""}
+EOD;
+        Globals::saveJSON(json_decode($defaultConfigContent));
+    }
+    private function setAsRoot ($name){
+        //$pages = Globals::getJSON();
+        $this->pages->root = $name;
+        //Globals::saveJSON($pages);
+    }
+    private function createPage(array $contents)
+    {
+        //$pages = Globals::getJSON();
+        foreach ($contents as $key => $value){
+            mkdir("app/pages/$key");
+            $js = fopen("app/pages/$key/$key.js", "w");
+            $css = fopen("app/pages/$key/$key.css", "w");
+            $html = fopen("app/pages/$key/$key.html", "w");
+            fwrite($html, $value->layout);
+            fwrite($css, $value->css);
+            fwrite($js, $value->events->ready);
+            if($this->pages !== null){
+                array_push($this->pages->pages, $key);
+            }
+        }
+        // Globals::saveJSON($pages);
+    }
+    private function createProviders(array $contents)
+    {
+        //$pages = Globals::getJSON();
+        foreach ($contents as $content){
+            $key = Globals::generateRandomString();
+            $js = fopen("app/providers/$key.js", "w");
+            fwrite($js, $content);
+            if($this->pages !== null){
+                array_push($this->pages->providers, $key);
+            }
+        }
+        //Globals::saveJSON($pages);
+    }
+    private function createDependencies(array $contents)
+    {
+        //$pages = Globals::getJSON();
+        // Build JS
+        foreach ($contents['js'] as $value){
+            $key = Globals::generateRandomString();
+            $js = fopen("app/dependencies/js/$key.js", "w");
+            fwrite($js, $value);
+            array_push($this->pages->dependencies->js, $key);
+        }
+        // Build CSS
+        foreach ($contents['css'] as $value){
+            $key = Globals::generateRandomString();
+            $js = fopen("app/dependencies/css/$key.css", "w");
+            fwrite($js, $value);
+            array_push($this->pages->dependencies->css, $key);
+        }
+        //Globals::saveJSON($pages);
+    }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /**
          * Get sample JSON
          * Parse, Create Pages.json, folders and
          */
-        $testConf = $this->getFileContents("build/formelo.backup");
+        $testConf = $this->getFileContents("build/formelo.manifest");
         $testArray = json_decode($testConf);
-        $pages = $testArray->pages;
-
-        $name = $input->getArgument($this->commandArgumentName);
-        $setAsMain = false;
-        if ($input->getOption($this->commandOptionName)) {
-            $setAsMain = true;
-        }
-        $filename = $name;
-        if (file_exists("app/pages/$filename/$filename.js")){
-            $output->writeln("$name already exists.");
-            die();
-        }
-        mkdir("app/pages/$filename");
-        $fileContents = <<<EOD
-(function(){
-    'use strict';
-    formelo.event().onCreate(function(){
-        // Entry point of this application
-    });
-
-    formelo.event().onIntent(function(params){
-        var data = params.detail;
-        // Receive parameters from calling page
-    });
-
-    formelo.event().onClose(function(){
-        // Override close button
-        // formelo.navigation.stopPropagation()
-    });
-}());
-EOD;
-        $js = fopen("app/pages/$filename/$filename.js", "w");
-        $css = fopen("app/pages/$filename/$filename.css", "w");
-        $html = fopen("app/pages/$filename/$filename.html", "w");
-        fwrite($js, $fileContents);
-        // Update the json
-        $pages = $this->getJSON();
-        if ($pages->root === "" || $setAsMain){
-            $pages->root = $filename;
-        }
-        array_push($pages->pages, $filename);
-        $this->saveJSON($pages);
-
+        $this->pages = Globals::getJSON();
+        $name = 'myname';
+        $this->resetConfig();
+        $applet =  (array) $testArray->applets;
+        $selectApplet = (array) $applet[$name];
+        //$this->setAsRoot((array) $selectApplet['root']);
+        $this->createPage((array) $selectApplet['pages']);
+        $this->createProviders( (array) $selectApplet['providers']);
+        $this->createDependencies( (array) $selectApplet['dependencies']);
+        Globals::saveJSON($this->pages);
         $output->writeln("$name page has been created.");
     }
     private function getJSON(){

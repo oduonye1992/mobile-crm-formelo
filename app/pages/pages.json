@@ -1,1 +1,1 @@
-{"dependencies":{"js":["tweenmax","three"],"css":[]},"providers":["welcomprovider"],"app":{"name":"","Description":"","Author":""},"pages":["welcome","game"],"root":"welcome"}
+{"icon_url":"https:\/\/cdn.formelo.com\/uploads\/20151216\/12\/1450268948584-facebook-256x256.png","description":"My World","default_submission_status":"accepted","mode":"dynamic","scope":"private","name":"Hello World","cred":{"username":"","api_key":""},"id":"dac0d9ed","status":"live","pages":{},"root":"","providers":[],"dependencies":{"js":[],"css":[]}}

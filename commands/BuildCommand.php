@@ -12,11 +12,11 @@ class BuildCommand extends Command
     protected $commandName = 'prepare';
     protected $commandDescription = "Builds the files";
 
-    protected $commandArgumentName = "name";
-    protected $commandArgumentDescription = "Who do you want to greet?";
+    protected $commandArgumentName = "port";
+    protected $commandArgumentDescription = "specify the port number to listen to";
 
-    protected $commandOptionName = "cap"; // should be specified like "app:greet John --cap"
-    protected $commandOptionDescription = 'If set, it will greet in uppercase letters';
+    protected $commandOptionName = "port"; // should be specified like "app:greet John --cap"
+    protected $commandOptionDescription = 'specify the port number to listen to';
 
     protected function configure(){
         $this
@@ -37,11 +37,12 @@ class BuildCommand extends Command
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
-        $name = $input->getArgument($this->commandArgumentName);
+        $port = $input->getArgument($this->commandArgumentName);
+        $portNumber = 8020;
         if ($input->getOption($this->commandOptionName)) {
-            $text = strtoupper($name);
+            $portNumber = $port;
         }
+        $io = new SymfonyStyle($input, $output);
         /**
          * Get the json file
          * Fore each one
@@ -65,15 +66,21 @@ class BuildCommand extends Command
          *      "script_0" : "kfsdlksmlkdmfklsfs"
          *
          */
-
         $pages = $this->getJSON();
-        $projectName = "myname";
         if (!isset($pages)){
             return $output->writeln("$pages Could not build. Check your permissions");
         }
         $config = [
-            'applets' => [
-                "myname" => [
+                    "icon_url" => "https://cdn.formelo.com/uploads/20151216/12/1450268948584-facebook-256x256.png",
+                    "user_group" => [],
+                    "description" => "ducco",
+                    "default_submission_status" => "accepted",
+                    "scope" => "public",
+                    "name" => "madboysc crew",
+                    "id" => "dac0d9ed",
+                    "parameters" => [
+                         "is_submittable" => true
+                    ],
                     'mode' => 'dynamic',
                     'root' => $pages->root,
                     'pages' => [
@@ -90,9 +97,6 @@ class BuildCommand extends Command
 
                         ]
                     ]
-                ]
-            ],
-            "scripts" => []
         ];
         $io->text("Compiling Pages");
         foreach ($pages->pages as $key){
@@ -111,26 +115,26 @@ class BuildCommand extends Command
                     "ready" => $js
                 ]
             ];
-            $config['applets']['myname']['pages'][$key] = $pageJson;
+            $config['pages'][$key] = $pageJson;
         }
         $io->text("Compiling Providers");
         foreach ($pages->providers as $key){
             $js = $this->getFileContents("app/providers/$key.js");
-            array_push($config['applets']['myname']['providers'], $js);
+            array_push($config['providers'], $js);
         }
         $io->text("Compiling Javascript Dependencies");
         foreach ($pages->dependencies->js as $key){
             $js = $this->getFileContents("app/dependencies/js/$key.js");
-            array_push($config['applets']['myname']['dependencies']['js'], $js);
+            array_push($config['dependencies']['js'], $js);
         }
         $io->text("Compiling CSS Dependencies");
         foreach ($pages->dependencies->css as $key){
             $js = $this->getFileContents("app/dependencies/css/$key.css");
-            array_push($config['applets']['myname']['dependencies']['css'], $js);
+            array_push($config['dependencies']['css'], $js);
         }
         $this->saveJSON($config, "build/formelo.manifest");
-        $io->success(array("Build script has been completed.","Development server running on localhost:8020"));
-        return shell_exec('php -S localhost:8020');
+        $io->success(array("Build script has been completed.","Development server running on localhost:$portNumber"));
+        return shell_exec("php -S localhost:$portNumber");
     }
     private function getJSON(){
         $filename = "app/pages/pages.json";

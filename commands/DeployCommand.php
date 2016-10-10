@@ -1,5 +1,6 @@
 <?php
 namespace commands;
+use GuzzleHttp\Client;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,7 +17,7 @@ class DeployCommand extends Command
     protected $commandArgumentDescription = "";
 
     protected $commandOptionName = "name"; // should be specified like "app:greet John --cap"
-    protected $commandOptionDescription = 'If set, it will make tis page the root page';
+    protected $commandOptionDescription = '';
 
     protected function configure(){
         $this
@@ -36,19 +37,25 @@ class DeployCommand extends Command
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $name = $input->getArgument($this->commandArgumentName);
-        $setAsMain = false;
-        if ($input->getOption($this->commandOptionName)) {
-            $setAsMain = true;
-        }
         $io = new SymfonyStyle($input, $output);
-        $appname = $io->ask("Enter a username");
-        $appPassword = $io->askHidden('What is your password?', function ($password) {
-            if (empty($password)) {
-                throw new \RuntimeException('Password cannot be empty.');
-            }
-            return $password;
-        });
+
+        // G E T   V A L U E S
+        $buildConfig = Globals::getFileContents('build/formelo.manifest');
+        $conf = Globals::getJSON();
+        $username = $conf->cred->username;
+        $apikey = $conf->cred->api_key;
+        if ($username === "" || $apikey === ""){
+            return $io->error("Kindly initialize your app by running 'php formelo init'");
+        }
+
+        // P U S H   T O   A P P  S T O R E
+        $client = new Client();
+        $io->text('Deploying...');
+        $res = $client->request('POST', 'https://requestb.in/tsfcjmts', [
+            'auth' => [$username, $apikey],
+            'headers'  => ['content-type' => 'application/json; charset=UTF-8', 'Accept' => 'application/json'],
+            'json' => $buildConfig
+        ]);
         $io->success("Deployed.");
     }
     private function getJSON(){
