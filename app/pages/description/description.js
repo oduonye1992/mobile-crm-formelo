@@ -2,6 +2,7 @@
     'use strict';
     var productID = null;
     var MoltinManager = formelo.require('MoltinManager');
+    var UserManager = formelo.require('UserManager');
     formelo.event().onCreate(function(){
         // Entry point of this application
         resetProductDescription();
@@ -20,7 +21,7 @@
     function customise(){
         formelo.html().get.header.title().html("Product Description");
     }
-    function showAddToCartButton(unique) {
+    function showAddToCartButton(productID) {
         var data = [
             {
                 'icon' : 'fa fa-shopping-cart',
@@ -29,7 +30,26 @@
             }
         ];
         formelo.ui().footer(data, function(data){
-            alert('item added to cart');
+            // Check if user doesn't exist
+            if (!UserManager.isUserExist()){
+                // Create user
+                UserManager.showRegistration(function(data){
+                     MoltinManager.customers.create(data, function(data){
+                         UserManager.addUser(data.id, data, function(){}, function(err){
+                             console.log(err);
+                             // Set as current user
+                             UserManager.setCurrentUser(data.id);
+                             MoltinManager.cart.addToCart(data.id, data.id, 1, function(data){
+                                alert('Added');
+                             }, function(err){
+                                 alert('Something went wrong');
+                             });
+                         });
+                     }, function(err){
+
+                     });
+                });
+            }
         });
     }
     function resetProductDescription(){

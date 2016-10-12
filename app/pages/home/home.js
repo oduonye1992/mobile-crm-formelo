@@ -7,6 +7,7 @@
     formelo.event().onCreate(function(){
             // Entry point of this application
             footer.build('home');
+            customise();
             var waiting = showWaiting('#homeContainer');
             MoltinManager.authenticate(function(aa){
                 MoltinManager.access_token = aa.access_token;
@@ -57,7 +58,7 @@
                 $(placeholder).html(previousHtml);
             }
         }
-    }
+    };
     function customise(){
         formelo.html().get.header.title().html("Adamu's Apparels");
     }

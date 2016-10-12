@@ -14,5 +14,7 @@ return array(
     'commands\\ImportCSSCommand' => $baseDir . '/commands/ImportCSSCommand.php',
     'commands\\InitCommand' => $baseDir . '/commands/InitCommand.php',
     'commands\\ProviderCommand' => $baseDir . '/commands/ProviderCommand.php',
+    'commands\\PublishCommand' => $baseDir . '/commands/PublishCommand.php',
     'commands\\PullCommand' => $baseDir . '/commands/PullCommand.php',
+    'commands\\UnpublishCommand' => $baseDir . '/commands/UnpublishCommand.php',
 );

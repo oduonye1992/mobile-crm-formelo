@@ -44,19 +44,25 @@ class DeployCommand extends Command
         $conf = Globals::getJSON();
         $username = $conf->cred->username;
         $apikey = $conf->cred->api_key;
-        if ($username === "" || $apikey === ""){
+        $realm = $conf['code'];
+        $id = $conf['id'];
+        if ($username == "" || $apikey == ""){
             return $io->error("Kindly initialize your app by running 'php formelo init'");
         }
 
         // P U S H   T O   A P P  S T O R E
-        $client = new Client();
         $io->text('Deploying...');
-        $res = $client->request('POST', 'https://requestb.in/tsfcjmts', [
-            'auth' => [$username, $apikey],
-            'headers'  => ['content-type' => 'application/json; charset=UTF-8', 'Accept' => 'application/json'],
-            'json' => $buildConfig
-        ]);
-        $io->success("Deployed.");
+        try {
+            $client = new Client();
+            $res = $client->request("PUT", "$realm.formelo.com/api/applets/$id.json", [
+                'auth' => [$username, $apikey],
+                'headers'  => ['content-type' => 'application/json; charset=UTF-8', 'Accept' => 'application/json'],
+                'json' => $buildConfig
+            ]);
+            $io->success("Deployed.");
+        } catch (\Exception $e) {
+            $io->error("Unable to deploy." . $e->getMessage());
+        }
     }
     private function getJSON(){
         $filename = "app/pages/pages.json";

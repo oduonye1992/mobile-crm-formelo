@@ -49,22 +49,43 @@ Delete the page's generated folder and remove the entry in the /app/pages/pages.
 
     php formelo prepare
 
-Pass in an additional --port=<PORT> to specify a new port  [Not Active]
+
+Pass in an additional --port=<PORT> to specify a new port
+
 
 ### 6. Deploy an app
 ---------------------------------------
 
     php formelo deploy
 
+
 Follow the wizard, pass in your username and API key
 
 
-[Not Active]
+### 7. Publish your app to the app store
+---------------------------------------
+
+php formelo publish
+
+
+### 8. Unpublish your app from the app store
+---------------------------------------
+
+php formelo publish
+
+
+
+
+
+
+
+
+[TODO]
 
 ### 1. Pull an existing project
 ---------------------------------------
 
-    php formelo pull <github link>
+    php formelo pull <github_link>
 
 
 # TODO -  

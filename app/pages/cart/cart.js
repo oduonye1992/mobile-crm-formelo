@@ -1,5 +1,9 @@
 (function(){
     'use strict';
+    var MotlinManager = formelo.require('MotlinManager');
+    var UserManager = formelo.require('UserManager');
+    var Helpers = formelo.require('Helpers');
+    var customerID = null;
     formelo.event().onCreate(function(){
         // Entry point of this application
         showItemsInCart();
@@ -73,6 +77,21 @@
     }
     function showItemsInCart(){
         // Show loading
+        // Fetch current user
+        var currentUser = UserManager.getCurrentUser();
+        if (currentUser) {
+            customerID = currentUser.id;
+            MotlinManager.cart.getItemsInCart(currentUser.id, function(data){
+                alert(JSON.stringify(data));
+                /*formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
+                    showDescription(unique);
+                });
+                showCheckoutButton();*/
+            }, function(err){
+                alert(JSON.stringify(err));
+            });
+        }
+        // Fetch items in cart
         $.when(fetchItems())
             .done(function(data){
                 formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
