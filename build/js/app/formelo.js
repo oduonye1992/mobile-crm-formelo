@@ -129,7 +129,7 @@ Formelo.prototype.html = function() {
                 layout : 'My title'
             };
             var defaults = $.extend({}, option, options);
-            var html = '<div id="applet-main" role="main">'+defaults.layout+'</div>';
+            var html = '<div xid="applet-main" role="main">'+defaults.layout+'</div>';
             return html;
         },
         footer : function(options){}
@@ -402,6 +402,9 @@ Formelo.prototype.ui = function(){
                  * @returns {boolean}
                  */
             footer : function(data, callback){
+                if (!data || !data.length){
+                    throw new Error('Footer array is empty');
+                }
                 var defaults = {
                     'icon' : 'fa fa-heart',
                     'text' : 'placeholder',
@@ -409,23 +412,20 @@ Formelo.prototype.ui = function(){
                     'active' :  false,
                     'unique' : null
                 };
-                if (!data || !data.length){
-                    return false;
-                }
+                var id = that.mAppletID+'-'+that.currentIndex;
                 var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
                     '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
                     '<ul>';
                 data.forEach(function(item){
                     var newDefault = $.extend({}, defaults, item);
                     html += '<li>'+
-                                '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; border:none !important; background-color: #34495E !important;">'+
-                                    '<span class="footer-icon" style="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
-                                    '<p class="footer_p" style="margin-top: -4px; color:'+(newDefault.active ? '#EB5055' : 'white')+' !important;">'+newDefault.text+'</p>'+
+                                '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; /*border:none !important; /*background-color: #34495E !important;*/">'+
+                                    '<span class="footer-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' " xstyle="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
+                                    '<p class="footer_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" style="margin-top: -4px; /*color:'+(newDefault.active ? '#EB5055' : 'white')+' !important; */">'+newDefault.text+'</p>'+
                                 '</a>'+
                             '</li>';
                 });
                 html += '</ul></div></div>';
-                var id = that.mAppletID+'-'+that.currentIndex;
                 var placeholder = '#'+id;
                 $(placeholder).appends(html);
                 BODY.trigger('create');
@@ -434,6 +434,35 @@ Formelo.prototype.ui = function(){
                     if (unique && callback){
                         callback(unique);
                     }
+                });
+            },
+            bareList : function(data, placeHolder, callback) {
+                var defaults = {
+                    'icon' : '',
+                    'text' : '',
+                    'colour' :  '#2980b9',
+                    'unique' : null
+                };
+                if (!data || !data.length){
+                    return false;
+                }
+                var html = '';
+                var i = 1;
+                data.forEach(function(item){
+                    var newDefault = $.extend({}, defaults, item);
+                    html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
+                        '<div class="col-xs-2" style="">'+
+                        '<p style="color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
+                        '</div>'+
+                        '<div class="col-xs-10">'+
+                        '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
+                        '</div>'+
+                        '</div>';
+                    i++;
+                });
+                $(placeHolder).html(html);
+                $('.holder-clickable-item').click(function(){
+                    callback($(this).attr('unique'));
                 });
             },
             spinner: function() {
@@ -523,9 +552,9 @@ Formelo.prototype.ui = function(){
                     '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
                     '<img xxx ="' + i + '" class="qmyImg qmainImg" src="' + defaultItem.image + '" style="max-width: 100%;" />' +
                     '</div>' +
-                    '<div class="col-xs-12 col-sm-12 col-md-12" style = " height:64px; max-height:64px; background-color:#404040;">' +
-                    '<span style="font-size: x-small; color: #ffffff; font-weight:400">' + defaultItem.name + '</span>' +
-                    '<p style="font-size: xx-small; color: #D9D9D9; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
+                    '<div class="col-xs-12 col-sm-12 col-md-12" style = " height:64px; max-height:64px; background-color:white;">' +
+                    '<span style="font-size: x-small; color: #2c3e50; font-weight:400">' + defaultItem.name + '</span>' +
+                    '<p style="font-size: xx-small; color: grey; margin-top: 2px; word-wrap: break-word; line-height: 14px;">' + defaultItem.description + '</p>' +
                     '</div>' +
                     '</div>' +
                     '</div>';

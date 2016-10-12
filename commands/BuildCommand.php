@@ -76,7 +76,7 @@ class BuildCommand extends Command
                     "description" => "ducco",
                     "default_submission_status" => "accepted",
                     "scope" => "public",
-                    "name" => "madboysc crew",
+                    "name" => str_replace(' ', '', $pages->name),
                     "id" => "dac0d9ed",
                     "parameters" => [
                          "is_submittable" => true
