@@ -27,5 +27,29 @@
             }
         }
     };
+    Helpers.showEmptyState = function(placeholder, title, message){
+        var previousHtml = $(placeholder).html();
+        var title  = title || 'Empty';
+        var message  = message || 'Nothing Here';
+        var loadingHtml =   '<div class="container-xs-height full-vh">' +
+            '<div class="row-xs-height">'+
+            '<div class="col-xs-height col-middle">'+
+            '<div class="error-container text-center">'+
+            '<h1 class="error-number" style="color: grey;">'+title+'</h1>'+
+            '<h3 style="color: grey;">'+message+'</h3>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+            '</div>';
+        $(placeholder).html(loadingHtml);
+    }
+    Helpers.str_random = function(){
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for( var i=0; i < 5; i++ ) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    };
     formelo.exports('Helpers', Helpers);
 })();

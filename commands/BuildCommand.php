@@ -86,10 +86,12 @@ class BuildCommand extends Command
                     'pages' => [
 
                     ],
-                    'providers' => [
+                    'exports' => [
+                        'js' => [
 
+                        ]
                     ],
-                    'dependencies' => [
+                    'imports' => [
                         'js' => [
 
                         ],
@@ -120,20 +122,29 @@ class BuildCommand extends Command
         $io->text("Compiling Providers");
         foreach ($pages->providers as $key){
             $js = $this->getFileContents("app/providers/$key.js");
-            array_push($config['providers'], $js);
+            $data = ['data' => $js];
+            $config['exports']['js'][$key] = $data;
         }
         $io->text("Compiling Javascript Dependencies");
         foreach ($pages->dependencies->js as $key){
             $js = $this->getFileContents("app/dependencies/js/$key.js");
-            array_push($config['dependencies']['js'], $js);
+            $data = [
+                 'data' => $js
+            ];
+            $config['imports']['js'][$key] = $data;
+            //array_push($config['imports']['js'], $data);
         }
         $io->text("Compiling CSS Dependencies");
         foreach ($pages->dependencies->css as $key){
-            $js = $this->getFileContents("app/dependencies/css/$key.css");
-            array_push($config['dependencies']['css'], $js);
+            $css = $this->getFileContents("app/dependencies/css/$key.css");
+            $data = [
+                'data' => $css
+            ];
+            $config['imports']['css'][$key] = $data;
         }
         $this->saveJSON($config, "build/formelo.manifest");
         $io->success(array("Build script has been completed.","Development server running on localhost:$portNumber"));
+
         return shell_exec("php -S localhost:$portNumber");
     }
     private function getJSON(){

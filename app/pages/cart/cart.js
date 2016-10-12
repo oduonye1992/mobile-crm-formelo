@@ -1,11 +1,14 @@
 (function(){
     'use strict';
-    var MotlinManager = formelo.require('MotlinManager');
+    var MoltinManager = formelo.require('MoltinManager');
     var UserManager = formelo.require('UserManager');
+    var footer = formelo.require('footer');
     var Helpers = formelo.require('Helpers');
+
     var customerID = null;
     formelo.event().onCreate(function(){
         // Entry point of this application
+        footer.build('cart');
         showItemsInCart();
         customise();
     });
@@ -19,6 +22,7 @@
         // Override close button
         // formelo.navigation.stopPropagation()
     });
+
     function showCheckoutButton(unique) {
         var data = [
             {
@@ -81,7 +85,7 @@
         var currentUser = UserManager.getCurrentUser();
         if (currentUser) {
             customerID = currentUser.id;
-            MotlinManager.cart.getItemsInCart(currentUser.id, function(data){
+            MoltinManager.cart.getItemsInCart(currentUser.id, function(data){
                 alert(JSON.stringify(data));
                 /*formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
                     showDescription(unique);
@@ -90,15 +94,18 @@
             }, function(err){
                 alert(JSON.stringify(err));
             });
+        } else {
+            Helpers.showEmptyState('#cart-placeholder', 'Empty', 'No Items in cart yet');
         }
         // Fetch items in cart
-        $.when(fetchItems())
+        /*$.when(fetchItems())
             .done(function(data){
                 formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
                     showDescription(unique);
                 });
                 showCheckoutButton();
             })
+            */
     }
     function showDescription(unique) {
         formelo.navigation().openActivity('description', {id : unique});

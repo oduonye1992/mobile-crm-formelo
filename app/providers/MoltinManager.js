@@ -41,7 +41,7 @@
     MoltinManager.validate = function(data, validationArray) {
         // Using the set of rules, validate that
         validationArray.forEach(function(item){
-             if (!data[item]){
+             if (data[item] === undefined){
                  throw new Error(item + ' key not found.');
              }
         });
@@ -81,6 +81,10 @@
     MoltinManager.products = {
         create : function(data, successCB, errorCB){
             var url = 'https://api.molt.in/v1/products';
+            MoltinManager.validate(data, [
+                'sku', 'title', 'slug', 'price', 'category', 'stock_level', 'stock_status',
+                'description', 'requires_shipping', 'catalog_only', 'tax_band', 'status'
+            ]);
              MoltinManager.network(url, data, 'POST')
              .done(function(data){
                  console.log(data);
@@ -161,7 +165,7 @@
                 'id' : productID
             };
             MoltinManager.validate(data, ['id', 'quantity']);
-            MoltinManager.network(url, {}, 'POST')
+            MoltinManager.network(url, data, 'POST')
                 .done(function(data){
                     console.log(data);
                     successCB(data);

@@ -8,8 +8,13 @@
         // Entry point of this application
         footer.build('home');
         customise();
-        var waiting = showWaiting('#details-placeholder');
         showAddButton();
+        var waiting = showWaiting('#details-placeholder');
+        showItemsInCategory(categoryID);
+    });
+
+    formelo.event().onResult(function(){
+        var waiting = showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
 
@@ -82,7 +87,7 @@
                 _data.push({
                     'name' : item.title,
                     'description' : item.description,
-                    'image' : item.images[0].url.https,
+                    'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'img/loading.png',
                     'unique' : item.id
                 });
             });

@@ -21,12 +21,12 @@
     function customise(){
         formelo.html().get.header.title().html("Product Description");
     }
-    function showAddToCartButton(productID) {
+    function showAddToCartButton() {
         var data = [
             {
                 'icon' : 'fa fa-shopping-cart',
                 'text' : 'Add to Cart',
-                'unique' : unique
+                'unique' : productID
             }
         ];
         formelo.ui().footer(data, function(data){
@@ -35,18 +35,21 @@
                 // Create user
                 UserManager.showRegistration(function(data){
                      MoltinManager.customers.create(data, function(data){
-                         UserManager.addUser(data.id, data, function(){}, function(err){
-                             console.log(err);
+                         UserManager.addUser(data.id, data, function(){
                              // Set as current user
                              UserManager.setCurrentUser(data.id);
-                             MoltinManager.cart.addToCart(data.id, data.id, 1, function(data){
-                                alert('Added');
+                             console.log('Sending '+data.id + ' for product '+productID);
+                             MoltinManager.cart.addToCart(data.id, productID, 1, function(data){
+                                 alert('Added');
+                                 console.log(data);
                              }, function(err){
-                                 alert('Something went wrong');
+                                 console.log('[Add To Cart]' + JSON.stringify(err));
                              });
+                         }, function(err){
+                             console.log('[Add User] '+JSON.stringify(err));
                          });
                      }, function(err){
-
+                        console.log('[Registration] '+JSON.stringify(err));
                      });
                 });
             }

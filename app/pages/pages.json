@@ -1,1 +1,38 @@
-{"icon_url":"https:\/\/cdn.formelo.com\/uploads\/20151216\/12\/1450268948584-facebook-256x256.png","description":"cool","default_submission_status":"accepted","mode":"dynamic","scope":"public","name":"My aplet","cred":{"username":"demo","api_key":"f14e7a19d99811e588f4fa163e7289ad"},"id":"dac0d9ed","status":"live","pages":["home","details","description","cart","deals","product-create","create-category"],"root":"home","providers":["footer","config","MoltinManager","UserManager","Helpers"],"dependencies":{"js":["moltin"],"css":[]},"code":"demo"}
+{
+  "icon_url": "https://cdn.formelo.com/uploads/20151216/12/1450268948584-facebook-256x256.png",
+  "description": "cool",
+  "default_submission_status": "accepted",
+  "mode": "dynamic",
+  "scope": "public",
+  "name": "My aplet",
+  "cred": {
+    "username": "demo",
+    "api_key": "f14e7a19d99811e588f4fa163e7289ad"
+  },
+  "id": "dac0d9ed",
+  "status": "live",
+  "pages": [
+    "home",
+    "details",
+    "description",
+    "cart",
+    "deals",
+    "product-create",
+    "create-category"
+  ],
+  "root": "home",
+  "providers": [
+    "footer",
+    "config",
+    "MoltinManager",
+    "UserManager",
+    "Helpers"
+  ],
+  "dependencies": {
+    "js": [
+      "moltin"
+    ],
+    "css": []
+  },
+  "code": "demo"
+}

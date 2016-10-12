@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     var MoltinManager = formelo.require('MoltinManager');
-
+    var Helpers = formelo.require('Helpers');
     var mode = 'create';
     var categoryID = null;
     var productID = null;
@@ -52,12 +52,12 @@
             throw new Error('Kindly check your form and try again');
         }
         var stock_status = 1;
-        var slug = title.trim().toLowerCase();
+        var slug = title.trim().toLowerCase()+'_'+Helpers.str_random();
         var status = 1;
         var category = categoryID;
         var requires_shipping = 1;
-        var tax_band = 1358874116987290058;
-        var catalog_only = 1;
+        var tax_band = "1359674746093961681";
+        var catalog_only = 0;
         return  {
             title : title,
             description : title,
@@ -79,6 +79,7 @@
             console.log(data);
             MoltinManager.products.create(data, function(data){
                 alert(JSON.stringify(data));
+                formelo.navigation().result();
             }, function(err){
                 alert(JSON.stringify(err));
             });

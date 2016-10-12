@@ -182,29 +182,36 @@ Formelo.prototype.runCode = function(index,params){
 };
 
 Formelo.prototype.runDependencies = function(){
-    var jsDependencies =  this.mAppletConfig.dependencies.js;
-    var cssDependencies =  this.mAppletConfig.dependencies.css;
-    console.log(cssDependencies);
+    var jsDependencies =  this.mAppletConfig.imports.js;
+    var cssDependencies =  this.mAppletConfig.imports.css;
     var script = '', style = '';
-    if (jsDependencies && jsDependencies.length) {
-        for (var i = 0; i < jsDependencies.length; i++){
-            script += '<script class="applet-dependencies" type="text/javascript">'+jsDependencies[i]+'</script>';
+    if (jsDependencies) {
+        console.log(jsDependencies);
+        for (var key in jsDependencies) {
+            if (jsDependencies[key]){
+                script += '<script class="applet-dependencies" type="text/javascript">'+jsDependencies[key].data+'</script>';
+            }
         }
         BODY.append(script);
     }
-    if (cssDependencies && cssDependencies.length) {
-        for (var j = 0; j < cssDependencies.length; j++) {
-            style += '<style class="applet-dependencies">' + cssDependencies[j] + '</style>';
+    if (cssDependencies) {
+        for (var key in cssDependencies) {
+            if (cssDependencies[key]){
+                style += '<style class="applet-dependencies">' + cssDependencies[key].data + '</style>';
+            }
         }
         BODY.append(style);
     }
 };
 
 Formelo.prototype.runProvider = function(){
-   var providers =  this.mAppletConfig.providers;
-   for (var i = 0; i < providers.length; i++){
-       eval(providers[i]);
-   }
+   var exports = this.mAppletConfig.exports.js;
+    console.log(exports);
+    for (var key in exports) {
+        if (exports[key]) {
+            eval(exports[key].data);
+        }
+    }
 };
 
 Formelo.prototype.runCss = function(index){
@@ -523,7 +530,6 @@ Formelo.prototype.ui = function(){
                         $(placeholder).find('.'+identifier).click(function(){
                             var unique = $(this).attr('unique');
                             if (unique){
-                                //var event = new CustomEvent('listItemClicked', {id : unique});
                                 if (callback){
                                     callback(unique);
                                 }
@@ -741,6 +747,7 @@ Formelo.prototype.event = function(){
         }
     };
 };
+
 /**
  * @description - Keep a service running at the background
  * @returns {{start: Function, stop: Function}}
@@ -902,10 +909,6 @@ Formelo.prototype.require = function(key){
             throw new Error('Item could not be found.. '+key);
         }
 };
-Formelo.prototype.dependency = function(name, content){
-    this.dependencies[name] = content;
-    alert('loaded '+name);
-};
 
 Formelo.prototype.uses = function(name){
     var load = this.dependencies[name];
@@ -944,8 +947,6 @@ Formelo.prototype.dependencies =  function(){
         }
     }
 };
-
-
 
 
 
@@ -1065,145 +1066,3 @@ Profile.prototype.getUserDetails = function(appletID, successCallback, errorCall
     }();
 };
 
-/**
- * @example DBAdapter.set(key, value, callbackSuccess, callbackError)
- * @example DBAdapter.set(key, callbackSuccess(data), callbackError)
- * @constructor DB Adapter
- * @description Data abstraction layer, from Local storage to database
- */
-var DBAdapter = function(){
-    /**
-     * @description, CLear the META table for now
-     * @todo - Implement a better solution
-     */
-    var nuke = function (callback, errorCallback){
-        var sql = "DELETE FROM "+tableName;
-        $.when(initFunctions.database.execute(sql))
-            .done(callback)
-            .fail(errorCallback);
-    };
-    var clearDonkeyImages = function(){
-        var donkey_cache_images_prefix = DonkeyCache.getPrefix();
-        var sql = "DELETE FROM "+tableName+" WHERE KEY like '%"+donkey_cache_images_prefix+"%'";
-        $.when(initFunctions.database.execute(sql))
-            .done(callback)
-            .fail(errorCallback);
-    };
-    var tableName = "META_DATA";
-    var getSql = function(key){
-        return "SELECT * FROM "+tableName+" WHERE KEY = '"+key+"'";
-    };
-    var insertQuery = function(key, value){
-        return "INSERT INTO "+tableName+" (KEY, VALUE) VALUES ('"+key+"', '"+initFunctions.escapeQuotes(value)+"')";
-    };
-    var updateQuery = function(key, value){
-        return "UPDATE "+tableName+" SET KEY = '"+key+"', VALUE = '"+initFunctions.escapeQuotes(value)+"'";
-    };
-    return {
-        get: function(key, callback, errorCallback){
-            var sql = getSql(key);
-            $.when(initFunctions.database.execute(sql))
-                .done(function(tx, resultSet){
-                    if(resultSet.rows.length){
-                      var result = resultSet.rows.item(0).VALUE;
-                      callback(result);
-                    } else {
-                        callback(null);
-                    }
-                })
-                .fail(errorCallback);
-        },
-        set: function(key, value, callback, errorCallback){
-            function runNuke (succ, err){
-                DBAdapter.nuke(function(){
-                    showMessage('Nuked');
-                    if (succ)succ();
-                }, function(a){
-                    alert(JSON.stringify(a));
-                });
-            }
-            var run = function(){
-                DBAdapter.get(key, function(data){
-                    var sql = data === null ? insertQuery(key, value) : updateQuery(key, value);
-                        $.when(initFunctions.database.execute(sql))
-                            .done(callback)
-                            .fail(function(err){
-                                // check if the error code meand exceeded storage
-                                // nuke then run again
-                                if (true){ // error is caused by storabge issue
-                                    runNuke(run, errorCallback);
-                                } else {
-                                    errorCallback()
-                                }
-                            });
-                },function(err){
-                    errorCallback();
-                });
-            }();
-        },
-        nuke : function(successCB, errorCB){
-            nuke(successCB, errorCB);
-        }
-    };
-}();
-
-function test(){
-    // Test  oufbsdnkdsnkjs
-    //alert('test is starting la la la');
-    /*DBAdapter.set("tambolo", "adanna", function(data){
-
-    }, function(){
-        alert("Error set " +JSON.stringify(err));
-    });
-
-    DBAdapter.get("tambolo", function(data){
-        alert(data);
-    }, function(err){
-        alert("Error get " +JSON.stringify(err));
-    });*
-    // a. DBAdapter.set("tamp")
-    /*alert('test is starting. . d d d d ');
-    var profile = new Profile();
-    profile.getUserDetails('ID', function(data){
-        alert(JSON.stringify(data));
-    }, function(err){
-        alert(JSON.stringify(err));
-    });*/
-
-
-    /*var formelo = new Formelo('aabbcc');
-    formelo.on(formelo.constants.events.ON_START, function(){
-        alert('opened');
-        formelo.Cache().set('badass', 'nigddddger');
-        alert(formelo.Cache().get('badass'));
-        formelo.Cache().remove('badass');
-    });
-    formelo.show();*/
-    //DonkeyCache.grab();
-
-
-
-    /*var arrays = [
-        {
-            name : 'name 1',
-            description : 'sdlnaksdmadsad',
-            time : 'ddd',
-            image : 'http://i645.photobucket.com/albums/uu172/lovelife1197/37275-11-baby-panda.jpg',
-            unique: 'aa'
-        },
-        {
-            name : 'name 2',
-            description : 'omio wiodqdw',
-            time : 'qqq',
-            image : 'http://space7.mobie.in/images/Panda.jpg',
-            unique: 'bb'
-        }
-    ];
-    formelo.UI.ListAdapter(arrays, '#aaa').attach(function(id){
-        alert('got '+id );
-        formelo.UI.GridAdapter(arrays, '#aaa').attach(function(id){
-            alert('got '+id );
-        });
-    });
-    */
-}

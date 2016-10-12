@@ -43,9 +43,8 @@
     UserManager.getCurrentUser = function(callback){
         return UserManager.users.data[UserManager.users.current];
     };
-    UserManager.setCurrentUser = function(id, callback){
+    UserManager.setCurrentUser = function(id){
         UserManager.users.current = id;
-        callback();
     };
     UserManager.isUserExist = function(id){
         if (!id) {
@@ -58,8 +57,8 @@
         // How the options and returns the email, firstnemt, and password
         // TODO implement native version
         var first_name = window.prompt('What is your firstname');
-        var last_name = window.prompt('What is your firstname');
-        var email = window.prompt('What is your firstname');
+        var last_name = window.prompt('What is your lastname');
+        var email = window.prompt('What is your email address');
         callback({
             first_name : first_name,
             last_name : last_name,
