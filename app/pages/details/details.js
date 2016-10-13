@@ -3,18 +3,19 @@
     var categoryID = null;
     var footer = formelo.require('footer');
     var MoltinManager = formelo.require('MoltinManager');
+    var Helpers = formelo.require('Helpers');
 
     formelo.event().onCreate(function(){
         // Entry point of this application
         footer.build('home');
         customise();
         showAddButton();
-        var waiting = showWaiting('#details-placeholder');
+        Helpers.showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
 
     formelo.event().onResult(function(){
-        var waiting = showWaiting('#details-placeholder');
+        Helpers.showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
 

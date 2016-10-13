@@ -1,4 +1,5 @@
 (function() {
+    var config  = formelo.require('config');
 
     var UserManager = {};
     /*
@@ -14,7 +15,41 @@
         current : null,
         data : {}
     };
-    UserManager.init = function(){};
+    UserManager.initialized = false;
+    UserManager.init = function(callback){
+        if (UserManager.initialized === true){
+            console.log('Config already initialized');
+            return callback();
+        }
+        // Get config from Formelo -- Oonly available in production
+        if (config.inProductionMode()){
+            formelo.storage().get(config.appletID+'_users', function(data){
+                if (data){
+                    console.log('Initialized user config');
+                    UserManager.users = data;
+                    UserManager.initialized = true;
+                } else {
+                    console.log('Date not found'.data);
+                }
+                callback();
+            }, function(){
+                console.log('Error initializing user config');
+                callback();
+            });
+        } else {
+            callback();
+        }
+
+    };
+    UserManager.save = function(){
+        if (config.inProductionMode()){
+            formelo.storage().set(config.appletID+'_users', UserManager.users, function(data){
+                console.log('Saved user config');
+            }, function(err){
+                console.log('Error saving user config '+err);
+            });
+        }
+    };
     UserManager.getUser = function(successCB, errorCB){
         // Generate fictitious data
         var data = {
@@ -38,6 +73,7 @@
             return errorCB('No ID or user object');
         }
         UserManager.users.data[id] = obj;
+        UserManager.save();
         successCB();
     };
     UserManager.getCurrentUser = function(callback){
@@ -45,6 +81,7 @@
     };
     UserManager.setCurrentUser = function(id){
         UserManager.users.current = id;
+        UserManager.save();
     };
     UserManager.isUserExist = function(id){
         if (!id) {
@@ -53,17 +90,29 @@
         }
         return UserManager.users.data[id] ? true : false;
     };
-    UserManager.showRegistration = function(callback){
-        // How the options and returns the email, firstnemt, and password
-        // TODO implement native version
-        var first_name = window.prompt('What is your firstname');
-        var last_name = window.prompt('What is your lastname');
-        var email = window.prompt('What is your email address');
-        callback({
-            first_name : first_name,
-            last_name : last_name,
-            email : email
-        });
+    UserManager.showRegistration = function(callback, errorCB){
+        if (config.inProductionMode()){
+            // TODO implement native version
+            formelo.profile().getProfile(function(data){
+                console.log(JSON.stringify(data));
+                callback({
+                    first_name : data.name,
+                    last_name : data.name,
+                    email : data.email,
+                    id : data.id
+                });
+            }, errorCB);
+        } else {
+            var first_name = window.prompt('What is your firstname');
+            var last_name = window.prompt('What is your lastname');
+            var email = window.prompt('What is your email address');
+            callback({
+                first_name : first_name,
+                last_name : last_name,
+                email : email,
+                id : Helpers.str_random()
+            });
+        }
     };
     formelo.exports('UserManager', UserManager);
 })();

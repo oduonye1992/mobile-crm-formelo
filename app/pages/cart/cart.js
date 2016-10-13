@@ -6,9 +6,11 @@
     var Helpers = formelo.require('Helpers');
 
     var customerID = null;
+
     formelo.event().onCreate(function(){
         // Entry point of this application
         footer.build('cart');
+        Helpers.showWaiting('#cart-placeholder');
         showItemsInCart();
         customise();
     });
@@ -38,74 +40,40 @@
     function customise(){
         formelo.html().get.header.title().html("My Cart");
     }
-    function fetchItems(id) {
-        var txDeferred = $.Deferred();
-        var data = [
-            {
-                name : 'Cindy Materials',
-                description : 'Al the funky eye glasses you need',
-                time : '$10.99',
-                image : 'http://previews.123rf.com/images/nito500/nito5001106/nito500110600004/9712978-black-glasses-on-a-white-background-Stock-Photo-eyeglasses-glasses-hipster.jpg',
-                unique: 'sdsds'
-            },
-            {
-                name : 'Cindy Materials',
-                description : 'Al the funky eye glasses you need',
-                time : '$61.99',
-                image : 'http://previews.123rf.com/images/nito500/nito5001106/nito500110600004/9712978-black-glasses-on-a-white-background-Stock-Photo-eyeglasses-glasses-hipster.jpg',
-                unique: 'dsd'
-            },
-            {
-                name : 'Cindy Materials',
-                description : 'Al the funky eye glasses you need',
-                time : '$6.23',
-                image : 'http://previews.123rf.com/images/nito500/nito5001106/nito500110600004/9712978-black-glasses-on-a-white-background-Stock-Photo-eyeglasses-glasses-hipster.jpg',
-                unique: 'ssd'
-            },
-            {
-                name : 'Cindy Materials',
-                description : 'Al the funky eye glasses you need',
-                time : '$1.99',
-                image : 'http://previews.123rf.com/images/nito500/nito5001106/nito500110600004/9712978-black-glasses-on-a-white-background-Stock-Photo-eyeglasses-glasses-hipster.jpg',
-                unique: 'dsds'
-            },{
-                name : 'Cindy Materials',
-                description : 'Al the funky eye glasses you need',
-                time : '$7.42',
-                image : 'http://previews.123rf.com/images/nito500/nito5001106/nito500110600004/9712978-black-glasses-on-a-white-background-Stock-Photo-eyeglasses-glasses-hipster.jpg',
-                unique: 'cinde'
-            }
-        ];
-        txDeferred.resolve(data);
-        return txDeferred.promise();
-    }
     function showItemsInCart(){
-        // Show loading
-        // Fetch current user
-        var currentUser = UserManager.getCurrentUser();
-        if (currentUser) {
-            customerID = currentUser.id;
-            MoltinManager.cart.getItemsInCart(currentUser.id, function(data){
-                alert(JSON.stringify(data));
-                /*formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
-                    showDescription(unique);
-                });
-                showCheckoutButton();*/
+        UserManager.showRegistration(function(data){
+            MoltinManager.cart.getItemsInCart(data.id, function(data){
+                console.log(JSON.stringify(data));
+                var _data = [];
+                var isEmpty = true;
+                for(var key in data){
+                    if (data[key]) {
+                        var item = data[key];
+                        isEmpty = false;
+                        _data.push({
+                            'name' : item.title,
+                            'description' : item.description,
+                            'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'img/loading.png',
+                            'unique' : item.id
+                        });
+                    }
+                }
+                if (isEmpty){
+                    return Helpers.showEmptyState('#cart-placeholder', 'Empty', 'xNo Items in cart yet');
+                } else {
+                    formelo.ui().gridAdapter(_data, '#cart-placeholder').attach(function(unique){
+                        showDescription(unique);
+                    });
+                    showCheckoutButton();
+                }
             }, function(err){
-                alert(JSON.stringify(err));
+                console.error(err);
+                Helpers.showEmptyState('#cart-placeholder', 'Empty', 'yNo Items in cart yet');
             });
-        } else {
-            Helpers.showEmptyState('#cart-placeholder', 'Empty', 'No Items in cart yet');
-        }
-        // Fetch items in cart
-        /*$.when(fetchItems())
-            .done(function(data){
-                formelo.ui().listAdapter(data, '#cart-placeholder').attach(function(unique){
-                    showDescription(unique);
-                });
-                showCheckoutButton();
-            })
-            */
+        }, function(err){
+            console.error(err);
+            Helpers.showEmptyState('#cart-placeholder', 'Empty', 'zNo Items in cart yet');
+        });
     }
     function showDescription(unique) {
         formelo.navigation().openActivity('description', {id : unique});

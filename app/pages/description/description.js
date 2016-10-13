@@ -31,7 +31,7 @@
         ];
         formelo.ui().footer(data, function(data){
             // Check if user doesn't exist
-            if (!UserManager.isUserExist()){
+            //if (!UserManager.isUserExist()){
                 // Create user
                 UserManager.showRegistration(function(data){
                      MoltinManager.customers.create(data, function(data){
@@ -40,19 +40,35 @@
                              UserManager.setCurrentUser(data.id);
                              console.log('Sending '+data.id + ' for product '+productID);
                              MoltinManager.cart.addToCart(data.id, productID, 1, function(data){
-                                 alert('Added');
+                                 console.log('Added');
                                  console.log(data);
+                                 formelo.navigation().result();
                              }, function(err){
-                                 console.log('[Add To Cart]' + JSON.stringify(err));
+                                 console.error('[Add To Cart]' + JSON.stringify(err));
                              });
                          }, function(err){
-                             console.log('[Add User] '+JSON.stringify(err));
+                             console.error('[Add User] '+JSON.stringify(err));
                          });
                      }, function(err){
-                        console.log('[Registration] '+JSON.stringify(err));
+                            console.error('It failed. ha ha');
+                             console.error('[Registration] '+JSON.stringify(err));
+                             UserManager.setCurrentUser(data.id);
+                             console.log('Sending '+data.id + ' for product '+productID);
+                             MoltinManager.cart.addToCart(data.id, productID, 1, function(data){
+                                 console.log('Added');
+                                 console.log(data);
+                                 formelo.navigation().result();
+                             }, function(err){
+                                 console.error('[Add To Cart]' + JSON.stringify(err));
+                             });
+                            console.error('[Registration] '+JSON.stringify(err));
                      });
+                }, function(err){
+                    console.error(err);
                 });
-            }
+            //} else {
+            //    console.log('User doesn\'t exist');
+            //}
         });
     }
     function resetProductDescription(){

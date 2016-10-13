@@ -11,5 +11,10 @@
         clientID : '14nNKisLLvQ65xGrdWTLXnbDw2k09NpVNxARscrMEC',
         clientSecret : 'bGLJchUtx3gSXVcqUDaiV7KIyFFSIlBv3gjtUcYhl9'
     };
+    config.inProductionMode = function(){
+        return true;
+    };
+    config.appletID = "moltin";
     formelo.exports('config', config);
+
 })();

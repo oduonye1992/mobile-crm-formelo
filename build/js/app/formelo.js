@@ -764,6 +764,40 @@ Formelo.prototype.services = function(){
     };
 };
 
+/**
+ * @description Store larger files here... Uses the File Manager
+ * @returns {{get: Function, set: Function}}
+ */
+Formelo.prototype.storage = function(){
+    var appletId = this.mAppletID;
+    var getKey = function(key){
+        return this.mAppletID+'-'+key;
+    };
+    return {
+        get : function(key, _successCB, _errorCB){
+            if (!key) throw new Error('Key not specified');
+            var successCB = _successCB || function(){};
+            var errorCB = _errorCB || function(){};
+            try {
+                DBAdapter.get(getKey(key), successCB, errorCB);
+            } catch(e){
+                return false;
+            }
+        },
+        set : function(key, item, _successCB, _errorCB){
+            if (!key) throw new Error('Key not specified');
+            var successCB = _successCB || function(){};
+            var errorCB = _errorCB || function(){};
+            try {
+                DBAdapter.set(getKey(key), item, successCB, errorCB);
+                return true;
+            } catch(e){
+                return false;
+            }
+        }
+    };
+};
+
 Formelo.prototype.navigation = function(){
     var that = this;
     return {
@@ -802,6 +836,7 @@ Formelo.prototype.navigation = function(){
         }
     };
 };
+
 /**
  * @returns {{run: Function}}
  * @constructor - Multi threading possible using Parallel.js
@@ -909,12 +944,10 @@ Formelo.prototype.require = function(key){
             throw new Error('Item could not be found.. '+key);
         }
 };
-
 Formelo.prototype.uses = function(name){
     var load = this.dependencies[name];
     load();
 };
-
 /**
  * Handle each applets dependencies and loads them on demand
  * @returns {{}}

@@ -2,19 +2,22 @@
     'use strict';
     var footer = formelo.require('footer');
     var config = formelo.require('config');
+    var Helpers = formelo.require('Helpers');
     var MoltinManager = formelo.require('MoltinManager');
+    var UserManager = formelo.require('UserManager');
 
     formelo.event().onCreate(function(){
             // Entry point of this application
+        Helpers.showWaiting('#homeContainer');
+        UserManager.init(function(){
             footer.build('home');
             customise();
-            var waiting = showWaiting('#homeContainer');
             MoltinManager.authenticate(function(aa){
                 MoltinManager.access_token = aa.access_token;
-                // Load Categories
                 showCategories();
                 showAddButton();
             });
+        });
     });
     formelo.event().onResult(function(){
         var waiting = showWaiting('#homeContainer');
@@ -38,26 +41,6 @@
             // Open create product page
             formelo.navigation().openActivity('create-category', { mode : 'create'});
         });
-    };
-    var showWaiting = function(placeholder){
-        var previousHtml = $(placeholder).html();
-        var loadingHtml =   '<div class="container-xs-height full-vh">' +
-            '<div class="row-xs-height">'+
-            '<div class="col-xs-height col-middle">'+
-            '<div class="error-container text-center">'+
-            '<h1 class="error-number" style="color: grey;">' +
-            '<div class="progress-circle-indeterminate"></div>' +
-            '</h1>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
-            '</div>';
-        $(placeholder).html(loadingHtml);
-        return {
-            stop : function(){
-                $(placeholder).html(previousHtml);
-            }
-        }
     };
     function customise(){
         formelo.html().get.header.title().html("Adamu's Apparels");
