@@ -57,7 +57,10 @@ EOD;
         $js = fopen("app/dependencies/css/$depName.css", "w");
         fwrite($js, $fileContents);
         $pages = $this->getJSON();
-        array_push($pages->dependencies->css, $depName);
+        $pages->dependencies->css[$depName] = [
+            'link' => $filename
+        ];
+        //array_push($pages->dependencies->css, $depName);
         $this->saveJSON($pages);
         $io->success("$depName has been imported.");
     }

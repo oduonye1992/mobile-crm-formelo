@@ -6,10 +6,10 @@
     var MoltinManager = formelo.require('MoltinManager');
     var UserManager = formelo.require('UserManager');
 
+
     formelo.event().onCreate(function(){
             // Entry point of this application
-        Helpers.showWaiting('#homeContainer');
-        UserManager.init(function(){
+        //UserManager.init(function(){
             footer.build('home');
             customise();
             MoltinManager.authenticate(function(aa){
@@ -17,10 +17,10 @@
                 showCategories();
                 showAddButton();
             });
-        });
+        //});
     });
     formelo.event().onResult(function(){
-        var waiting = showWaiting('#homeContainer');
+        //var waiting = showWaiting('#homeContainer');
         showCategories();
     });
     formelo.event().onIntent(function(params){
@@ -45,24 +45,58 @@
     function customise(){
         formelo.html().get.header.title().html("Adamu's Apparels");
     }
+    function bareList(data, placeHolder, callback) {
+            var defaults = {
+                'icon' : '',
+                'text' : '',
+                'colour' :  '#2980b9',
+                'unique' : null
+            };
+            if (!data || !data.length){
+                return false;
+            }
+            var html = '';
+            var i = 1;
+            data.forEach(function(item){
+                var newDefault = $.extend({}, defaults, item);
+                html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
+                    '<div class="col-xs-2" style="">'+
+                    '<p style="margin-top: 40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
+                    '</div>'+
+                    '<div class="col-xs-10">'+
+                    '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
+                    '</div>'+
+                    '</div>';
+                i++;
+            });
+            $(placeHolder).html(html);
+            $('.holder-clickable-item').click(function(){
+                callback($(this).attr('unique'));
+            });
+    }
     function showCategories () {
+        var waiting = Helpers.showWaiting('#homeContainer');
         MoltinManager.categories.getAll(function(data){
             // Parse data
+
+            if (!data.length){
+                return waiting.error('Empty', 'No Categories available');
+            }
+            waiting.stop();
             var colours = [
-                '#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#34495e',
-                '#16a085', '#27ae60', '#2980b9', '#8e44ad', '#2c3e50',
-                '#f1c40f', '#e67e22', '#e74c3c', '#ecf0f1', '#95a5a6',
-                '#f39c12', '#d35400', '#c0392b', '#bdc3c7', '#7f8c8d'
+                '#f1c40f', '#e74c3c', '#3498db', '#1abc9c'
             ];
             var _data = [];
+            var q = 0;
             data.forEach(function(item){
                 _data.push({
                     'text' : item.title,
-                    'colour' : colours[Math.floor(Math.random()*colours.length)],
+                    'colour' : colours[q],
                     'unique' : item.id
                 });
+                q = q == 3 ? 0 : q + 1;
             });
-            formelo.ui().bareList(_data, '#homeContainer', function(unique){
+            bareList(_data, '#homeContainer', function(unique){
                 formelo.navigation().openActivity('details', {categoryID : unique});
             });
         }, function(err){

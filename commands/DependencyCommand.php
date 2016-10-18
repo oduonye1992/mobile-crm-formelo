@@ -57,7 +57,10 @@ EOD;
         $js = fopen("app/dependencies/js/$depName.js", "w");
         fwrite($js, $fileContents);
         $pages = $this->getJSON();
-        array_push($pages->dependencies->js, $depName);
+        $pages->dependencies->js[$depName] = [
+            'link' => $filename
+        ];
+        //array_push($pages->dependencies->js, $depName);
         $this->saveJSON($pages);
         $io->success("$depName has been imported.");
     }

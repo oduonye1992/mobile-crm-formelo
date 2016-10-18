@@ -1,11 +1,13 @@
 (function(){
     'use strict';
     var footer = formelo.require('footer');
+    var Helpers = formelo.require('Helpers');
+
     formelo.event().onCreate(function(){
         // Entry point of this application
-        showDealsItems();
         footer.build('deals');
         customise();
+        Helpers.showWaiting('#deals-placeholder').error('No Deals', 'Kindly check again later');
     });
 
     formelo.event().onIntent(function(params){
@@ -17,6 +19,7 @@
         // Override close button
         // formelo.navigation.stopPropagation()
     });
+
     function customise(){
         formelo.html().get.header.title().html("Today's Deals");
     }

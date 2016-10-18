@@ -14,7 +14,9 @@
     config.inProductionMode = function(){
         return true;
     };
+    config.isFirstTime = function(){
+        return false;
+    };
     config.appletID = "moltin";
     formelo.exports('config', config);
-
 })();

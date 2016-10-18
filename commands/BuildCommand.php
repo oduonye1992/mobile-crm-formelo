@@ -71,13 +71,15 @@ class BuildCommand extends Command
             return $output->writeln("$pages Could not build. Check your permissions");
         }
         $config = [
-                    "icon_url" => "https://cdn.formelo.com/uploads/20151216/12/1450268948584-facebook-256x256.png",
+                    "icon_url" => $pages->icon_url,
+                    "status" => $pages->status,
+                    "reference_code" => $pages->reference_code,
                     "user_group" => [],
-                    "description" => "ducco",
-                    "default_submission_status" => "accepted",
+                    "description" => $pages->description,
+                    //"default_submission_status" => "accepted",
                     "scope" => "public",
-                    "name" => str_replace(' ', '', $pages->name),
-                    "id" => "dac0d9ed",
+                    "name" => $pages->name,
+                    "id" => $pages->id,
                     "parameters" => [
                          "is_submittable" => true
                     ],
@@ -126,19 +128,21 @@ class BuildCommand extends Command
             $config['exports']['js'][$key] = $data;
         }
         $io->text("Compiling Javascript Dependencies");
-        foreach ($pages->dependencies->js as $key){
+        foreach ($pages->dependencies->js as $key => $value){
             $js = $this->getFileContents("app/dependencies/js/$key.js");
             $data = [
-                 'data' => $js
+                 'data' => $js,
+                 'link' => $value->link
             ];
             $config['imports']['js'][$key] = $data;
             //array_push($config['imports']['js'], $data);
         }
         $io->text("Compiling CSS Dependencies");
-        foreach ($pages->dependencies->css as $key){
+        foreach ($pages->dependencies->css as $key => $value){
             $css = $this->getFileContents("app/dependencies/css/$key.css");
             $data = [
-                'data' => $css
+                'data' => $css,
+                'link' => $value->link
             ];
             $config['imports']['css'][$key] = $data;
         }

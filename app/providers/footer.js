@@ -22,12 +22,12 @@
             'active' :  false,
             'unique' : 'deals'
         },
-        'more' : {
-            'icon' : 'fa fa-ellipsis-h',
-            'text' : 'More',
+        'settings' : {
+            'icon' : 'fa  fa-gear',
+            'text' : 'Settings',
             'link' : null,
             'active' :  false,
-            'unique' : 'more'
+            'unique' : 'settings'
         }
     };
     footer.build = function(activeItem){
@@ -46,6 +46,8 @@
                  formelo.navigation().openActivity('home');
              } else if (unique == 'deals') {
                  formelo.navigation().openActivity('deals');
+             } else if (unique == 'settings') {
+                 formelo.navigation().openActivity('setup');
              }
         });
     };

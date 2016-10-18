@@ -13,17 +13,14 @@
         Helpers.showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
-
     formelo.event().onResult(function(){
         Helpers.showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
-
     formelo.event().onIntent(function(params){
         // Receive parameters from calling page
         categoryID = params.detail['categoryID'];
     });
-
     formelo.event().onClose(function(){
         // Override close button
         // formelo.navigation.stopPropagation()
@@ -55,26 +52,6 @@
             '</div>';
         $(placeholder).html(loadingHtml);
     };
-    var showWaiting = function(placeholder){
-        var previousHtml = $(placeholder).html();
-        var loadingHtml =   '<div class="container-xs-height full-vh">' +
-            '<div class="row-xs-height">'+
-            '<div class="col-xs-height col-middle">'+
-            '<div class="error-container text-center">'+
-            '<h1 class="error-number" style="color: grey;">' +
-            '<div class="progress-circle-indeterminate"></div>' +
-            '</h1>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
-            '</div>';
-        $(placeholder).html(loadingHtml);
-        return {
-            stop : function(){
-                $(placeholder).html(previousHtml);
-            }
-        }
-    };
     var customise = function(){
         formelo.html().get.header.title().html("Eye Glasses");
     };
@@ -87,8 +64,8 @@
             data.forEach(function(item){
                 _data.push({
                     'name' : item.title,
-                    'description' : item.description,
-                    'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'img/loading.png',
+                    'description' : item.price.value,
+                    'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'https://s-media-cache-ak0.pinimg.com/236x/fc/7e/ce/fc7ece8e8ee1f5db97577a4622f33975.jpg',
                     'unique' : item.id
                 });
             });

@@ -55,7 +55,7 @@
             var data = getValues();
             console.log(data);
             MoltinManager.categories.create(data, function(data){
-                alert(JSON.stringify(data));
+                //alert(JSON.stringify(data));
                 formelo.navigation().result();
             }, function(err){
                 alert(JSON.stringify(err));

@@ -48,7 +48,7 @@ class InitCommand extends Command
         $username = $io->ask("Enter your Username", "");
         $apikey = $io->ask("Enter your API Key", "");
         $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'private');
-
+        $appReferenceCode = "opo3c245-8d72-11e6-8e46-bbec5ba9c49f";
         // U P D A T E   P A G E S   C O N F I G
         $config = (array) Globals::getJSON();
         $config['name'] = $appName;
@@ -57,23 +57,50 @@ class InitCommand extends Command
         $config['cred']->username = $username;
         $config['cred']->api_key = $apikey;
         $config['code'] = $appTeam;
+        $config['reference_code'] = $appReferenceCode;
+
+        $conf = [
+            "icon_url" => "https://cdn.formelo.com/uploads/20151216/12/1450268948584-facebook-256x256.png",
+            "user_group" => [],
+            "description" => $appDesc,
+            "status" => "live",
+            "reference_code" => $appReferenceCode,
+            "default_submission_status" => "accepted",
+            "scope" => $appletMode,
+            "name" => $appName,
+            "parameters" => [
+                "is_submittable" => true
+            ],
+            'mode' => 'dynamic',
+            'root' => null,
+            'pages' => [],
+            'exports' => [
+                'js' => []
+            ],
+            'imports' => [
+                'js' => [],
+                'css' => []
+            ]
+        ];
 
         // R E G I S T E R   T O   A P P  S T O R E
         $io->text('Creating...');
         $client = new Client();
         try {
-            $res = $client->request('POST', "https://requestb.in/q9euc8q9", [ //"$appTeam.formelo.com/api/applets"
+            //"http://requestb.in/1kxrrsp1",[//
+            $res = $client->request('POST',  "https://$appTeam.formelo.com/api/v1/applets", [
                 'auth' => [$username, $apikey],
                 'headers'  => [
                     'content-type' => 'application/json; charset=UTF-8',
                     'Accept' => 'application/json'
                 ],
-                'json' => $config
+                'json' => $conf
             ]);
             if ($res->getStatusCode() == 201) {
                 $responseHeader = $res->getHeaders();
-                $config['id'] = isset($responseHeader['X-Entity-ID']) ? $responseHeader['X-Entity-ID'] : null;
+                $config['id'] = isset($responseHeader['X-Entity-ID']) ? $responseHeader['X-Entity-ID'][0] : null;
                 $io->write($res->getStatusCode());
+                $io->write("Applet ID is ".$config['id']);
                 $io->success(array(
                     'All set. Go build something awesome',
                     'For a quickstart guide, see https://developer.formelo.com',

@@ -8,10 +8,10 @@
  * @todo handle close callback not triggering after returning back to page
  *
  * **/
-
 function Formelo(appletID, backlink, config){
     if (!appletID) throw new Error('Please specify an applet ID');
-    this.mAppletID = appletID;
+    this.mAppletID = appletID.replace(/ /g,'');
+    //alert(this.mAppletID);
     this.backlink = backlink;
     this.mAppletConfig = config || null;
     this.currentIndex = 0;
@@ -25,12 +25,15 @@ function Formelo(appletID, backlink, config){
     this.getAppletConfig = function(appletID, callback){
         var that = this;
         if (that.mAppletConfig !== null){
-            //alert(JSON.stringify(that.mAppletConfig));
-            that.rootPage = that.mAppletConfig.root;
+            console.log('Getting conf from params passed');
+            console.log(JSON.stringify(that.mAppletConfig));
+            that.rootPage = that.mAppletConfig.root.trim();
             callback(that.mAppletConfig);
         } else {
+            console.log('Getting conf from cache');
             $.when(initFunctions.getFormConfigByRef(appletID))
                 .done(function(formConfig){
+                    console.log('Gotten conf from cache');
                     that.mAppletConfig = formConfig;
                     alert(that.mAppletConfig.root);
                     that.rootPage = that.mAppletConfig.root;
@@ -67,8 +70,8 @@ Formelo.prototype.close = function(){
 };
 
 Formelo.prototype.html = function() {
-     var that = this;
-     return {
+    var that = this;
+    return {
         get : {
             header : {
                 title : function(){
@@ -149,16 +152,30 @@ Formelo.prototype.start = function(){
     var that = this;
     this.getAppletConfig(this.mAppletID, function(){
         // Create the first page
-        if (that.mAppletConfig && that.mAppletConfig.pages){
-            that.currentIndex = that.rootPage;
-            that.runProvider();
-            that.runDependencies();
-            that.runCode(that.rootPage);
-            that.createPage(that.rootPage);
-            that.runCss(that.rootPage);
-        } else {
-            alert('Invalid config '+JSON.stringify(that.mAppletConfig));
-        }
+        //try {
+            if (that.mAppletConfig && that.mAppletConfig.pages){
+                console.log(that.mAppletConfig);
+                that.currentIndex = that.rootPage;
+                that.runProvider();
+                console.log('Loaded providers');
+                that.runDependencies();
+                console.log('Loaded dependencies');
+                console.log('Root page is '+that.rootPage);
+                if (!that.rootPage || that.rootPage == ""){
+                    throw new Error('No root page');
+                }
+                that.runCode(that.rootPage);
+                console.log('Loaded code');
+                that.createPage(that.rootPage);
+                console.log('Created page');
+                that.runCss(that.rootPage);
+                console.log('Loaded CSS');
+            } else {
+                alert('Invalid config '+JSON.stringify(that.mAppletConfig));
+            }
+        //} catch (e) {
+        //    console.error('[Formelo Start] '+e.message+' | [Line Number] : '+e.lineNumber+' [Stack] '+JSON.stringify(e));
+        //}
     });
 };
 
@@ -182,6 +199,10 @@ Formelo.prototype.runCode = function(index,params){
 };
 
 Formelo.prototype.runDependencies = function(){
+    if (!this.mAppletConfig.imports || !this.mAppletConfig.imports.js){
+        console.error('Imports is not defined');
+        return false;
+    }
     var jsDependencies =  this.mAppletConfig.imports.js;
     var cssDependencies =  this.mAppletConfig.imports.css;
     var script = '', style = '';
@@ -205,11 +226,16 @@ Formelo.prototype.runDependencies = function(){
 };
 
 Formelo.prototype.runProvider = function(){
-   var exports = this.mAppletConfig.exports.js;
+    if(!this.mAppletConfig.exports || !this.mAppletConfig.exports.js){
+        return 'No Provide array';
+    }
+    var exports = this.mAppletConfig.exports.js;
     console.log(exports);
     for (var key in exports) {
         if (exports[key]) {
-            eval(exports[key].data);
+            if (!this.mModules[key]){
+                eval(exports[key].data);
+            }
         }
     }
 };
@@ -237,9 +263,9 @@ Formelo.prototype.createPage = function(index, _options){
     options['title'] = this.mAppletConfig.pages[index].name;
     var layout = this.mAppletConfig.pages[index].layout;
     var html = //'<div class="applet-pages applet-'+this.mAppletID+'" data-role="page" id = "'+id+'">'+
-                    this.html().header(options) +
-                    this.html().body({layout : layout});
-                //'</div>';
+        this.html().header(options) +
+        this.html().body({layout : layout});
+    //'</div>';
     if (!$('#'+id).length){
         BODY.appends('<div class="applet-pages applet-'+this.mAppletID+'" data-role="page" id = "'+id+'"><div>');
     }
@@ -345,169 +371,169 @@ Formelo.prototype.hooks = {
 };
 
 Formelo.prototype.profile = function(){
-        var profile = new Profile();
-        var that = this;
-        return {
-            getProfile : function(successCallback, errorCallback){
-                profile.getUserDetails(that.mAppletConfig.name, successCallback,errorCallback);
-            },
-            deductPoint : function(number){
+    var profile = new Profile();
+    var that = this;
+    return {
+        getProfile : function(successCallback, errorCallback){
+            profile.getUserDetails(that.mAppletConfig.name, successCallback,errorCallback);
+        },
+        deductPoint : function(number){
 
-            },
-            addPoint : function(number){
+        },
+        addPoint : function(number){
 
-            }
-        };
+        }
     };
+};
 
 /**
  * @constructor
  * @type {{EmptyLayout: Function, spinner: Function, ListAdapter: Function, GridAdapter: Function, Notification: {Toast: Function, Modal: Function}}}
-*/
+ */
 Formelo.prototype.ui = function(){
-        var that = this;
-        return {
-            /**
-             *
-             */
-            actionBars : function(items, callback){
-                var showSingleAction = function(that){
-                        var id = formelo.mAppletID+'-'+formelo.currentIndex;
-                        $('#'+id).find('#applet-header-nav-btn-right').html(items[0].name).click(function(){
-                            callback(items[0].unique);
-                        });
-                };
-                var showMultipleActions = function(that, items, callback){
-                    var id = that.mAppletID+'-'+that.currentIndex;
-                    $('#'+id).find('#applet-header-nav-btn-right').html('More').click(function(){
-                        var actionPlaceholder = id+'-actionbar';
-                        var placeholder = '<div id="'+id+'-actionbar"></div>';
-                        var mod = that.ui().modal('Options', placeholder);
-                        that.ui().listAdapter(items, '#'+actionPlaceholder).attach(function(unique){
-                            mod.close();
-                            callback('unique');
-                        });
-                    });
-                };
-                if (items && items.length){
-                    if (items.length == 1){
-                        showSingleAction(that, items, callback);
-                    } else {
-                        showMultipleActions(that, items, callback);
-                    }
-                } else {
-                    alert('Action bars needs records to survive');
-                }
-            },
-            emptyLayout : function(id){
-
-            },
-            /**
-                 * @example formelo.ui().footer(data, function(unique){})
-                 * @param data
-                 * @param callback
-                 * @returns {boolean}
-                 */
-            footer : function(data, callback){
-                if (!data || !data.length){
-                    throw new Error('Footer array is empty');
-                }
-                var defaults = {
-                    'icon' : 'fa fa-heart',
-                    'text' : 'placeholder',
-                    'link' : null,
-                    'active' :  false,
-                    'unique' : null
-                };
+    var that = this;
+    return {
+        /**
+         *
+         */
+        actionBars : function(items, callback){
+            var showSingleAction = function(that){
+                var id = formelo.mAppletID+'-'+formelo.currentIndex;
+                $('#'+id).find('#applet-header-nav-btn-right').html(items[0].name).click(function(){
+                    callback(items[0].unique);
+                });
+            };
+            var showMultipleActions = function(that, items, callback){
                 var id = that.mAppletID+'-'+that.currentIndex;
-                var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
-                    '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
-                    '<ul>';
-                data.forEach(function(item){
-                    var newDefault = $.extend({}, defaults, item);
-                    html += '<li>'+
-                                '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; /*border:none !important; /*background-color: #34495E !important;*/">'+
-                                    '<span class="footer-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' " xstyle="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
-                                    '<p class="footer_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" style="margin-top: -4px; /*color:'+(newDefault.active ? '#EB5055' : 'white')+' !important; */">'+newDefault.text+'</p>'+
-                                '</a>'+
-                            '</li>';
+                $('#'+id).find('#applet-header-nav-btn-right').html('More').click(function(){
+                    var actionPlaceholder = id+'-actionbar';
+                    var placeholder = '<div id="'+id+'-actionbar"></div>';
+                    var mod = that.ui().modal('Options', placeholder);
+                    that.ui().listAdapter(items, '#'+actionPlaceholder).attach(function(unique){
+                        mod.close();
+                        callback('unique');
+                    });
                 });
-                html += '</ul></div></div>';
-                var placeholder = '#'+id;
-                $(placeholder).appends(html);
-                BODY.trigger('create');
-                $(placeholder+' .applet-footer-items').click(function(){
-                    var unique = $(this).attr('unique-id');
-                    if (unique && callback){
-                        callback(unique);
-                    }
-                });
-            },
-            bareList : function(data, placeHolder, callback) {
-                var defaults = {
-                    'icon' : '',
-                    'text' : '',
-                    'colour' :  '#2980b9',
-                    'unique' : null
-                };
-                if (!data || !data.length){
-                    return false;
+            };
+            if (items && items.length){
+                if (items.length == 1){
+                    showSingleAction(that, items, callback);
+                } else {
+                    showMultipleActions(that, items, callback);
                 }
-                var html = '';
-                var i = 1;
-                data.forEach(function(item){
-                    var newDefault = $.extend({}, defaults, item);
-                    html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
-                        '<div class="col-xs-2" style="">'+
-                        '<p style="color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
-                        '</div>'+
-                        '<div class="col-xs-10">'+
-                        '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
-                        '</div>'+
-                        '</div>';
-                    i++;
-                });
-                $(placeHolder).html(html);
-                $('.holder-clickable-item').click(function(){
-                    callback($(this).attr('unique'));
-                });
-            },
-            spinner: function() {
-                return {
-                    start : function(){
+            } else {
+                alert('Action bars needs records to survive');
+            }
+        },
+        emptyLayout : function(id){
 
-                    },
-                    stop : function(){
+        },
+        /**
+         * @example formelo.ui().footer(data, function(unique){})
+         * @param data
+         * @param callback
+         * @returns {boolean}
+         */
+        footer : function(data, callback){
+            if (!data || !data.length){
+                throw new Error('Footer array is empty');
+            }
+            var defaults = {
+                'icon' : 'fa fa-heart',
+                'text' : 'placeholder',
+                'link' : null,
+                'active' :  false,
+                'unique' : null
+            };
+            var id = that.mAppletID+'-'+that.currentIndex;
+            var html = '<div style="height: 40px !important; max-height: 40px !important;" data-position ="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-role="footer" data-position-fixed="true">'+
+                '<div style="height: inherit; margin-top: -4px" data-role="navbar">'+
+                '<ul>';
+            data.forEach(function(item){
+                var newDefault = $.extend({}, defaults, item);
+                html += '<li>'+
+                    '<a class="applet-footer-items" unique-id="'+item.unique+'" style="margin-top: -4%; /*border:none !important; /*background-color: #34495E !important;*/">'+
+                    '<span class="footer-icon '+(newDefault.active ? 'footer-active' : 'footer-not-active')+' " xstyle="color:'+(newDefault.active ? '#EB5055' : 'white')+'"><i class="'+newDefault.icon+'"></i></span>'+
+                    '<p class="footer_p '+(newDefault.active ? 'footer-active' : 'footer-not-active')+'" style="margin-top: -4px; /*color:'+(newDefault.active ? '#EB5055' : 'white')+' !important; */">'+newDefault.text+'</p>'+
+                    '</a>'+
+                    '</li>';
+            });
+            html += '</ul></div></div>';
+            var placeholder = '#'+id;
+            $(placeholder).appends(html);
+            BODY.trigger('create');
+            $(placeholder+' .applet-footer-items').click(function(){
+                var unique = $(this).attr('unique-id');
+                if (unique && callback){
+                    callback(unique);
+                }
+            });
+        },
+        bareList : function(data, placeHolder, callback) {
+            var defaults = {
+                'icon' : '',
+                'text' : '',
+                'colour' :  '#2980b9',
+                'unique' : null
+            };
+            if (!data || !data.length){
+                return false;
+            }
+            var html = '';
+            var i = 1;
+            data.forEach(function(item){
+                var newDefault = $.extend({}, defaults, item);
+                html += '<div unique="'+item.unique+'" class="row holder-clickable-item" style="height: 20vh;background-color: '+newDefault.colour+';">'+
+                    '<div class="col-xs-2" style="">'+
+                    '<p style="margin-top: 40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
+                    '</div>'+
+                    '<div class="col-xs-10">'+
+                    '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
+                    '</div>'+
+                    '</div>';
+                i++;
+            });
+            $(placeHolder).html(html);
+            $('.holder-clickable-item').click(function(){
+                callback($(this).attr('unique'));
+            });
+        },
+        spinner: function() {
+            return {
+                start : function(){
 
-                    }
+                },
+                stop : function(){
+
+                }
+            };
+        },
+        /**
+         * Creates a list for you, setting the click listeners and other cool stuffs
+         * @param {array} items - An array of items to
+         * @param {string} placeholder - Ususlly the ID od class of an empty div
+         * @access {public}
+         * @example new formelo().ui().listAdapter(arrays, '#placeholder').attach(function(callback){});
+         * @todo Add custom mapping and interactions
+         * **/
+        listAdapter : function(items, placeholder){
+            if (!items) throw new Error('Item not specified'); // I am going home now
+            var html = '<div class="card share full-height no-margin-card" data-social="item">';
+            var identifier = str_random(20);
+            items.forEach(function(item){
+                /**
+                 * @type {{name: string, description: string, time: string, image: string, unique: string}}
+                 * @example {{name: string, description: string, time: string, image: string, unique: string}}
+                 */
+                var defaults = {
+                    name : '',
+                    description : '',
+                    time : '',
+                    image : '',
+                    unique: ''
                 };
-            },
-            /**
-             * Creates a list for you, setting the click listeners and other cool stuffs
-             * @param {array} items - An array of items to
-             * @param {string} placeholder - Ususlly the ID od class of an empty div
-             * @access {public}
-             * @example new formelo().ui().listAdapter(arrays, '#placeholder').attach(function(callback){});
-             * @todo Add custom mapping and interactions
-             * **/
-            listAdapter : function(items, placeholder){
-                if (!items) throw new Error('Item not specified'); // I am going home now
-                var html = '<div class="card share full-height no-margin-card" data-social="item">';
-                var identifier = str_random(20);
-                items.forEach(function(item){
-                    /**
-                     * @type {{name: string, description: string, time: string, image: string, unique: string}}
-                     * @example {{name: string, description: string, time: string, image: string, unique: string}}
-                     */
-                    var defaults = {
-                        name : '',
-                        description : '',
-                        time : '',
-                        image : '',
-                        unique: ''
-                    };
-                    var defaultItem = $.extend({}, defaults, item);
-                    html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'">' +
+                var defaultItem = $.extend({}, defaults, item);
+                html += '<div class="card-header clearfix '+identifier+'" unique = "'+defaultItem.unique+'">' +
                     '<div class="user-pic pull-left">' +
                     '<img alt="Profile Image" width="33" height="33" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '">' +
                     '</div>' +
@@ -517,42 +543,42 @@ Formelo.prototype.ui = function(){
                     '<h6>' + defaultItem.description + '</h6>' +
                     '</div>' +
                     '</div>';
-                });
-                html += '</div>';
-                return {
-                    /**
-                     *
-                     * @param callback
-                     * @callback callback - Called when a list item has been clicked.
-                     */
-                    attach : function(callback){
-                        $(placeholder).html(html);
-                        $(placeholder).find('.'+identifier).click(function(){
-                            var unique = $(this).attr('unique');
-                            if (unique){
-                                if (callback){
-                                    callback(unique);
-                                }
+            });
+            html += '</div>';
+            return {
+                /**
+                 *
+                 * @param callback
+                 * @callback callback - Called when a list item has been clicked.
+                 */
+                attach : function(callback){
+                    $(placeholder).html(html);
+                    $(placeholder).find('.'+identifier).click(function(){
+                        var unique = $(this).attr('unique');
+                        if (unique){
+                            if (callback){
+                                callback(unique);
                             }
-                        });
-                    }
+                        }
+                    });
+                }
+            };
+        },
+        gridAdapter : function(items, placeholder){
+            if (!items) throw new Error('Item not specified');
+            var html = '';
+            var identifier = str_random(20);
+            var i = 0;
+            items.forEach(function(item){
+                var defaults = {
+                    name : '',
+                    description : '',
+                    time : '',
+                    image : '',
+                    unique: ''
                 };
-            },
-            gridAdapter : function(items, placeholder){
-                if (!items) throw new Error('Item not specified');
-                var html = '';
-                var identifier = str_random(20);
-                var i = 0;
-                items.forEach(function(item){
-                    var defaults = {
-                        name : '',
-                        description : '',
-                        time : '',
-                        image : '',
-                        unique: ''
-                    };
-                    var defaultItem = $.extend({}, defaults, item);
-                    html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
+                var defaultItem = $.extend({}, defaults, item);
+                html += '<div class="col-xs-6 col-sm-3 col-md-3 applet-list-item '+identifier+' clickable-panel" unique="'+defaultItem.unique+'" style="padding: 12px; margin-bottom: 6px;">' +
                     '<div class = "row" style="height: inherit;">' +
                     '<div class="col-xs-12 col-sm-12 col-md-12" style = "padding: 0px;">' +
                     '<img aaa ="' + i + '" class="qmyImg qloadingImg" src="img/loading.png" style="max-width: 100%;" />' +
@@ -564,89 +590,89 @@ Formelo.prototype.ui = function(){
                     '</div>' +
                     '</div>' +
                     '</div>';
-                    i++;
-                });
-                return {
-                    attach : function(callback){
-                        $(placeholder).html(html);
-                        $(placeholder).find('.qmyImg').hide();
-                        $(placeholder).find('.qloadingImg').show();
-                        $(placeholder).find('.qmainImg').on('load', function () {
-                            var x = $(this).attr('xxx');
-                            $(placeholder).find('[aaa="'+x+'"]').hide();
-                            $(this).show();
-                        });
-                        $(placeholder).find('.'+identifier).click(function(){
-                            var unique = $(this).attr('unique');
-                            if (unique){
-                                if (callback){
-                                    callback(unique);
-                                }
+                i++;
+            });
+            return {
+                attach : function(callback){
+                    $(placeholder).html(html);
+                    $(placeholder).find('.qmyImg').hide();
+                    $(placeholder).find('.qloadingImg').show();
+                    $(placeholder).find('.qmainImg').on('load', function () {
+                        var x = $(this).attr('xxx');
+                        $(placeholder).find('[aaa="'+x+'"]').hide();
+                        $(this).show();
+                    });
+                    $(placeholder).find('.'+identifier).click(function(){
+                        var unique = $(this).attr('unique');
+                        if (unique){
+                            if (callback){
+                                callback(unique);
                             }
-                        });
-                    }
-                };
-            },
-            notification : {
-                /**
-                 * @example formelo.ui().notification.Toast(message)
-                 * @param message
-                 * @constructor
-                 */
-                toast : function(message){
-                    showMessage(message);
+                        }
+                    });
                 }
-            },
+            };
+        },
+        notification : {
             /**
-                 *  @example formelo.ui().sidemenu(data, function(itemClicked){})
-                 *  @example var data = [{ unique : 'aa',
+             * @example formelo.ui().notification.Toast(message)
+             * @param message
+             * @constructor
+             */
+            toast : function(message){
+                showMessage(message);
+            }
+        },
+        /**
+         *  @example formelo.ui().sidemenu(data, function(itemClicked){})
+         *  @example var data = [{ unique : 'aa',
                                         text : 'Name',
                                         icon : 'fa fa-edit'}]
-                 * @param _data
-                 * @param callback
-                 * @param options
-                 */
-            sidemenu : function(_data, callback, options){
-                var data = _data || [];
-                var subList = '';
-                var defaults = {
-                    unique : 'aa',
-                    text : 'Name',
-                    icon : 'fa fa-edit'
-                };
-                var placeholder = that.mAppletID+'-'+that.currentIndex;
-                data.forEach(function(item){
-                    var newDefaults = $.extend({}, defaults, item);
-                    subList += '<li unique-id="'+newDefaults.unique+'" class="'+placeholder+'-panel-item"><br/><a data-ajax="false" class="panel-black-bg" style="font-size: large;"><i class="'+newDefaults.icon+'" style="color:#F7CA18;"></i> &nbsp;&nbsp;'+newDefaults.text+'</a></li>';
-                });
-                var id = that.mAppletID+'-'+that.currentIndex+'-panel';
-                var html = '<div class = "main-panel panel-black-bg" data-role="panel" id="'+id+'" data-display="overlay" data-position-fixed="true" data-position="right">';
-                html += '<ul data-role="listview" data-inset="false" data-icon="false">';
-                html += subList;
-                html += '</ul>';
-                html += '</div>';
-                $('#'+placeholder).appends(html).trigger('refresh');
-                $('.'+placeholder+'-panel-item').click(function(){
-                    var unique = $(this).attr('unique-id');
-                    if (unique){
-                        callback(unique);
-                    }
-                });
-                $('#'+id).panel();
-                var defOptions = {
-                    showHamburgerMenu :  true
-                };
-                var def = $.extend({}, defOptions, options);
-                if (def.showHamburgerMenu){
-                     var nav = that.html().get.header.menu();
-                     nav.html('<i class="fa fa-bars"></i>').attr('href', '#'+id);
+         * @param _data
+         * @param callback
+         * @param options
+         */
+        sidemenu : function(_data, callback, options){
+            var data = _data || [];
+            var subList = '';
+            var defaults = {
+                unique : 'aa',
+                text : 'Name',
+                icon : 'fa fa-edit'
+            };
+            var placeholder = that.mAppletID+'-'+that.currentIndex;
+            data.forEach(function(item){
+                var newDefaults = $.extend({}, defaults, item);
+                subList += '<li unique-id="'+newDefaults.unique+'" class="'+placeholder+'-panel-item"><br/><a data-ajax="false" class="panel-black-bg" style="font-size: large;"><i class="'+newDefaults.icon+'" style="color:#F7CA18;"></i> &nbsp;&nbsp;'+newDefaults.text+'</a></li>';
+            });
+            var id = that.mAppletID+'-'+that.currentIndex+'-panel';
+            var html = '<div class = "main-panel panel-black-bg" data-role="panel" id="'+id+'" data-display="overlay" data-position-fixed="true" data-position="right">';
+            html += '<ul data-role="listview" data-inset="false" data-icon="false">';
+            html += subList;
+            html += '</ul>';
+            html += '</div>';
+            $('#'+placeholder).appends(html).trigger('refresh');
+            $('.'+placeholder+'-panel-item').click(function(){
+                var unique = $(this).attr('unique-id');
+                if (unique){
+                    callback(unique);
                 }
-                return $('#'+id);
-            },
-            modal : function(title, body, type){
-                return openModal(title, body, type);
+            });
+            $('#'+id).panel();
+            var defOptions = {
+                showHamburgerMenu :  true
+            };
+            var def = $.extend({}, defOptions, options);
+            if (def.showHamburgerMenu){
+                var nav = that.html().get.header.menu();
+                nav.html('<i class="fa fa-bars"></i>').attr('href', '#'+id);
             }
+            return $('#'+id);
+        },
+        modal : function(title, body, type){
+            return openModal(title, body, type);
         }
+    }
 };
 
 /**
@@ -938,16 +964,28 @@ Formelo.prototype.exports = function(key, value){
     }
 };
 Formelo.prototype.require = function(key){
-        if (key && this.mModules[key]){
+    if (key && this.mModules[key]){
+        return this.mModules[key];
+    } else {
+        var exports = this.mAppletConfig.exports.js;
+        console.log(exports);
+        if (exports[key]){
+            eval(exports[key].data);
+            console.log(key + ' has been "evaled"');
+            console.log(JSON.stringify(this.mModules));//
+            console.log("Done loading");
             return this.mModules[key];
         } else {
             throw new Error('Item could not be found.. '+key);
         }
+    }
 };
+
 Formelo.prototype.uses = function(name){
     var load = this.dependencies[name];
     load();
 };
+
 /**
  * Handle each applets dependencies and loads them on demand
  * @returns {{}}
@@ -980,6 +1018,8 @@ Formelo.prototype.dependencies =  function(){
         }
     }
 };
+
+
 
 
 

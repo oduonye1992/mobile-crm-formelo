@@ -20,10 +20,31 @@
             '</div>'+
             '</div>'+
             '</div>';
+        var errorHtml = function(title, message) {
+            var title   = title || '';
+            var message = message || '';
+            return  '<div class="container-xs-height full-vh">' +
+                '<div class="row-xs-height">'+
+                '<div class="col-xs-height col-middle">'+
+                '<div class="error-container text-center">'+
+                '<h1 class="error-number" style="color: grey;">' +
+                title +
+                '</h1>'+
+                '<h2 style="color: grey;">' +
+                message +
+                '</h2>'+
+                '</div>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+        }
         $(placeholder).html(loadingHtml);
         return {
             stop : function(){
                 $(placeholder).html(previousHtml);
+            },
+            error : function(title, message){
+                $(placeholder).html(errorHtml(title, message));
             }
         }
     };

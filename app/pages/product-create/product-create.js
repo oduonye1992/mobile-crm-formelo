@@ -60,7 +60,7 @@
         var catalog_only = 0;
         return  {
             title : title,
-            description : title,
+            description : description,
             price : price,
             sku : sku,
             stock_level : stock_level,

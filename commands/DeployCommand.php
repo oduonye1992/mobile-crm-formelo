@@ -44,8 +44,8 @@ class DeployCommand extends Command
         $conf = Globals::getJSON();
         $username = $conf->cred->username;
         $apikey = $conf->cred->api_key;
-        $realm = $conf['code'];
-        $id = $conf['id'];
+        $realm = $conf->code;
+        $id = $conf->id;
         if ($username == "" || $apikey == ""){
             return $io->error("Kindly initialize your app by running 'php formelo init'");
         }
@@ -54,10 +54,10 @@ class DeployCommand extends Command
         $io->text('Deploying...');
         try {
             $client = new Client();
-            $res = $client->request("PUT", "$realm.formelo.com/api/applets/$id.json", [
+            $res = $client->request("PUT", "https://$realm.formelo.com/api/v1/applets/$id.json", [
                 'auth' => [$username, $apikey],
                 'headers'  => ['content-type' => 'application/json; charset=UTF-8', 'Accept' => 'application/json'],
-                'json' => $buildConfig
+                'json' => json_decode($buildConfig)
             ]);
             $io->success("Deployed.");
         } catch (\Exception $e) {

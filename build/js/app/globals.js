@@ -1,4 +1,4 @@
-function xalert(msg){}
+function alert(msg){}
 //All global variables
 var version             = 'v3.38';
 var xconfig;
