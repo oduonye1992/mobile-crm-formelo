@@ -18,6 +18,7 @@
     formelo.event().onClose(function(){
         // Override close button
         // formelo.navigation.stopPropagation()
+        overrideBackButton();
     });
 
     function customise(){
@@ -75,5 +76,9 @@
     }
     function showDescription(unique) {
         formelo.navigation().openActivity('description', {id : unique});
+    }
+    function overrideBackButton(){
+        formelo.navigation().stopPropagation();
+        formelo.close();
     }
 }());

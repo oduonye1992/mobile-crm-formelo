@@ -4,12 +4,15 @@
     var footer = formelo.require('footer');
     var MoltinManager = formelo.require('MoltinManager');
     var Helpers = formelo.require('Helpers');
+    var config = formelo.require('config');
 
     formelo.event().onCreate(function(){
         // Entry point of this application
         footer.build('home');
         customise();
-        showAddButton();
+        if (config.isAdmin){
+            showAddButton();
+        }
         Helpers.showWaiting('#details-placeholder');
         showItemsInCategory(categoryID);
     });
@@ -53,7 +56,7 @@
         $(placeholder).html(loadingHtml);
     };
     var customise = function(){
-        formelo.html().get.header.title().html("Eye Glasses");
+        formelo.html().get.header.title().html("Product List");
     };
     var showItemsInCategory = function(id){
         MoltinManager.products.getProductsByCategory(id, function(data){

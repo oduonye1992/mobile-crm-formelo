@@ -18,6 +18,7 @@
     formelo.event().onClose(function(){
         // Override close button
         // formelo.navigation.stopPropagation()
+        overrideBackButton();
     });
 
     function customise(){
@@ -54,5 +55,9 @@
                 formelo.navigation().openActivity('orders');
             }
         })
+    }
+    function overrideBackButton(){
+        formelo.navigation().stopPropagation();
+        formelo.close();
     }
 }());

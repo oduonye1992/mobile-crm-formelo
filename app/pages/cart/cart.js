@@ -24,6 +24,7 @@
     formelo.event().onClose(function(){
         // Override close button
         // formelo.navigation.stopPropagation()
+        //overrideBackButton();
     });
     formelo.event().onResult(function(data){
         if (data && data.mode == 'billing'){
@@ -35,6 +36,18 @@
         }
     });
 
+    function showCartSummary(cartSummary){
+        var totalAmount = cartSummary.totals.post_discount.formatted.without_tax;
+        var html = '<div class="row" style="height: 20vh;background-color: cornflowerblue;">'+
+                        '<div class="col-xs-6" style="color:white;text-align:center;height: 100%;">'+
+                            '<p style="font-size: x-large;line-height: 20vh;">Total</p>'+
+                        '</div>'+
+                        '<div class="col-xs-6" style="color:white;text-align:center;line-height:100%;height: inherit;">'+
+                            '<p style="font-size: x-large;line-height: 20vh;" id="total_amount">'+totalAmount+'</p>'+
+                        '</div>'+
+                    '</div>';
+        $('#cart-summary').html(html);
+    }
     function showCheckoutButton(unique) {
         var data = [
             {
@@ -48,9 +61,14 @@
                 // Fetch billing Addresses
                 if (config.inProductionMode()){
                     showMessage('Loading Addresses');
+                    formelo.ui().spinner.show();
                 }
                 MoltinManager.customers.getAddressForCustomer(customerID, function(data){
                     console.log(data);
+                    if (config.inProductionMode()){
+                        showMessage('Loading Addresses');
+                        formelo.ui().spinner.hide();
+                    }
                     if (!data.length){
                         showMessage('No shipping address found.');
                         formelo.navigation().openActivity('billing', {customerData : customerData, customerID : customerID});
@@ -58,6 +76,9 @@
                         formelo.navigation().openActivity('billing', {customerData : customerData, customerID : customerID});
                     }
                 }, function(err){
+                    if (config.inProductionMode()){
+                        formelo.ui().spinner.hide();
+                    }
                     console.error(err);
                 });
             } else {
@@ -82,6 +103,7 @@
         formelo.html().get.header.title().html("My Cart");
     }
     function showItemsInCart(){
+        $('#cart-summary').html("");
         UserManager.showRegistration(function(data){
             customerID = data.id;
             customerData = data;
@@ -97,7 +119,8 @@
             Helpers.showEmptyState('#cart-placeholder', 'Error', 'User not found.');
         });
     }
-    function populateCheckout(data){
+    function populateCheckout(cartData){
+        var data = cartData.contents;
         var _data = [];
         var isEmpty = true;
         for(var key in data){
@@ -106,8 +129,8 @@
                 isEmpty = false;
                 _data.push({
                     'name' : item.title,
-                    'description' : item.description,
-                    'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'img/loading.png',
+                    'description' : item.price.value,
+                    'image' : (item.images[0] && item.images[0].url && item.images[0].url.https) ? item.images[0].url.https : 'https://s-media-cache-ak0.pinimg.com/236x/fc/7e/ce/fc7ece8e8ee1f5db97577a4622f33975.jpg',
                     'unique' : item.id
                 });
             }
@@ -116,12 +139,46 @@
             return Helpers.showEmptyState('#cart-placeholder', 'Empty', 'No Items in cart yet');
         } else {
             formelo.ui().gridAdapter(_data, '#cart-placeholder').attach(function(unique){
-                showDescription(unique);
+                if (config.inProductionMode()){
+                    formelo.ui().showNativeOptions('Options', 'What would you want to do?', ['View Item', 'Remove from Cart'], function(index){
+                        if (index == 1){
+                            showDescription(unique);
+                        } else {
+                            removeFromCart(unique);
+                        }
+                    })
+                } else {
+                    if (window.confirm('Remove from cart')){
+                        showDescription(unique);
+                    } else {
+                        removeFromCart(unique);
+                    }
+                }
             });
+            showCartSummary(cartData);
             showCheckoutButton();
         }
     }
     function showDescription(unique) {
         formelo.navigation().openActivity('description', {productID : unique});
+    }
+    function removeFromCart(unique){
+        console.log('Removing '+unique+' from '+customerID);
+        if (config.inProductionMode()){
+            formelo.ui().spinner.show();
+        }
+        MoltinManager.cart.removeFromCart(customerID, unique, function(data){
+            if (config.inProductionMode()){
+                formelo.ui().spinner.hide();
+                showMessage("Removed");
+            }
+            showItemsInCart();
+        }, function(err){
+            if (config.inProductionMode()){
+                formelo.ui().spinner.hide();
+                showMessage("An Error occured");
+            }
+            console.error(err);
+        });
     }
 }());

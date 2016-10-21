@@ -206,12 +206,23 @@
                     errorCB(err);
                 });
         },
+        removeFromCart : function(customerID, productID, successCB, errorCB){
+            var url = 'https://api.molt.in/v1/carts/'+customerID+'/item/'+productID;
+            MoltinManager.network(url, {}, 'DELETE')
+                .done(function(data){
+                    console.log(data);
+                    successCB(data);
+                })
+                .fail(function(err){
+                    errorCB(err);
+                });
+        },
         getItemsInCart : function(customerID, successCB, errorCB){
             var url = 'https://api.molt.in/v1/carts/'+customerID;
             MoltinManager.network(url)
                 .done(function(data){
                     console.log(data);
-                    successCB(data.result.contents);
+                    successCB(data.result);
                 })
                 .fail(function(err){
                     console.log(err);

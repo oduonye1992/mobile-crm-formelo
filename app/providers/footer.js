@@ -1,5 +1,6 @@
 (function() {
     var footer = {};
+    var config = formelo.require('config');
     footer.items = {
         'home' : {
             'icon' : 'fa fa-file-picture-o',
@@ -32,11 +33,15 @@
     };
     footer.build = function(activeItem){
         // Parse data
+        var items = this.items;
+        if (!config.isAdmin){
+            delete items['settings'];
+        }
         var data = [];
-        for(var key in this.items) {
-            if (this.items.hasOwnProperty(key)){
-                this.items[key]['active'] = key === activeItem;
-                data.push(this.items[key]);
+        for(var key in items) {
+            if (items.hasOwnProperty(key)){
+                items[key]['active'] = key === activeItem;
+                data.push(items[key]);
             }
         }
         formelo.ui().footer(data, function(unique){

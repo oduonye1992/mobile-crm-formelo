@@ -1,4 +1,4 @@
-function alert(msg){}
+function salert(msg){}
 //All global variables
 var version             = 'v3.38';
 var xconfig;
@@ -69,7 +69,7 @@ function openDevApplet(){
     // Get the json
     readTextFile('formelo.manifest', function(data){
         var myData = JSON.parse(data);
-        formelo = new Formelo(myData.name.trim(), 'selector-page', JSON.parse(data));
+        formelo = new Formelo(myData.id, 'selector-page', JSON.parse(data));
         formelo.start();
     });
 }
@@ -2426,6 +2426,7 @@ function inviteUser(){
         }
     });
 }
+
 function showModal(_title, _body, _openingCallBack, _closingCallback){
     var title   = _title || 'Untitled';
     var body    = _body  || '';
@@ -2448,6 +2449,7 @@ function showModal(_title, _body, _openingCallBack, _closingCallback){
     });
     adjustHeightsToViewport();
 }
+
 function rgbToHex(r, g, b) {
     function componentToHex(c) {
         var hex = c.toString(16);
@@ -2455,13 +2457,13 @@ function rgbToHex(r, g, b) {
     }
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+
 var openModal = function(title, body, type){
     var title = title || '';
     var body = body || '';
     var type = type || '';
-    var mod = $('#modalSlideLeft');
-    mod.remove();
-    var html = '<div class="modal fade stick-up in" id="modalSlideLeft" tabindex="-1" role="dialog" aria-hidden="false" style="display: block; overflow:scroll;>'+
+    $('#formeloModal').remove();
+    var html = '<div class="modal fade stick-up in" id="formeloModal" tabindex="-1" role="dialog" aria-hidden="false" style="display: block; overflow:scroll;>'+
         '<div class="modal-dialog modal-sm">'+
         '<div class="modal-content-wrapper">'+
         '<div class="modal-content">'+
@@ -2471,9 +2473,7 @@ var openModal = function(title, body, type){
         '<div class="modal-body col-xs-height col-middle xtext-center" style="padding: 6px;">'+
         '<h5 class="" style="text-align: center"><span class="semi-bold">'+title+'</span><span class="close-modal" data-dismiss="modal" style="float:right;'+
         'margin-right: 10px; color:grey;"><i class="fa fa-close"></i></span></h5>'+
-        //'<div class="card share full-height no-margin-card" data-social="item">'+
-        body+
-        //'</div>'+
+            body+
         '</div>'+
         '</div>'+
         '</div>'+
@@ -2484,16 +2484,48 @@ var openModal = function(title, body, type){
         '<!-- /.modal-dialog -->'+
         '</div>';
     $('body').append(html);
-    mod.modal();
+    $('#formeloModal').modal();
     $('.close-modal').click(function(){
-        $('#modalSlideLeft').modal('hide').remove();
-        $('.modal-backdrop').hide().remove();
+        $('#formeloModal').modal('hide');//.remove();
     });
     return {
         close : function(){
-            $('#modalSlideLeft').modal('hide').remove();
-            $('.modal-backdrop').hide().remove();
+            $('#formeloModal').modal('hide');//.remove();
         }
     }
 };
 
+var optionsAdapter = function (items, placeholder) {
+    if (!items) throw new Error('Item not specified'); // I am going home now
+    var html = '<div class="row">';
+    var identifier = str_random(20);
+    items.forEach(function (item) {
+        var defaults = {
+            name: '',
+            description: '',
+            time: '',
+            image: '',
+            unique: ''
+        };
+        var defaultItem = $.extend({}, defaults, item);
+        html +=    '<div class="col-xs-4 ' + identifier + '" unique = "' + defaultItem.unique + '">'+
+                        '<img class = "donkeyCache" donkey-id="'+defaultItem.image+'" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '" style="width: 100%;border-radius: 50%;">'+
+                        '<p style="text-align: center; font-weight: 400; color: #2c3e50;">' + defaultItem.name + '</p>'+
+                    '</div>';
+    });
+    html += '</div>';
+    return {
+        attach: function (callback) {
+            $(placeholder).html(html);
+            //DonkeyCache.grab();
+            $(placeholder).find('.' + identifier).click(function () {
+                var unique = $(this).attr('unique');
+                if (unique) {
+                    if (callback) {
+                        callback(unique);
+                    }
+                }
+            });
+        }
+    };
+};

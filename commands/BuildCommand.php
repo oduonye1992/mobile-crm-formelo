@@ -119,7 +119,8 @@ class BuildCommand extends Command
                     "ready" => $js
                 ]
             ];
-            $config['pages'][$key] = $pageJson;
+            array_push($config['pages'], $pageJson);
+            //$config['pages'][$key] = $pageJson;
         }
         $io->text("Compiling Providers");
         foreach ($pages->providers as $key){

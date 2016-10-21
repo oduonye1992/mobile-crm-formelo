@@ -69,6 +69,10 @@ Formelo.prototype.close = function(){
     });
 };
 
+Formelo.prototype.getMode = function(){
+    return APPLET_MODE;
+};
+
 Formelo.prototype.html = function() {
     var that = this;
     return {
@@ -139,6 +143,17 @@ Formelo.prototype.html = function() {
     }
 };
 
+Formelo.prototype.buildPages = function(){
+    var obj = {};
+    if (this.mAppletConfig && this.mAppletConfig.pages &&
+        this.mAppletConfig.pages.length){
+        this.mAppletConfig.pages.forEach(function(item){
+            obj[item.key] = item;
+        });
+    }
+    this.mAppletConfig.pages = obj;
+};
+
 Formelo.prototype.start = function(){
     /** Create Placeholder to hold out event throwing and catching */
     var id = str_random(10);
@@ -151,8 +166,8 @@ Formelo.prototype.start = function(){
     /** Get the form config, */
     var that = this;
     this.getAppletConfig(this.mAppletID, function(){
-        // Create the first page
-        //try {
+            // Pages were objects before but was reverted to array. Don't wanna change much to i'll turn it to objects
+            that.buildPages();
             if (that.mAppletConfig && that.mAppletConfig.pages){
                 console.log(that.mAppletConfig);
                 that.currentIndex = that.rootPage;
@@ -173,9 +188,6 @@ Formelo.prototype.start = function(){
             } else {
                 alert('Invalid config '+JSON.stringify(that.mAppletConfig));
             }
-        //} catch (e) {
-        //    console.error('[Formelo Start] '+e.message+' | [Line Number] : '+e.lineNumber+' [Stack] '+JSON.stringify(e));
-        //}
     });
 };
 
@@ -409,7 +421,7 @@ Formelo.prototype.ui = function(){
                     var actionPlaceholder = id+'-actionbar';
                     var placeholder = '<div id="'+id+'-actionbar"></div>';
                     var mod = that.ui().modal('Options', placeholder);
-                    that.ui().listAdapter(items, '#'+actionPlaceholder).attach(function(unique){
+                    that.ui().optionsAdapter(items, '#'+actionPlaceholder).attach(function(unique){
                         mod.close();
                         callback('unique');
                     });
@@ -613,6 +625,40 @@ Formelo.prototype.ui = function(){
                 }
             };
         },
+        optionsAdapter : function (items, placeholder) {
+            if (!items) throw new Error('Item not specified.'); // I am going home now
+            var html = '<div class="row">';
+            var identifier = str_random(20);
+            items.forEach(function (item) {
+                var defaults = {
+                    name: '',
+                    description: '',
+                    time: '',
+                    image: '',
+                    unique: ''
+                };
+                var defaultItem = $.extend({}, defaults, item);
+                html +=    '<div class="col-xs-4 ' + identifier + '" unique = "' + defaultItem.unique + '" style="text-align: center;">'+
+                    '<img class = "donkeyCache" donkey-id="'+defaultItem.image+'" data-src-retina="' + defaultItem.image + '" data-src="' + defaultItem.image + '" src="' + defaultItem.image + '" style="width: 100%;border-radius: 50%; width: 50px;">'+
+                    '<p style="text-align: center; font-weight: 400; color: #2c3e50; font-size: small;">' + defaultItem.name + '</p>'+
+                    '</div>';
+            });
+            html += '</div>';
+            return {
+                attach: function (callback) {
+                    $(placeholder).html(html);
+                    //DonkeyCache.grab();
+                    $(placeholder).find('.' + identifier).click(function () {
+                        var unique = $(this).attr('unique');
+                        if (unique) {
+                            if (callback) {
+                                callback(unique);
+                            }
+                        }
+                    });
+                }
+            };
+        },
         notification : {
             /**
              * @example formelo.ui().notification.Toast(message)
@@ -671,6 +717,35 @@ Formelo.prototype.ui = function(){
         },
         modal : function(title, body, type){
             return openModal(title, body, type);
+        },
+        spinner : {
+            show : function(title, message){
+                customFunctions.displayNotificationDialog(title, message);
+            },
+            hide : function(){
+                customFunctions.closeNotificationDialog();
+            }
+        },
+        /**
+         * @example showNativeOptions('Title', 'Are you sure you want this', ['yes', 'no', 'cancel'], function(index){
+         *              showMessage("Hello"+index);
+         *          });
+         * @param _title
+         * @param _message
+         * @param _items
+         * @param _callback
+         */
+        showNativeOptions : function (_title, _message, _items, _callback){
+            var title   = _title || '';
+            var message = _message || '';
+            var items = _items || [];
+            var callback = _callback || function(){};
+            navigator.notification.confirm(
+                message,
+                callback,
+                title, items,
+                ''
+            );
         }
     }
 };
@@ -1091,6 +1166,9 @@ function Profile(){
     };
 }
 Profile.prototype.getUserDetails = function(appletID, successCallback, errorCallback){
+    if (APPLET_MODE == "private") {
+        return successCallback(getUserCredentials());
+    }
     if (!appletID || !successCallback || !errorCallback) throw new Error ('Bad arguments passed');
     if (!isFunction(successCallback) || !isFunction(errorCallback)) throw new Error ('Success or error arguments passed not a function');
     var that = this;

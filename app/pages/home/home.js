@@ -15,7 +15,9 @@
             MoltinManager.authenticate(function(aa){
                 MoltinManager.access_token = aa.access_token;
                 showCategories();
-                showAddButton();
+                if (config.isAdmin){
+                    showAddButton();
+                }
             });
         //});
     });
@@ -30,8 +32,13 @@
     formelo.event().onClose(function(){
         // Override close button
         // formelo.navigation.stopPropagation()
+        overrideBackButton();
     });
 
+    function overrideBackButton(){
+        formelo.navigation().stopPropagation();
+        formelo.close();
+    }
     var showAddButton = function(){
         var data = [{
             'name' : 'Add',
@@ -43,7 +50,7 @@
         });
     };
     function customise(){
-        formelo.html().get.header.title().html("Adamu's Apparels");
+        formelo.html().get.header.title().html(config.store.name);
     }
     function bareList(data, placeHolder, callback) {
             var defaults = {

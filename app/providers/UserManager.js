@@ -91,61 +91,66 @@
         return UserManager.users.data[id] ? true : false;
     };
     UserManager.currentUser = null;
+    UserManager.authenticate = function(userData, successCB, errorCB){
+        userData['password'] = "S0ftware!";
+        MoltinManager.customers.create(userData, function(data){
+            console.log(data);
+            UserManager.currentUser = data;
+            successCB(data);
+        }, function (err) {
+            console.log(err);
+            if (err.status == '406'){
+                console.log('Authenticating users');
+                MoltinManager.customers.login(userData.email, userData.password, function(data){
+                    console.log(data);
+                    var newUser = {
+                        first_name : data.first_name,
+                        last_name : data.last_name,
+                        email : data.email,
+                        id : data.id
+                    };
+                    UserManager.currentUser = newUser;
+                    successCB(newUser)
+                }, function(err){
+                    console.log(err);
+                    errorCB(err);
+                })
+            } else {
+                errorCB();
+            }
+        });
+    };
     UserManager.showRegistration = function(callback, errorCB){
-        var authenticate = function(userData, successCB, errorCB){
-            MoltinManager.customers.create(userData, function(data){
-                console.log(data);
-                UserManager.currentUser = data;
-                successCB(data);
-            }, function (err) {
-                console.log(err);
-                if (err.status == '406'){
-                    console.log('Authenticating users');
-                    MoltinManager.customers.login(userData.email, userData.password, function(data){
-                        console.log(data);
-                        var newUser = {
-                            first_name : data.first_name,
-                            last_name : data.last_name,
-                            email : data.email,
-                            id : data.id
-                        };
-                        UserManager.currentUser = newUser;
-                        successCB(newUser)
-                    }, function(err){
-                        console.log(err);
-                        errorCB(err);
-                    })
-                } else {
-                    errorCB();
-                }
-            });
-        };
         if (UserManager.currentUser !== null){
             return callback(UserManager.currentUser);
         }
-        if (config.inProductionMode()){
-            // TODO implement native version
-            formelo.profile().getProfile(function(data){
-                console.log(JSON.stringify(data));
-                var userData = {
-                    first_name : data.name,
-                    last_name : data.name,
-                    email : data.email,
-                    password : 'S0ftware!'
-                };
-                authenticate(userData, callback, errorCB);
-            }, errorCB);
+        if (config.inPrivateMode()){
+            // Private mode;
+            // Fetch applet details from server
+            return callback({id : "dsdnsdweosdnjd2323"});
         } else {
-            var first_name = window.prompt('What is your firstname');
-            var last_name = window.prompt('What is your lastname');
-            var email = window.prompt('What is your email address');
-            var userData = {
-                first_name : first_name,
-                last_name : last_name,
-                email : email,
-                password : 'S0ftware!'
-            };
-            authenticate(userData, callback, errorCB);
+            if (config.inProductionMode()){
+                // TODO implement native version
+                formelo.profile().getProfile(function(data){
+                    console.log(JSON.stringify(data));
+                    var userData = {
+                        first_name : data.name,
+                        last_name : data.name,
+                        email : data.email
+                    };
+                    UserManager.authenticate(userData, callback, errorCB);
+                }, errorCB);
+            } else {
+                var first_name = window.prompt('What is your firstname');
+                var last_name = window.prompt('What is your lastname');
+                var email = window.prompt('What is your email address');
+                var userData = {
+                    first_name : first_name,
+                    last_name : last_name,
+                    email : email
+                };
+                UserManager.authenticate(userData, callback, errorCB);
+            }
         }
     };
     formelo.exports('UserManager', UserManager);

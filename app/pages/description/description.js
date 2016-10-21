@@ -5,6 +5,7 @@
     var MoltinManager = formelo.require('MoltinManager');
     var UserManager = formelo.require('UserManager');
     var Helpers = formelo.require('Helpers');
+    var config = formelo.require('config');
 
     formelo.event().onCreate(function(){
         // Entry point of this application
@@ -68,15 +69,25 @@
             }
         ];
         formelo.ui().footer(data, function(data){
+                if (config.inProductionMode()){
+                    formelo.ui().spinner.show();
+                }
                 UserManager.showRegistration(function(data){
                     MoltinManager.cart.addToCart(data.id, productID, 1, function(data){
+                        if (config.inProductionMode()){
+                            formelo.ui().spinner.hide();
+                            showMessage('Added to Cart.');
+                        }
                         console.log('Added');
                         console.log(data);
-                        formelo.navigation().result();
+                        //formelo.navigation().result();
                     }, function(err){
                         console.error('[Add To Cart]' + JSON.stringify(err));
                     });
                 }, function(err){
+                    if (config.inProductionMode()){
+                        formelo.ui().spinner.hide();
+                    }
                     console.error(err);
                 });
         });
@@ -97,8 +108,7 @@
         MoltinManager.products.getProductByID(id, function(data){
             waiting.stop();
             showProductDescription(data);
-            isProductInCart(productID);
-            //showAddToCartButton();
+            showAddToCartButton();
         }, function(err){
             waiting.error('Error', 'Could not fetch details');
             alert(JSON.stringify(err));
