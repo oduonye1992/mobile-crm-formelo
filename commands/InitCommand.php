@@ -48,7 +48,10 @@ class InitCommand extends Command
         $username = $io->ask("Enter your Username", "");
         $apikey = $io->ask("Enter your API Key", "");
         $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'private');
-        $appReferenceCode = "opo3c245-8d72-11e6-8e46-bbec5ba9c49f";
+        // Bug - Iteally a new referncen code will be set from the server
+        // But for now, we'll randomly generate on
+        $tempUniqueRefPrefix = substr($apikey, 0, 8);
+        $appReferenceCode = $tempUniqueRefPrefix."-8d72-11e6-8e46-bbec5ba9c49f";
         // U P D A T E   P A G E S   C O N F I G
         $config = (array) Globals::getJSON();
         $config['name'] = $appName;
@@ -99,8 +102,6 @@ class InitCommand extends Command
             if ($res->getStatusCode() == 201) {
                 $responseHeader = $res->getHeaders();
                 $config['id'] = isset($responseHeader['X-Entity-ID']) ? $responseHeader['X-Entity-ID'][0] : null;
-                $io->write($res->getStatusCode());
-                $io->write("Applet ID is ".$config['id']);
                 $io->success(array(
                     'All set. Go build something awesome',
                     'For a quickstart guide, see https://developer.formelo.com',

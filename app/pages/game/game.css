@@ -6,6 +6,8 @@
     src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
+
+
 *,
 *::after,
 *::before {
@@ -340,3 +342,8 @@ body #cdawrap { top: auto; right: auto; bottom: 12px; left: 12px; border: 1px so
     background: linear-gradient(#e4e0ba, #f7d9aa);
 }
 
+.slidedown {
+    /*background-color: white !important;*/
+    background: -webkit-linear-gradient(#e4e0ba, #f7d9aa);
+    background: linear-gradient(#e4e0ba, #f7d9aa);
+}

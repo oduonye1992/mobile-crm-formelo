@@ -70,13 +70,16 @@ class BuildCommand extends Command
         if (!isset($pages)){
             return $output->writeln("$pages Could not build. Check your permissions");
         }
+        if (!isset($pages->id)){
+            return $io->error("Applet not initialized. Run 'php formelo init' ");
+        }
         $config = [
                     "icon_url" => $pages->icon_url,
                     "status" => $pages->status,
                     "reference_code" => $pages->reference_code,
                     "user_group" => [],
                     "description" => $pages->description,
-                    //"default_submission_status" => "accepted",
+
                     "scope" => "public",
                     "name" => $pages->name,
                     "id" => $pages->id,

@@ -1,8 +1,7 @@
 #Welcome to Formelo CLI v1 :)
 
-###### This is the version one of this CLI. It might have issues. Kindly create a issue if you happen to find one before us.
 
-###### Some methods might triger native functionalities that will not work when previewing on the browser. These methods are marked as "Native" in the docs.
+###### This is the version one of this CLI. It might have issues. Kindly create a issue if you happen to find one before us.
 
 
 ### 1. Initialize a new applet
@@ -11,6 +10,13 @@
     php formelo init
 
 Follow the wizard to can specify the name and description of your app.
+You must specify thr following parameters:
+
+1. Applet Name
+2. Applet Description
+3. Username
+4. API_Key
+5. Choose Applet Mode. Either Public or Private
 
 
 ### 2. Create a Page
@@ -59,9 +65,6 @@ Pass in an additional --port=<PORT> to specify a new port
     php formelo deploy
 
 
-Follow the wizard, pass in your username and API key
-
-
 ### 7. Publish your app to the app store
 ---------------------------------------
 
@@ -80,7 +83,8 @@ php formelo publish
 
 
 
-[TODO]
+# TODO 
+
 
 ### 1. Pull an existing project
 ---------------------------------------
@@ -88,11 +92,10 @@ php formelo publish
     php formelo pull <github_link>
 
 
-# TODO -  
+### 2. Deploy preview to native devices. 
+---------------------------------------
 
-1. Deploy preview to native devices. GenyMotion - Android and Xcode's Emulator.
-2. Pull Existing config
-
+GenyMotion - Android and Xcode's Emulator.
 
 
 

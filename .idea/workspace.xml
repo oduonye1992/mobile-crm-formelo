@@ -20,190 +20,44 @@
     <favorites_list name="formelo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52821064">
+    <splitter split-orientation="horizontal" split-proportion="0.5091278">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="formelo.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
+          <file leaf-file-name="DependencyCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3744">
-                  <caret line="637" column="30" selection-start-line="637" selection-start-column="30" selection-end-line="637" selection-end-column="30" />
-                  <folding>
-                    <element signature="n#!!doc;n#Formelo#0" expanded="false" />
-                    <element signature="n#!!block;n#Formelo#0" expanded="false" />
-                    <element signature="e#891#1735#0" expanded="false" />
-                    <element signature="e#1770#2048#0" expanded="false" />
-                    <element signature="e#2087#2288#0" expanded="false" />
-                    <element signature="e#2329#2356#0" expanded="false" />
-                    <element signature="e#2395#5343#0" expanded="false" />
-                    <element signature="e#3599#5004#0" expanded="false" />
-                    <element signature="e#5387#5653#0" expanded="false" />
-                    <element signature="e#7236#7334#0" expanded="false" />
-                    <element signature="e#7909#8810#0" expanded="false" />
-                    <element signature="e#8855#9213#0" expanded="false" />
-                    <element signature="e#9258#9738#0" expanded="false" />
-                    <element signature="e#10778#11604#0" expanded="false" />
-                    <element signature="e#11653#11719#0" expanded="false" />
-                    <element signature="e#11759#11828#0" expanded="false" />
-                    <element signature="e#11831#12009#0" expanded="false" />
-                    <element signature="e#12036#13880#0" expanded="false" />
-                    <element signature="e#13921#14264#0" expanded="false" />
-                    <element signature="e#14267#14440#0" expanded="false" />
-                    <element signature="e#14518#14544#0" expanded="false" />
-                    <element signature="e#15962#15974#0" expanded="false" />
-                    <element signature="e#15984#16145#0" expanded="false" />
-                    <element signature="e#16187#18143#0" expanded="false" />
-                    <element signature="e#16328#16521#0" expanded="false" />
-                    <element signature="e#17963#18131#0" expanded="false" />
-                    <element signature="e#18202#19447#0" expanded="false" />
-                    <element signature="e#18231#18375#0" expanded="false" />
-                    <element signature="e#18415#18460#0" expanded="false" />
-                    <element signature="e#19477#19634#0" expanded="false" />
-                    <element signature="e#19644#20069#0" expanded="false" />
-                    <element signature="e#20120#22422#0" expanded="false" />
-                    <element signature="e#21783#21942#0" expanded="false" />
-                    <element signature="e#22474#25027#0" expanded="false" />
-                    <element signature="e#26755#27012#0" expanded="false" />
-                    <element signature="e#26769#26911#0" expanded="false" />
-                    <element signature="e#27022#27355#0" expanded="false" />
-                    <element signature="e#27409#29189#0" expanded="false" />
-                    <element signature="e#29234#29294#0" expanded="false" />
-                    <element signature="e#29574#29889#0" expanded="false" />
-                    <element signature="e#30319#30456#0" expanded="false" />
-                    <element signature="e#30493#31524#0" expanded="false" />
-                    <element signature="e#31563#33475#0" expanded="false" />
-                    <element signature="e#33478#33608#0" expanded="false" />
-                    <element signature="e#33648#33749#0" expanded="false" />
-                    <element signature="e#33752#33869#0" expanded="false" />
-                    <element signature="e#33908#34844#0" expanded="false" />
-                    <element signature="e#34888#36338#0" expanded="false" />
-                    <element signature="e#36341#36439#0" expanded="false" />
-                    <element signature="e#36477#36702#0" expanded="false" />
-                    <element signature="e#36733#37886#0" expanded="false" />
-                    <element signature="e#37917#39273#0" expanded="false" />
-                    <element signature="e#37965#39271#0" expanded="false" />
-                    <element signature="e#39276#39443#0" expanded="false" />
-                    <element signature="e#39492#39633#0" expanded="false" />
-                    <element signature="e#39676#40197#0" expanded="false" />
-                    <element signature="e#40239#40294#0" expanded="false" />
-                    <element signature="e#40297#40397#0" expanded="false" />
-                    <element signature="e#40442#41199#0" expanded="false" />
-                    <element signature="n#!!doc;n#Profile#0" expanded="false" />
-                    <element signature="n#!!block;n#Profile#0" expanded="false" />
-                    <element signature="e#41488#41677#0" expanded="false" />
-                    <element signature="e#41742#42889#0" expanded="false" />
-                    <element signature="e#42978#44981#0" expanded="false" />
-                    <element signature="e#43380#44064#0" expanded="false" />
-                    <element signature="e#44105#44976#0" expanded="false" />
-                    <marker date="1476989388000" expanded="true" signature="4819:4836" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="16618:16671" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="16829:16862" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="17133:17217" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="17552:17638" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="18711:18764" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="18855:18922" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="19044:19150" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="21348:21399" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="21467:21484" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="21522:21539" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23107:23141" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23194:23210" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23289:23302" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23407:23423" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23537:23553" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23665:23719" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23759:23810" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="23878:23970" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="27950:27967" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="28008:28022" ph="..." />
-                    <marker date="1476989388000" expanded="true" signature="28029:28035" ph=" " />
-                    <marker date="1476989388000" expanded="true" signature="28035:28041" ph=" " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="description.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/description/description.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="80" column="45" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
-                  <folding>
-                    <element signature="e#300#448#0" expanded="false" />
-                    <element signature="e#496#599#0" expanded="false" />
-                    <element signature="e#640#728#0" expanded="false" />
-                    <element signature="e#756#834#0" expanded="false" />
-                    <element signature="e#874#1474#0" expanded="false" />
-                    <element signature="e#1514#2078#0" expanded="false" />
-                    <element signature="e#2135#2299#0" expanded="false" />
-                    <element signature="e#3376#3570#0" expanded="false" />
-                    <element signature="e#3613#3999#0" expanded="false" />
-                    <element signature="e#4038#4427#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cart.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/cart/cart.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="105" column="36" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
-                  <folding>
-                    <element signature="e#628#717#0" expanded="false" />
-                    <element signature="e#758#878#0" expanded="false" />
-                    <element signature="e#924#1149#0" expanded="false" />
-                    <element signature="e#1194#1947#0" expanded="false" />
-                    <element signature="e#1988#3498#0" expanded="false" />
-                    <element signature="e#2009#2171#0" expanded="false" />
-                    <element signature="e#3522#4028#0" expanded="false" />
-                    <element signature="e#4053#4119#0" expanded="false" />
-                    <element signature="e#4878#6526#0" expanded="false" />
-                    <element signature="e#6564#6651#0" expanded="false" />
-                    <marker date="1476984427000" expanded="true" signature="1322:1368" ph="..." />
-                    <marker date="1476984427000" expanded="true" signature="1427:1470" ph="..." />
-                    <marker date="1476984427000" expanded="true" signature="1514:1551" ph="..." />
-                    <marker date="1476984427000" expanded="true" signature="1653:1716" ph="..." />
-                    <marker date="1476984427000" expanded="true" signature="1760:1797" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/cart/cart.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24">
-                  <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+                <state relative-caret-position="96">
+                  <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="splash.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/splash/splash.js">
+          <file leaf-file-name="Globals.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/Globals.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#215#319#0" expanded="false" />
-                    <element signature="e#367#456#0" expanded="false" />
-                    <element signature="e#497#585#0" expanded="false" />
-                    <element signature="e#622#2763#0" expanded="false" />
-                    <element signature="e#916#2638#0" expanded="false" />
-                    <element signature="e#2790#3460#0" expanded="false" />
-                    <marker date="1477046792000" expanded="true" signature="2301:2469" ph="{...}" />
-                    <marker date="1477046792000" expanded="true" signature="2484:2592" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="-547">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/pages/game/game.js">
+          <file leaf-file-name="GreetCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+                <state relative-caret-position="-168">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="game.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/pages/game/game.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="226">
+                  <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -212,52 +66,70 @@
           <file leaf-file-name="BuildCommand.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2808">
-                  <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/home/home.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+                <state relative-caret-position="220">
+                  <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
                   <folding>
-                    <element signature="e#318#741#0" expanded="false" />
-                    <element signature="e#783#871#0" expanded="false" />
-                    <element signature="e#919#1008#0" expanded="false" />
-                    <element signature="e#1049#1167#0" expanded="false" />
-                    <element signature="e#1204#1284#0" expanded="false" />
-                    <element signature="e#1637#1711#0" expanded="false" />
-                    <element signature="e#1763#3004#0" expanded="false" />
-                    <element signature="e#1792#1936#0" expanded="false" />
-                    <element signature="e#1976#2021#0" expanded="false" />
-                    <element signature="e#3036#3999#0" expanded="false" />
-                    <marker date="1476898013000" expanded="true" signature="2272:2325" ph="..." />
-                    <marker date="1476898013000" expanded="true" signature="2416:2483" ph="..." />
-                    <marker date="1476898013000" expanded="true" signature="2605:2711" ph="..." />
+                    <element signature="e#775#1302#0#PHP" expanded="false" />
+                    <element signature="e#1640#2291#0#PHP" expanded="false" />
+                    <element signature="e#2596#3548#0#PHP" expanded="false" />
+                    <element signature="e#3596#4450#0#PHP" expanded="false" />
+                    <element signature="e#4501#4703#0#PHP" expanded="false" />
+                    <element signature="e#4768#5124#0#PHP" expanded="false" />
+                    <element signature="e#5182#5483#0#PHP" expanded="false" />
+                    <element signature="e#5733#5972#0#PHP" expanded="false" />
+                    <element signature="e#5977#6213#0#PHP" expanded="false" />
+                    <element signature="e#6218#6404#0#PHP" expanded="false" />
+                    <element signature="e#6409#6780#0#PHP" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/home/home.css">
+          <file leaf-file-name="InitCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+                <state relative-caret-position="221">
+                  <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/build/index.html">
+          <file leaf-file-name="formelo.manifest" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="960">
-                  <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PublishCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/PublishCommand.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UnpublishCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/UnpublishCommand.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DeployCommand.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -267,7 +139,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/providers/config.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="192">
@@ -290,44 +162,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="pages.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="56" selection-start-line="0" selection-start-column="56" selection-end-line="0" selection-end-column="56" />
+                <state relative-caret-position="154">
+                  <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/registration/registration.html">
+          <file leaf-file-name="backup" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backup/backup">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+                <state relative-caret-position="112">
+                  <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="details.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/details/details.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#290#553#0" expanded="false" />
-                    <element signature="e#595#696#0" expanded="false" />
-                    <element signature="e#744#849#0" expanded="false" />
-                    <element signature="e#890#978#0" expanded="false" />
-                    <element signature="e#1016#1333#0" expanded="false" />
-                    <element signature="e#1397#2034#0" expanded="false" />
-                    <element signature="e#2066#2137#0" expanded="false" />
-                    <element signature="e#2181#3075#0" expanded="false" />
-                    <element signature="e#3120#3207#0" expanded="false" />
-                    <marker date="1476898057000" expanded="true" signature="1811:1823" ph="..." />
-                    <marker date="1476898057000" expanded="true" signature="1866:1878" ph="..." />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -341,16 +191,6 @@
                     <element signature="e#98#872#0" expanded="false" />
                     <element signature="e#913#1769#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="product-create.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/product-create/product-create.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -410,20 +250,6 @@
                     <marker date="1476960451000" expanded="true" signature="97427:97458" ph="..." />
                     <marker date="1476960451000" expanded="true" signature="97915:97966" ph="..." />
                     <marker date="1476960451000" expanded="true" signature="98648:98699" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="description.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/pages/description/description.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24">
-                  <caret line="1" column="84" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -511,8 +337,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/pages/home/home.css" />
-        <option value="$PROJECT_DIR$/app/pages/product-create/product-create.html" />
         <option value="$PROJECT_DIR$/app/pages/create-category/create-category.html" />
         <option value="$PROJECT_DIR$/../Public Formelo IOS/www/js/app/sync.js" />
         <option value="$PROJECT_DIR$/commands/Publish.php" />
@@ -522,14 +346,10 @@
         <option value="$PROJECT_DIR$/backup/aaa" />
         <option value="$PROJECT_DIR$/app/pages/details/details.html" />
         <option value="$PROJECT_DIR$/commands/DeployCommand.php" />
-        <option value="$PROJECT_DIR$/commands/InitCommand.php" />
         <option value="$PROJECT_DIR$/commands/ImportCSSCommand.php" />
-        <option value="$PROJECT_DIR$/commands/DependencyCommand.php" />
         <option value="$PROJECT_DIR$/backup/moltin.js" />
         <option value="$PROJECT_DIR$/app/dependencies/js/moltin.js" />
         <option value="$PROJECT_DIR$/app/pages/setup/setup.html" />
-        <option value="$PROJECT_DIR$/app/pages/pages.json" />
-        <option value="$PROJECT_DIR$/build/formelo.manifest" />
         <option value="$PROJECT_DIR$/app/pages/description/description.html" />
         <option value="$PROJECT_DIR$/app/providers/Helpers.js" />
         <option value="$PROJECT_DIR$/app/pages/basic-store-settings/basic-store-settings.html" />
@@ -550,7 +370,6 @@
         <option value="$PROJECT_DIR$/app/pages/deals/deals.js" />
         <option value="$PROJECT_DIR$/app/pages/splash/splash.html" />
         <option value="$PROJECT_DIR$/app/providers/UserManager.js" />
-        <option value="$PROJECT_DIR$/commands/BuildCommand.php" />
         <option value="$PROJECT_DIR$/app/pages/cart/cart.html" />
         <option value="$PROJECT_DIR$/app/pages/details/details.js" />
         <option value="$PROJECT_DIR$/app/pages/home/home.js" />
@@ -562,6 +381,13 @@
         <option value="$PROJECT_DIR$/app/pages/cart/cart.js" />
         <option value="$PROJECT_DIR$/build/js/app/formelo.js" />
         <option value="$PROJECT_DIR$/app/pages/splash/splash.js" />
+        <option value="$PROJECT_DIR$/commands/DependencyCommand.php" />
+        <option value="$PROJECT_DIR$/app/pages/game/game.css" />
+        <option value="$PROJECT_DIR$/commands/InitCommand.php" />
+        <option value="$PROJECT_DIR$/commands/BuildCommand.php" />
+        <option value="$PROJECT_DIR$/backup/backup" />
+        <option value="$PROJECT_DIR$/app/pages/pages.json" />
+        <option value="$PROJECT_DIR$/build/formelo.manifest" />
       </list>
     </option>
   </component>
@@ -576,10 +402,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1280" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -627,114 +452,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dependencies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formelo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dependencies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -746,7 +463,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;splas&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;descrip&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;Moltin&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;cart&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/cart/cart.js&#10;con&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;fo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;openmo&#9;null&#9;null&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;descri&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;index.ht&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;home.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;hom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;home&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;spla&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;des&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;deta&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;UserM&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;Mol&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;waitin&#9;null&#9;null&#10;deals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/deals/deals.js&#10;setup&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/setup/setup.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;conf&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;detail&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;footer&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;splash&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;User&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registrat&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.css&#10;home.cs&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;UserMan&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registra&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.js&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;registration&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.html&#10;Mana&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;Help&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/Helpers.js&#10;inst&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/instagram/instagram.js&#10;produ&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;details&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;cate&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/create-category/create-category.js&#10;desc&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;co&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;config&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;de&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js" />
+    <property name="SearchEverywhereHistoryKey" value="forme&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/formelo.manifest&#10;ini&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/commands/InitCommand.php&#10;game.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/game/game.css&#10;home.css&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;splas&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;descrip&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;Moltin&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;cart&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/cart/cart.js&#10;con&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;fo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;form&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;openmo&#9;null&#9;null&#10;glo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/globals.js&#10;descri&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;formelo&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;index.ht&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/index.html&#10;home.c&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;hom&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;home&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.js&#10;spla&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;des&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js&#10;deta&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;pag&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;formel&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;for&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/build/js/app/formelo.js&#10;UserM&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;Mol&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;waitin&#9;null&#9;null&#10;deals&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/deals/deals.js&#10;setup&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/setup/setup.js&#10;pages&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/pages.json&#10;conf&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/config.js&#10;detail&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;footer&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/footer.js&#10;splash&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/splash/splash.js&#10;User&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registrat&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.css&#10;home.cs&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/home/home.css&#10;UserMan&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/UserManager.js&#10;registra&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.js&#10;pro&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;registration&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/registration/registration.html&#10;Mana&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/MoltinManager.js&#10;Help&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/providers/Helpers.js&#10;inst&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/instagram/instagram.js&#10;produ&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/product-create/product-create.js&#10;details&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/details/details.js&#10;cate&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/create-category/create-category.js&#10;desc&#9;FILE&#9;file:///Users/danieloduonye/Dropbox/Daniel/Work/Projects/formelo/app/pages/description/description.js" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MobileStoreBackend" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -851,24 +568,24 @@
       <workItem from="1476866935796" duration="14701000" />
       <workItem from="1476953052752" duration="12731000" />
       <workItem from="1477007000435" duration="67000" />
-      <workItem from="1477042067156" duration="741000" />
+      <workItem from="1477042067156" duration="6799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205016000" />
+    <option name="totallyTimeSpent" value="211074000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1280" height="727" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1341853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.011308562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2997159" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19275825" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22824302" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -907,76 +624,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/commands/ProviderCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/details/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/Globals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ImportCSSCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/setup/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="47" selection-start-line="0" selection-start-column="47" selection-end-line="0" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/dependencies/js/moltin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1117,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="0" column="402" selection-start-line="0" selection-start-column="402" selection-end-line="0" selection-end-column="402" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/js/app/formelo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3744">
@@ -1226,18 +866,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="80" column="45" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
-          <folding>
-            <element signature="e#300#448#0" expanded="false" />
-            <element signature="e#496#599#0" expanded="false" />
-            <element signature="e#640#728#0" expanded="false" />
-            <element signature="e#756#834#0" expanded="false" />
-            <element signature="e#874#1474#0" expanded="false" />
-            <element signature="e#1514#2078#0" expanded="false" />
-            <element signature="e#2135#2299#0" expanded="false" />
-            <element signature="e#3376#3570#0" expanded="false" />
-            <element signature="e#3613#3999#0" expanded="false" />
-            <element signature="e#4038#4427#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,23 +874,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="105" column="36" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
-          <folding>
-            <element signature="e#628#717#0" expanded="false" />
-            <element signature="e#758#878#0" expanded="false" />
-            <element signature="e#924#1149#0" expanded="false" />
-            <element signature="e#1194#1947#0" expanded="false" />
-            <element signature="e#1988#3498#0" expanded="false" />
-            <element signature="e#2009#2171#0" expanded="false" />
-            <element signature="e#3522#4028#0" expanded="false" />
-            <element signature="e#4053#4119#0" expanded="false" />
-            <element signature="e#4878#6526#0" expanded="false" />
-            <element signature="e#6564#6651#0" expanded="false" />
-            <marker date="1476984427000" expanded="true" signature="1322:1368" ph="..." />
-            <marker date="1476984427000" expanded="true" signature="1427:1470" ph="..." />
-            <marker date="1476984427000" expanded="true" signature="1514:1551" ph="..." />
-            <marker date="1476984427000" expanded="true" signature="1653:1716" ph="..." />
-            <marker date="1476984427000" expanded="true" signature="1760:1797" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1273,40 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-          <folding>
-            <element signature="e#318#741#0" expanded="false" />
-            <element signature="e#783#871#0" expanded="false" />
-            <element signature="e#919#1008#0" expanded="false" />
-            <element signature="e#1049#1167#0" expanded="false" />
-            <element signature="e#1204#1284#0" expanded="false" />
-            <element signature="e#1637#1711#0" expanded="false" />
-            <element signature="e#1763#3004#0" expanded="false" />
-            <element signature="e#1792#1936#0" expanded="false" />
-            <element signature="e#1976#2021#0" expanded="false" />
-            <element signature="e#3036#3999#0" expanded="false" />
-            <marker date="1476898013000" expanded="true" signature="2272:2325" ph="..." />
-            <marker date="1476898013000" expanded="true" signature="2416:2483" ph="..." />
-            <marker date="1476898013000" expanded="true" signature="2605:2711" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/home/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1315,14 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="56" selection-start-line="0" selection-start-column="56" selection-end-line="0" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1339,19 +914,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="e#290#553#0" expanded="false" />
-            <element signature="e#595#696#0" expanded="false" />
-            <element signature="e#744#849#0" expanded="false" />
-            <element signature="e#890#978#0" expanded="false" />
-            <element signature="e#1016#1333#0" expanded="false" />
-            <element signature="e#1397#2034#0" expanded="false" />
-            <element signature="e#2066#2137#0" expanded="false" />
-            <element signature="e#2181#3075#0" expanded="false" />
-            <element signature="e#3120#3207#0" expanded="false" />
-            <marker date="1476898057000" expanded="true" signature="1811:1823" ph="..." />
-            <marker date="1476898057000" expanded="true" signature="1866:1878" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,11 +999,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="84" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,23 +1087,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-          <folding>
-            <element signature="e#215#319#0" expanded="false" />
-            <element signature="e#367#456#0" expanded="false" />
-            <element signature="e#497#585#0" expanded="false" />
-            <element signature="e#622#2763#0" expanded="false" />
-            <element signature="e#916#2638#0" expanded="false" />
-            <element signature="e#2790#3460#0" expanded="false" />
-            <marker date="1477046792000" expanded="true" signature="2301:2469" ph="{...}" />
-            <marker date="1477046792000" expanded="true" signature="2484:2592" ph="{...}" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dependencies/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="192">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/home/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/game/game.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/PublishCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/UnpublishCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/DeployCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/Globals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-547">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/GreetCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/DependencyCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/BuildCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+          <folding>
+            <element signature="e#775#1302#0#PHP" expanded="false" />
+            <element signature="e#1640#2291#0#PHP" expanded="false" />
+            <element signature="e#2596#3548#0#PHP" expanded="false" />
+            <element signature="e#3596#4450#0#PHP" expanded="false" />
+            <element signature="e#4501#4703#0#PHP" expanded="false" />
+            <element signature="e#4768#5124#0#PHP" expanded="false" />
+            <element signature="e#5182#5483#0#PHP" expanded="false" />
+            <element signature="e#5733#5972#0#PHP" expanded="false" />
+            <element signature="e#5977#6213#0#PHP" expanded="false" />
+            <element signature="e#6218#6404#0#PHP" expanded="false" />
+            <element signature="e#6409#6780#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup/backup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/InitCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/formelo.manifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
