@@ -7,7 +7,7 @@
     "welcome",
     "game"
   ],
-  "root": "game",
+  "root": "welcome",
   "providers": [
 
   ],
