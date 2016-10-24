@@ -8,9 +8,7 @@
     "game"
   ],
   "root": "welcome",
-  "providers": [
-
-  ],
+  "providers": [],
   "dependencies": {
     "js": {
       "three": {

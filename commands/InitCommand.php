@@ -50,7 +50,7 @@ class InitCommand extends Command
         $appletMode = $io->choice('Make this applet Public ?', array('public', 'private'), 'private');
         // Bug - Iteally a new referncen code will be set from the server
         // But for now, we'll randomly generate on
-        $tempUniqueRefPrefix = substr($apikey, 0, 8);
+        $tempUniqueRefPrefix = Globals::generateRandomString(8);
         $appReferenceCode = $tempUniqueRefPrefix."-8d72-11e6-8e46-bbec5ba9c49f";
         // U P D A T E   P A G E S   C O N F I G
         $config = (array) Globals::getJSON();
