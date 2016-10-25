@@ -500,7 +500,7 @@ Formelo.prototype.ui = function(){
                     '<p style="margin-top: 40%; color: white;font-weight: 400; text-align: center;">'+i+'</p>'+
                     '</div>'+
                     '<div class="col-xs-10">'+
-                    '<p style="font-size: xx-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
+                    '<p style="font-size: x-large ;font-weight: 400;color: white;text-align: center;line-height: 20vh;margin-left: -20%;">'+newDefault.text+'</p>'+
                     '</div>'+
                     '</div>';
                 i++;
