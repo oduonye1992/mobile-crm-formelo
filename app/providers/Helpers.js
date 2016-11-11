@@ -1,5 +1,5 @@
 (function() {
-
+    var PipedriveManager = formelo.require('PipedriveManager');
     var Helpers = {};
     /*
     *  Load properties to this class
@@ -48,6 +48,9 @@
             }
         }
     };
+    Helpers.isProduction = function(){
+        return true;
+    };
     Helpers.showEmptyState = function(placeholder, title, message){
         var previousHtml = $(placeholder).html();
         var title  = title || 'Empty';
@@ -63,7 +66,7 @@
             '</div>'+
             '</div>';
         $(placeholder).html(loadingHtml);
-    }
+    };
     Helpers.str_random = function(){
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -71,6 +74,36 @@
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         }
         return text;
+    };
+    Helpers.startLoading = function(){
+        if (Helpers.isProduction()){
+            formelo.ui().spinner.show();
+        }
+    };
+    Helpers.stopLoading = function(){
+        if (Helpers.isProduction()){
+            formelo.ui().spinner.hide();
+        }
+    };
+    Helpers.takePicture = function(data, successCB, errorCB){
+        formelo.hooks.getImage(function(result){
+            var blob = formelo.helpers.base64ToFile(result);
+            var form_data = new FormData();
+            form_data.append('file', blob);
+            form_data.append('deal_id', data.deal_id);
+            form_data.append('person_id', data.person_id);
+            form_data.append('activity_id', data.activity_id);
+            console.log('Please wait...');
+            Helpers.startLoading();
+            PipedriveManager.files.add(form_data, function(res){
+                Helpers.stopLoading();
+                console.log(res);
+                successCB(res);
+            }, function(err){
+                Helpers.stopLoading();
+                console.error(err);
+            });
+        }, errorCB);
     };
     formelo.exports('Helpers', Helpers);
 })();

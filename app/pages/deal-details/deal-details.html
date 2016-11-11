@@ -1,0 +1,60 @@
+<div id="contact-details-placeholder">
+    <div class="row" style="height: 20vh;background-color: cornflowerblue;">
+        <div class="col-xs-6" style="color:white;text-align:center;height: 100%;max-height: 100%;overflow: visible;">
+            <p id="main-title" style="margin-top: 6vh;font-weight: 400;"></p>
+        </div>
+
+        <div class="col-xs-6" style="color:white;text-align:center;line-height:100%;height: inherit;">
+            <p style="font-size: small; margin-top: 6vh;">
+                <span style=" font-size: small;" id="person-name"></span><br>
+                <span style=" font-size: smaller;" id="organization-name"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row" style="height: 10vh;background-color: #34495e;">
+        <div class="col-xs-6" style="color:white;text-align:center;height: 100%;max-height: 100%;overflow: visible;">
+            <p id="deal-amount" style="line-height: 10vh;font-weight: 500;font-size: x-large;"></p>
+        </div>
+        <div class="col-xs-6" style="color: white;text-align: center;height: 100%;max-height: 100%;overflow: visible;">
+            <p id="main-subtitle" style="text-align: right;line-height: 10vh;color: black;font-weight: 500;margin: 0px;padding: 0% 6%;">
+                <span class="btn btn-sm btn-default" id="deal-lost" style="margin: 0px;">Loading</span>
+        </div>
+    </div>
+
+    <div class="form-group form-group-default input-group">
+        <label>Deal Status</label>
+        <input id="deal-status" class="form-control" type="text">
+        <span class="input-group-addon" style="background-color: transparent;border-color: transparent;"><i class="fa fa-2x fa-angle-right"></i></span>
+    </div>
+</div>
+
+
+
+<div class="panel">
+    <ul class="nav nav-tabs nav-tabs-simple" role="tablist">
+        <li class="active"><a style="background-color: transparent !important;" href="#deal-general" data-toggle="tab" role="tab" aria-expanded="true">General</a>
+        </li>
+        <li class=""><a style="background-color: transparent !important;" href="#deal-flows" data-toggle="tab" role="tab" aria-expanded="false">Flows</a>
+        </li>
+        <li class=""><a style="background-color: transparent !important;" href="#deal-files" data-toggle="tab" role="tab" aria-expanded="false">Files</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="deal-general">
+            <div class="row" id="deal-general-tab">
+
+            </div>
+        </div>
+        <div class="tab-pane" id="deal-flows">
+            <div class="row" id="deals-flows-tab">
+
+            </div>
+        </div>
+        <div class="tab-pane" id="deal-files">
+            <div class="row" id="deals-files-tab">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.slidedown {
+    background-color: white !important;
+}
+.applet-header-nav-btn {
+    color : black;
+}
+a.applet-footer-items.ui-link.ui-btn {
+    background-color: white !important;
+    border: none !important;
+    border-top: 1px solid #ecf0f1 !important;
+}
+.footer-active {
+    color: cornflowerblue;
+}
+.footer-not-active{
+    color : #2c3e50;
+}

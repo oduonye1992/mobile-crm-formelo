@@ -2,38 +2,39 @@
     var footer = {};
     var config = formelo.require('config');
     footer.items = {
-        'home' : {
-            'icon' : 'fa fa-file-picture-o',
-            'text' : 'Store',
-            'link' : null,
-            'active' :  false,
-            'unique' : 'shop'
-        },
-        'cart' : {
-            'icon' : 'fa fa-shopping-cart',
-            'text' : 'My cart',
-            'link' : null,
-            'active' :  false,
-            'unique' : 'cart'
-        },
-        'deals' : {
+        'deal' : {
             'icon' : 'fa fa-money',
             'text' : 'Deals',
             'link' : null,
             'active' :  false,
-            'unique' : 'deals'
+            'unique' : 'deal'
         },
-        'settings' : {
-            'icon' : 'fa  fa-gear',
-            'text' : 'Settings',
+        'activity' : {
+            'icon' : 'fa fa-calendar',
+            'text' : 'Activities',
             'link' : null,
             'active' :  false,
-            'unique' : 'settings'
+            'unique' : 'activity'
+        },
+        'contact' : {
+            'icon' : 'fa fa-users',
+            'text' : 'Contacts',
+            'link' : null,
+            'active' :  false,
+            'unique' : 'contact'
+        },
+        'organization' : {
+            'icon' : 'fa fa-building-o',
+            'text' : 'Organizations',
+            'link' : null,
+            'active' :  false,
+            'unique' : 'organization'
         }
     };
     footer.build = function(activeItem){
         // Parse data
         var items = this.items;
+        delete items['settings'];
         if (!config.isAdmin){
             delete items['settings'];
         }
@@ -45,14 +46,14 @@
             }
         }
         formelo.ui().footer(data, function(unique){
-             if (unique === 'cart'){
-                 formelo.navigation().openActivity('cart');
-             } else if (unique === 'shop') {
-                 formelo.navigation().openActivity('home');
-             } else if (unique == 'deals') {
-                 formelo.navigation().openActivity('deals');
-             } else if (unique == 'settings') {
-                 formelo.navigation().openActivity('setup');
+             if (unique === 'deal'){
+                 formelo.navigation().openActivity('Deals');
+             } else if (unique === 'activity') {
+                 formelo.navigation().openActivity('activity');
+             } else if (unique == 'contact') {
+                 formelo.navigation().openActivity('contact');
+             } else if (unique == 'organization') {
+                 formelo.navigation().openActivity('organization');
              }
         });
     };
